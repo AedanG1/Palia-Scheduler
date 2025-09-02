@@ -3,12 +3,12 @@
 import usePaliaTime from "./hooks/usePaliaTime";
 
 export default function Home() {
-  const {clockText, paliaTime} = usePaliaTime();
+  const {paliaTime12Hour, paliaTime24Hour} = usePaliaTime();
 
   return (
     <div>
-      <h2>{clockText}</h2>
-      <h2>{paliaTime}</h2>
+      <h2>{paliaTime12Hour}</h2>
+      <h2>{paliaTime24Hour}</h2>
     </div>
   );
 }
