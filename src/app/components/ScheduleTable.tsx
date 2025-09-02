@@ -13,11 +13,9 @@ export default function ScheduleTable({ schedule }: {schedule: Array<PaliaActivi
           </tr>
         </thead>
         <tbody>
-          <tr>
             {!schedule ? null : schedule.map((activity: PaliaActivity): JSX.Element => {
-              return <td key={activity.id}>{activity.name}: starts at {activity.startHour}</td>
+              return <tr key={activity.id}><p>{activity.name}: starts at {activity.startHour}</p></tr>
             })}
-          </tr>
         </tbody>
       </table>
     </div>

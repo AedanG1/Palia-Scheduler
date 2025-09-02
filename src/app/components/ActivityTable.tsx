@@ -1,9 +1,14 @@
 import {act, JSX} from "react";
 import { paliaActivities, PaliaActivity } from "../data";
 
-export default function ActivityTable({schedule}: {schedule: Array<PaliaActivity> | null}): JSX.Element {
+type ActivityTableProps = {
+  schedule: Array<PaliaActivity>;
+  handleSchedule: (activity: PaliaActivity) => void;
+}
+
+export default function ActivityTable({schedule, handleSchedule}: ActivityTableProps): JSX.Element {
   // show all activities that aren't already on the user's schedule
-  const scheduleIds: Array<number> | undefined = schedule?.map((activity: PaliaActivity): number => {
+  const scheduleIds: Array<number> | undefined = schedule.map((activity: PaliaActivity): number => {
     return activity.id;
   }) 
 
@@ -14,10 +19,16 @@ export default function ActivityTable({schedule}: {schedule: Array<PaliaActivity
   })
 
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <p key={activity.id}>{activity.name}: starts at {activity.startHour}</p>
+    return <button 
+              key={activity.id} 
+              onClick={() => handleSchedule(activity)} 
+              className="hover: cursor-pointer"
+            >
+              {activity.name}: starts at {activity.startHour}
+            </button>
   })
 
   return (
-    <div>{activityElements}</div>
+    <div className="flex flex-col">{activityElements}</div>
   ) 
 }
