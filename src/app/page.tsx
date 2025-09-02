@@ -1,11 +1,14 @@
 'use client'
 
-import usePalianTime from "./hooks/usePalianTime";
+import usePaliaTime from "./hooks/usePaliaTime";
 
 export default function Home() {
-  const {clockText} = usePalianTime();
+  const {clockText, paliaTime} = usePaliaTime();
 
   return (
-    <h2>{clockText}</h2>
+    <div>
+      <h2>{clockText}</h2>
+      <h2>{paliaTime}</h2>
+    </div>
   );
 }
