@@ -1,5 +1,6 @@
 'use client'
 
+import NotificationSettings from "./components/NotificationSettings";
 import usePaliaTime from "./hooks/usePaliaTime";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
 
   return (
     <div>
+      <NotificationSettings/>
       <h2>{paliaTime12Hour}</h2>
       <h2>{paliaTime24Hour}</h2>
     </div>
