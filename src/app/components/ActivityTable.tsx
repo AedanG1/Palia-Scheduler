@@ -1,12 +1,12 @@
-import {act, JSX} from "react";
+import {JSX} from "react";
 import { paliaActivities, PaliaActivity } from "../data";
 
 type ActivityTableProps = {
   schedule: Array<PaliaActivity>;
-  handleSchedule: (activity: PaliaActivity) => void;
+  addToSchedule: (activity: PaliaActivity) => void;
 }
 
-export default function ActivityTable({schedule, handleSchedule}: ActivityTableProps): JSX.Element {
+export default function ActivityTable({schedule, addToSchedule}: ActivityTableProps): JSX.Element {
   // show all activities that aren't already on the user's schedule
   const scheduleIds: Array<number> | undefined = schedule.map((activity: PaliaActivity): number => {
     return activity.id;
@@ -21,7 +21,7 @@ export default function ActivityTable({schedule, handleSchedule}: ActivityTableP
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
     return <button 
               key={activity.id} 
-              onClick={() => handleSchedule(activity)} 
+              onClick={() => addToSchedule(activity)} 
               className="hover: cursor-pointer"
             >
               {activity.name}: starts at {activity.startHour}

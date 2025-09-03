@@ -38,9 +38,17 @@ export default function Home() {
 
   }, [paliaTime24Hour, schedule])
 
-  const handleSchedule = (activity: PaliaActivity): void => {
+  const addToSchedule = (activity: PaliaActivity): void => {
     setSchedule((prev: Array<PaliaActivity>): Array<PaliaActivity> => {
       return [...prev, activity]; 
+    })
+  }
+  
+  const removeFromSchedule = (activity: PaliaActivity): void => {
+    setSchedule((prev: Array<PaliaActivity>): Array<PaliaActivity> => {
+      return prev.filter((prevActivity: PaliaActivity): PaliaActivity | null => {
+        return prevActivity.id !== activity.id ? prevActivity : null;
+      }) 
     })
   }
 
@@ -51,8 +59,8 @@ export default function Home() {
       <h2>{paliaTime24Hour ?? "loading"}</h2>
       <hr></hr>
       <div className="flex flex-row gap-24">
-        <ScheduleTable schedule={schedule} />
-        <ActivityTable schedule={schedule} handleSchedule={handleSchedule}/>
+        <ScheduleTable schedule={schedule} removeFromSchedule={removeFromSchedule} />
+        <ActivityTable schedule={schedule} addToSchedule={addToSchedule}/>
       </div>
     </div>
   );

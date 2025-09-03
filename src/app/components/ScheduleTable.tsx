@@ -1,23 +1,23 @@
 import type { PaliaActivity } from "../data"
-import {JSX} from "react"
+import {act, JSX} from "react"
 
-export default function ScheduleTable({ schedule }: {schedule: Array<PaliaActivity> | null}) {
+type ScheduleTableProps = {
+  schedule: Array<PaliaActivity> | null;
+  removeFromSchedule: (activity: PaliaActivity) => void;
+}
+
+export default function ScheduleTable({ schedule, removeFromSchedule }: ScheduleTableProps) {
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              Schedule
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-            {!schedule ? null : schedule.map((activity: PaliaActivity): JSX.Element => {
-              return <tr key={activity.id}><p>{activity.name}: starts at {activity.startHour}</p></tr>
-            })}
-        </tbody>
-      </table>
+      {!schedule ? null : schedule.map((activity: PaliaActivity): JSX.Element => {
+        return <button 
+                key={activity.id}
+                onClick={() => { removeFromSchedule(activity) }}
+                className="hover: cursor-pointer"
+                >
+                  {activity.name}: starts at {activity.startHour}
+                </button>
+      })}
     </div>
   )
 }
