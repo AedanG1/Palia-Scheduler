@@ -54,13 +54,13 @@ export default function Home() {
 
   return (
     <div>
-      <NotificationSettings/>
-      <div className="flex flex-row gap-12">
-        <h2>{paliaTime12Hour ?? "loading"}</h2>
-        <h2>{paliaTime24Hour ?? "loading"}</h2>
+      <div className="flex flex-col items-center mb-8">
+        <h1 className="text-4xl font-bold">Palia Scheduler</h1>
+        <h2 className="text-slate-500">Current time in Palia</h2>
+        <h3 className="text-2xl font-bold">{paliaTime12Hour ?? "loading"}</h3>
+        <NotificationSettings/>
       </div>
-      <hr></hr>
-      <div className="flex flex-row gap-24">
+      <div className="flex flex-row gap-24 justify-center">
         <ScheduleTable 
           schedule={schedule}
           paliaCurrentHour={paliaCurrentHour}

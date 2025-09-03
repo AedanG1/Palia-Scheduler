@@ -23,7 +23,7 @@ export default function usePaliaTime(): PaliaTime {
   } else if (hour === 0) {
     hour = 12;
   }
-    return hour.toFixed(0).padStart(2, '0');
+    return hour.toFixed(0);
   }
 
   const formatSegment = (minute: number): string => {

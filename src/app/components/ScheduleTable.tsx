@@ -33,7 +33,7 @@ export default function ScheduleTable({
     if (hour >= 3) {
       return hour - 2;
     } else {
-      return hour + 23;
+      return hour + 22;
     }
   }
 
@@ -47,11 +47,11 @@ export default function ScheduleTable({
   }
 
   return (
-    <div className={`w-full grid grid-cols-1`}>
-      <h2>Daily Schedule</h2>
-      <div className="flex">
+    <div className="w-1/2 flex flex-col gap-4">
+      <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Daily Schedule</h2>
+      <div className="flex bg-white rounded-lg shadow-lg p-4">
         {/* Time Labels Column */}
-        <div className="w-20 text-right pr-2 border-r border-slate-200">
+        <div className="w-16 text-right pr-2 border-r border-slate-200">
           {hoursToDisplay.map(hour => (
             <div key={hour} className="h-8 flex items-center justify-end">
               <span className="text-sm text-slate-500">{formatHour(hour)}</span>
@@ -64,24 +64,27 @@ export default function ScheduleTable({
 
           {/* Background grid lines */}
           {hoursToDisplay.map((hour: number): JSX.Element => (
-            <div key={`line-${hour}`} className="h-8 border-b border-slate-700"></div>
+            <div key={`line-${hour}`} className="h-8 border-b border-slate-200"></div>
           ))}
 
           {/* Activity Blocks */}
           <div className="absolute inset-0 grid grid-rows-24">
             {schedule?.map((activity: PaliaActivity): JSX.Element => {
               return (
-                <div 
+                <button 
                   key={activity.id} 
                   style={{ 
                     gridRowStart: getStartHour(activity.startHour),
-                    gridRowEnd: `span ${getSpan(activity)}`
+                    gridRowEnd: `span ${getSpan(activity)}`,
+                    background: `${activity.colorBg}`,
+                    color: `${activity.colorText}`,
+                    borderColor: `${activity.colorBorder}`
                   }}
-                  className="border bg-slate-600"
+                  className="hover:cursor-pointer border-2 rounded-lg shadow-md"
                   onClick={() => removeFromSchedule(activity)}
                 >
                   {activity.name}
-                </div>
+                </button>
               )
             })}
           </div>
