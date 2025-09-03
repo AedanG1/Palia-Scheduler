@@ -55,8 +55,10 @@ export default function Home() {
   return (
     <div>
       <NotificationSettings/>
-      <h2>{paliaTime12Hour ?? "loading"}</h2>
-      <h2>{paliaTime24Hour ?? "loading"}</h2>
+      <div className="flex flex-row gap-12">
+        <h2>{paliaTime12Hour ?? "loading"}</h2>
+        <h2>{paliaTime24Hour ?? "loading"}</h2>
+      </div>
       <hr></hr>
       <div className="flex flex-row gap-24">
         <ScheduleTable 

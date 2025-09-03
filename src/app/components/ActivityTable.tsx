@@ -8,7 +8,7 @@ type ActivityTableProps = {
 
 export default function ActivityTable({schedule, addToSchedule}: ActivityTableProps): JSX.Element {
   // show all activities that aren't already on the user's schedule
-  const scheduleIds: Array<number> | undefined = schedule.map((activity: PaliaActivity): number => {
+  const scheduleIds: Array<string> | undefined = schedule.map((activity: PaliaActivity): string => {
     return activity.id;
   }) 
 
