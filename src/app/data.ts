@@ -3,16 +3,16 @@ export type PaliaActivity = {
   name: string;
   desc: string;
   startHour: number;
-  endHour: number | null;
+  endHour: number;
 };
 
 export const paliaActivities: Array<PaliaActivity> = [
   {
     id: 1,
-    name: "Flow-Tree Garden",
+    name: "Flow-Tree Garden Spawn",
     desc: "Find the Flow-Tree Garden in Bahari Bay. Make sure to let others know where it is!",
     startHour: 0,
-    endHour: null
+    endHour: 1
   },
   {
     id: 2,
@@ -33,6 +33,6 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Kilima Flower Bloom",
     desc: "Find the Flower Bloom in Kilima. Make sure to let others know where it is!",
     startHour: 12,
-    endHour: null
+    endHour: 13
   }
 ];

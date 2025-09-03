@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 export interface PaliaTime {
-  paliaTime24Hour: string | void;
-  paliaTime12Hour: string | void;
-  paliaCurrentHour: number | void;
+  paliaTime24Hour: string | undefined;
+  paliaTime12Hour: string | undefined;
+  paliaCurrentHour: number | undefined;
+  paliaCurrentMinute: number | undefined;
 }
 
 export default function usePaliaTime(): PaliaTime {
@@ -46,31 +47,21 @@ export default function usePaliaTime(): PaliaTime {
     return () => clearInterval(intervalId);
   }, [])
 
-  const paliaCurrentHour = useMemo((): number | void => {
-    if (paliaTimeInSeconds) {
-      const paliaTimeMinutes = Math.floor(paliaTimeInSeconds / MINUTE);
-      const m = paliaTimeMinutes % 60;
-      return (paliaTimeMinutes - m) / 60;
-    }
-  }, [paliaTimeInSeconds])
+  let paliaCurrentMinute: number | undefined;
+  let paliaCurrentHour: number | undefined;
+  let paliaTime24Hour: string | undefined;
+  let paliaTime12Hour: string | undefined;
 
-  const paliaTime24Hour = useMemo((): string | void => {
-    if (paliaTimeInSeconds) {
-      const paliaTimeMinutes = Math.floor(paliaTimeInSeconds / MINUTE);
-      const m = paliaTimeMinutes % 60;
-      const h = (paliaTimeMinutes - m) / 60;
-      return `${formatSegment(h)}:${formatSegment(m)}`;
-    }
-  }, [paliaTimeInSeconds])
+  if (paliaTimeInSeconds !== null) {
+    const paliaTimeMinutes = Math.floor(paliaTimeInSeconds / MINUTE);
+    const m = paliaTimeMinutes % 60;
+    const h = (paliaTimeMinutes - m) / 60;
 
-  const paliaTime12Hour = useMemo((): string | void => {
-    if (paliaTimeInSeconds) {
-      const paliaTimeMinutes = Math.floor(paliaTimeInSeconds / MINUTE);
-      const m = paliaTimeMinutes % 60;
-      const h = (paliaTimeMinutes - m) / 60;
-      return `${format12Hour(h)}:${formatSegment(m)} ${getMeridiem(h)}`;
-    }
-  }, [paliaTimeInSeconds])
+    paliaCurrentMinute = m;
+    paliaCurrentHour = h;
+    paliaTime24Hour = `${formatSegment(h)}:${formatSegment(m)}`;
+    paliaTime12Hour = `${format12Hour(h)}:${formatSegment(m)} ${getMeridiem(h)}`;
+  }
 
-  return {paliaTime24Hour, paliaTime12Hour, paliaCurrentHour}
+  return {paliaTime24Hour, paliaTime12Hour, paliaCurrentHour, paliaCurrentMinute}
 }

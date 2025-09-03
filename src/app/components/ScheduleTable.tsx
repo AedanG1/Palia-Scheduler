@@ -1,23 +1,19 @@
+'use client'
+
 import type { PaliaActivity } from "../data"
-import {act, JSX} from "react"
+import {JSX} from "react"
+import { paliaActivities } from "../data"
 
 type ScheduleTableProps = {
   schedule: Array<PaliaActivity> | null;
   removeFromSchedule: (activity: PaliaActivity) => void;
+  paliaCurrentMinute: number | undefined;
+  paliaCurrentHour: number | undefined;
 }
 
-export default function ScheduleTable({ schedule, removeFromSchedule }: ScheduleTableProps) {
+export default function ScheduleTable({ schedule, removeFromSchedule, paliaCurrentHour, paliaCurrentMinute }: ScheduleTableProps) {
+
   return (
-    <div>
-      {!schedule ? null : schedule.map((activity: PaliaActivity): JSX.Element => {
-        return <button 
-                key={activity.id}
-                onClick={() => { removeFromSchedule(activity) }}
-                className="hover: cursor-pointer"
-                >
-                  {activity.name}: starts at {activity.startHour}
-                </button>
-      })}
-    </div>
+    <div></div>
   )
 }
