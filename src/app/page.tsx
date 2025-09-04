@@ -6,6 +6,7 @@ import type { PaliaActivity } from "./data";
 import ScheduleTable from "./components/ScheduleTable";
 import ActivityTable from "./components/ActivityTable";
 import useActivityNotification from "./hooks/useActivityNotification";
+import PaliaClock from "./components/PaliaClock";
 
 export default function Home() {
   const [schedule, setSchedule] = useState<Array<PaliaActivity>>([]);
@@ -30,7 +31,8 @@ export default function Home() {
       <div className="flex flex-col items-center mb-8">
         <h1 className="text-4xl font-bold">Palia Scheduler</h1>
         <h2 className="text-slate-500">Current time in Palia</h2>
-        <NotificationSettings/>
+        <PaliaClock />
+        <NotificationSettings />
       </div>
       <div className="flex flex-row gap-24 justify-center">
         <ScheduleTable 
