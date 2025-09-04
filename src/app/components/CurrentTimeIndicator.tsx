@@ -16,10 +16,10 @@ export default function CurrentTimeIndicator({scheduleStartingHour}: {scheduleSt
       style={{
         top: `${topPosition}rem`
       }}
-      className="absolute w-full h-0.5 bg-red-500 z-50 top-167.5"
+      className="absolute w-full h-0.5 bg-red-500 z-50 rounded-lg"
     >
       {/* circle */}
-      <div className="absolute w-3 h-3 bg-red-500 rounded-lg top-[-4.5] left-[-6.5]"></div>
+      <div className="absolute w-3 h-3 bg-red-500 rounded-lg top-[-4.8] left-[-6.5]"></div>
     </div>
   )
 }

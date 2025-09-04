@@ -35,7 +35,7 @@ export default function Home() {
         <PaliaClock />
         <NotificationSettings />
       </div>
-      <div className="flex flex-row gap-24 justify-center">
+      <div className="flex flex-row gap-20 justify-center">
         <ScheduleTable 
           schedule={schedule}
           removeFromSchedule={removeFromSchedule}

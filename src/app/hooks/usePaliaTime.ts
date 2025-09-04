@@ -38,7 +38,7 @@ export default function usePaliaTime(): PaliaTime {
   }
 
   const getMeridiem = (hour: number): string => {
-    return hour > 11 ? "PM" : "AM";
+    return hour >= 12 ? "PM" : "AM";
   }
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function usePaliaTime(): PaliaTime {
 
       const totalMinutes = Math.floor(paliaSeconds / MINUTE);
       const minute = totalMinutes % 60;
-      const hour = Math.floor(totalMinutes / 60);
+      const hour = (totalMinutes - minute) / 60;
       const dayNumber = Math.floor(paliaSeconds / DAY);
 
       setPaliaTime({
