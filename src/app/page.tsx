@@ -1,42 +1,15 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NotificationSettings from "./components/NotificationSettings";
-import usePaliaTime from "./hooks/usePaliaTime";
 import type { PaliaActivity } from "./data";
 import ScheduleTable from "./components/ScheduleTable";
-import useNotificationPermission from "./hooks/useNotificationPermission";
 import ActivityTable from "./components/ActivityTable";
+import useActivityNotification from "./hooks/useActivityNotification";
 
 export default function Home() {
-  const {permissionStatus} = useNotificationPermission();
-  const {paliaTime12Hour, paliaTime24Hour, paliaCurrentHour} = usePaliaTime();
   const [schedule, setSchedule] = useState<Array<PaliaActivity>>([]);
-  const [notifiedHour, setNotifiedHour] = useState<number | null>(null);
-
-  useEffect(() => {
-    // if the user doesn't have notifications enabled, do nothing
-    if (permissionStatus !== "granted") {
-      return;
-    }
-    
-    // only notify if user has a schedule, palia time has loaded, and hasn't been notified already
-    if (!schedule || !paliaCurrentHour || paliaCurrentHour === notifiedHour) return;
-
-    // find any activity in the schedule that is starting in an hour
-    const upcomingActivity: PaliaActivity | undefined = schedule.find(
-      (activity) => activity.startHour === (paliaCurrentHour + 1)
-    ); 
-
-    // send a notification and set the notified hour to current hour
-    if (upcomingActivity) {
-      new Notification(`${upcomingActivity.name}`, { body: `${upcomingActivity.desc}`})
-      // TODO: fix this so that the notification happens every day only once.
-      // if there's only one activity on the schedule, it doesn't get notified the next day.
-      setNotifiedHour(paliaCurrentHour);
-    }
-
-  }, [paliaTime24Hour, schedule])
+  useActivityNotification(schedule);
 
   const addToSchedule = (activity: PaliaActivity): void => {
     setSchedule((prev: Array<PaliaActivity>): Array<PaliaActivity> => {
@@ -57,7 +30,6 @@ export default function Home() {
       <div className="flex flex-col items-center mb-8">
         <h1 className="text-4xl font-bold">Palia Scheduler</h1>
         <h2 className="text-slate-500">Current time in Palia</h2>
-        <h3 className="text-2xl font-bold">{paliaTime12Hour ?? "loading"}</h3>
         <NotificationSettings/>
       </div>
       <div className="flex flex-row gap-24 justify-center">

@@ -7,6 +7,7 @@ export interface PaliaTime {
   paliaTime12Hour: string;
   paliaCurrentHour: number;
   paliaCurrentMinute: number;
+  paliaDayNumber: number;
 }
 
 export default function usePaliaTime(): PaliaTime {
@@ -15,6 +16,7 @@ export default function usePaliaTime(): PaliaTime {
     paliaCurrentHour: 0,
     paliaTime24Hour: "00:00",
     paliaTime12Hour: "12:00 AM",
+    paliaDayNumber: 0
   });
 
   const PST_UTC_SUNDAY_OFFSET = 60 * 60 * (8 + 3 * 24);
@@ -49,12 +51,14 @@ export default function usePaliaTime(): PaliaTime {
       const totalMinutes = Math.floor(paliaSeconds / MINUTE);
       const minute = totalMinutes % 60;
       const hour = Math.floor(totalMinutes / 60);
+      const dayNumber = Math.floor(paliaSeconds / DAY);
 
       setPaliaTime({
         paliaCurrentHour: hour,
         paliaCurrentMinute: minute,
         paliaTime24Hour: `${formatSegment(hour)}:${formatSegment(minute)}`,
         paliaTime12Hour: `${format12Hour(hour)}:${formatSegment(minute)} ${getMeridiem(hour)}`,
+        paliaDayNumber: dayNumber
       });
     }, 250)
 
