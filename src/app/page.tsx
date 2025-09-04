@@ -10,6 +10,7 @@ import PaliaClock from "./components/PaliaClock";
 
 export default function Home() {
   const [schedule, setSchedule] = useState<Array<PaliaActivity>>([]);
+  const SCHEDULE_STARTING_HOUR = 3; // 0-24
   useActivityNotification(schedule);
 
   const addToSchedule = (activity: PaliaActivity): void => {
@@ -38,6 +39,7 @@ export default function Home() {
         <ScheduleTable 
           schedule={schedule}
           removeFromSchedule={removeFromSchedule}
+          scheduleStartingHour={SCHEDULE_STARTING_HOUR}
         />
         <ActivityTable schedule={schedule} addToSchedule={addToSchedule}/>
       </div>

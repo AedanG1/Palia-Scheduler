@@ -23,7 +23,7 @@ export default function useActivityNotification(schedule: Array<PaliaActivity>) 
     
     // Find all activities starting in the next hour
     const upcomingActivities = schedule.filter(
-      (activity) => activity.startHour === (paliaCurrentHour + 1)
+      (activity) => activity.startHour === (paliaCurrentHour + 1) % 24 // wrap to 0 after 23
     );
 
     if (upcomingActivities) {

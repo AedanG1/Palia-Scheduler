@@ -7,16 +7,17 @@ import CurrentTimeIndicator from "./CurrentTimeIndicator";
 type ScheduleTableProps = {
   schedule: Array<PaliaActivity> | null;
   removeFromSchedule: (activity: PaliaActivity) => void;
+  scheduleStartingHour: number;
 }
 
 export default function ScheduleTable({
    schedule, 
    removeFromSchedule, 
+   scheduleStartingHour
   }: ScheduleTableProps): JSX.Element {
 
   // create an array to store each hour to display on the schedule
-  // shift start of schedule to 3am. 24, 25, 26 becomes 0, 1, 2
-  const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + 3) % 24);
+  const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
 
   const formatHour = (hour: number): string => {
     const displayHour = hour % 12 === 0 ? 12 : hour % 12;
@@ -24,12 +25,9 @@ export default function ScheduleTable({
     return `${displayHour} ${meridiem}`;
   }
 
-  const getStartHour = (hour: number): number => {
-    if (hour >= 3) {
-      return hour - 2;
-    } else {
-      return hour + 22;
-    }
+  // get the grid position, 0-24, of the activity based on it's starting hour
+  const getStartPosition = (startHour: number): number => {
+    return ((startHour - scheduleStartingHour + 24) % 24) + 1;
   }
 
   const getSpan = (activity: PaliaActivity): number => {
@@ -82,7 +80,7 @@ export default function ScheduleTable({
           ))}
 
           {/* Current Time Indicator */}
-          <CurrentTimeIndicator />
+          <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} />
 
           {/* Activity Blocks */}
           <div className="absolute inset-0 grid grid-rows-24">
@@ -91,7 +89,7 @@ export default function ScheduleTable({
                 <button 
                   key={activity.id} 
                   style={{ 
-                    gridRowStart: getStartHour(activity.startHour),
+                    gridRowStart: getStartPosition(activity.startHour),
                     gridRowEnd: `span ${getSpan(activity)}`,
                     background: `${activity.colorBg}`,
                     color: `${activity.colorText}`,
