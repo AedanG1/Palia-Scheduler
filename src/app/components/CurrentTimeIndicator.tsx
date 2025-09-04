@@ -2,14 +2,21 @@
 
 import usePaliaTime from "../hooks/usePaliaTime";
 
-export default function CurrentTimeIndicator({scheduleStartingHour}: {scheduleStartingHour: number}) {
+export type CurrentTimeIndicatorProps = {
+  scheduleStartingHour: number;
+  scheduleRowHeight: number;
+}
+
+export default function CurrentTimeIndicator({scheduleStartingHour, scheduleRowHeight}: CurrentTimeIndicatorProps) {
   const { paliaCurrentHour, paliaCurrentMinute } = usePaliaTime();
 
-  // schedule starts at 3:00, adjust current hour so that 3:00 acts as 0:00
+  // Shift so that scheduleStartingHour acts as "0"
   const adjustedHour = (paliaCurrentHour - scheduleStartingHour + 24) % 24;
-  const minutesFrom3am = ((adjustedHour * 60) + paliaCurrentMinute);
-  const gridOffset = (adjustedHour - 1) * 0.5; // amount of grid lines between 0 and current hour * 0.5 rem
-  const topPosition = ((minutesFrom3am / 8) + gridOffset) * 0.25;
+  // each row is one hour so multiply adjusted hour by the row height
+  const hourPosition = adjustedHour * scheduleRowHeight;
+  // each row is 60 minutes so divide the minute by 60 to get a fraction of an hour
+  const minutePosition = (paliaCurrentMinute / 60) * scheduleRowHeight;
+  const topPosition = hourPosition + minutePosition;
 
   return (
     <div

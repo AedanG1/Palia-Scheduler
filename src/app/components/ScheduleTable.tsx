@@ -18,6 +18,7 @@ export default function ScheduleTable({
 
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
+  const scheduleRowHeight = 2; // this number is in rem
 
   const formatHour = (hour: number): string => {
     const displayHour = hour % 12 === 0 ? 12 : hour % 12;
@@ -65,7 +66,13 @@ export default function ScheduleTable({
         {/* Time Labels Column */}
         <div className="w-16 text-right pr-2 border-r border-slate-200">
           {hoursToDisplay.map(hour => (
-            <div key={hour} className="h-8 flex items-center justify-end">
+            <div 
+              key={hour}
+              style={{
+                height: `${scheduleRowHeight}rem`
+              }}
+              className="flex items-center justify-end"
+            >
               <span className="text-sm text-slate-500">{formatHour(hour)}</span>
             </div>
           ))}
@@ -76,11 +83,16 @@ export default function ScheduleTable({
 
           {/* Background grid lines */}
           {hoursToDisplay.map((hour: number): JSX.Element => (
-            <div key={`line-${hour}`} className="h-8 border-b border-slate-200"></div>
+            <div 
+              key={`line-${hour}`} 
+              style={{
+                height: `${scheduleRowHeight}rem`
+              }}
+              className="border-b border-slate-200"></div>
           ))}
 
           {/* Current Time Indicator */}
-          <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} />
+          <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
           {/* Activity Blocks */}
           <div className="absolute inset-0 grid grid-rows-24">
