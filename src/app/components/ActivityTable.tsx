@@ -7,24 +7,26 @@ type ActivityTableProps = {
 }
 
 export default function ActivityTable({schedule, addToSchedule}: ActivityTableProps): JSX.Element {
-  // show all activities that aren't already on the user's schedule
+  // get IDs of activities on schedule
   const scheduleIds: Array<string> | undefined = schedule.map((activity: PaliaActivity): string => {
     return activity.id;
   }) 
 
+  // show all activities that aren't already on the user's schedule, sorted by start time
   const activitiesToDisplay: Array<PaliaActivity> = paliaActivities.filter((activity: PaliaActivity) => {
     if (!scheduleIds?.includes(activity.id)) {
       return activity;
     }
-  })
+  }).sort((a, b) => a.startHour - b.startHour);
 
+  // Format the hour to 12 hour
   const formatHour = (hour: number): string => {
-    const h = hour % 24;
-    const meridiem = h >= 12 ? 'pm' : 'am';
-    const displayHour = h % 12 === 0 ? 12 : h % 12;
+    const displayHour = hour % 12 === 0 ? 12 : hour % 12;
+    const meridiem = hour >= 12 ? 'pm' : 'am';
     return `${displayHour} ${meridiem}`;
   }
 
+  // create the Activity Elements from the activities that aren't on the user's schedule
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
     return <button 
               key={activity.id} 

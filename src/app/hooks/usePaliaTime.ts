@@ -3,14 +3,19 @@
 import { useState, useEffect } from "react";
 
 export interface PaliaTime {
-  paliaTime24Hour: string | undefined;
-  paliaTime12Hour: string | undefined;
-  paliaCurrentHour: number | undefined;
-  paliaCurrentMinute: number | undefined;
+  paliaTime24Hour: string;
+  paliaTime12Hour: string;
+  paliaCurrentHour: number;
+  paliaCurrentMinute: number;
 }
 
 export default function usePaliaTime(): PaliaTime {
-  const [paliaTimeInSeconds, setPaliaTimeInSeconds] = useState<number | null>(null);
+  const [paliaTime, setPaliaTime] = useState<PaliaTime>({
+    paliaCurrentMinute: 0,
+    paliaCurrentHour: 0,
+    paliaTime24Hour: "00:00",
+    paliaTime12Hour: "12:00 AM",
+  });
 
   const PST_UTC_SUNDAY_OFFSET = 60 * 60 * (8 + 3 * 24);
   const MINUTE = 60;
@@ -37,31 +42,24 @@ export default function usePaliaTime(): PaliaTime {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const now = new Date();
-      const epoch_seconds = now.getTime() / 1000;
-      const realTimePST = epoch_seconds - PST_UTC_SUNDAY_OFFSET;
-      const newPaliaTime = (realTimePST * 24) % DAY;
+      const epochSeconds = now.getTime() / 1000;
+      const realTimePST = epochSeconds - PST_UTC_SUNDAY_OFFSET;
+      const paliaSeconds = (realTimePST * 24) % DAY;
 
-      setPaliaTimeInSeconds(newPaliaTime);
+      const totalMinutes = Math.floor(paliaSeconds / MINUTE);
+      const minute = totalMinutes % 60;
+      const hour = Math.floor(totalMinutes / 60);
+
+      setPaliaTime({
+        paliaCurrentHour: hour,
+        paliaCurrentMinute: minute,
+        paliaTime24Hour: `${formatSegment(hour)}:${formatSegment(minute)}`,
+        paliaTime12Hour: `${format12Hour(hour)}:${formatSegment(minute)} ${getMeridiem(hour)}`,
+      });
     }, 250)
 
     return () => clearInterval(intervalId);
   }, [])
 
-  let paliaCurrentMinute: number | undefined;
-  let paliaCurrentHour: number | undefined;
-  let paliaTime24Hour: string | undefined;
-  let paliaTime12Hour: string | undefined;
-
-  if (paliaTimeInSeconds !== null) {
-    const paliaTimeMinutes = Math.floor(paliaTimeInSeconds / MINUTE);
-    const m = paliaTimeMinutes % 60;
-    const h = (paliaTimeMinutes - m) / 60;
-
-    paliaCurrentMinute = m;
-    paliaCurrentHour = h;
-    paliaTime24Hour = `${formatSegment(h)}:${formatSegment(m)}`;
-    paliaTime12Hour = `${format12Hour(h)}:${formatSegment(m)} ${getMeridiem(h)}`;
-  }
-
-  return {paliaTime24Hour, paliaTime12Hour, paliaCurrentHour, paliaCurrentMinute}
+  return paliaTime;
 }

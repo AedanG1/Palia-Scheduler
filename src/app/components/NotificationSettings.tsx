@@ -1,3 +1,5 @@
+'use client'
+
 import {JSX} from "react";
 import useNotificationPermission from "../hooks/useNotificationPermission";
 

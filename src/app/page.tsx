@@ -10,7 +10,7 @@ import ActivityTable from "./components/ActivityTable";
 
 export default function Home() {
   const {permissionStatus} = useNotificationPermission();
-  const {paliaTime12Hour, paliaTime24Hour, paliaCurrentHour, paliaCurrentMinute} = usePaliaTime();
+  const {paliaTime12Hour, paliaTime24Hour, paliaCurrentHour} = usePaliaTime();
   const [schedule, setSchedule] = useState<Array<PaliaActivity>>([]);
   const [notifiedHour, setNotifiedHour] = useState<number | null>(null);
 
@@ -63,8 +63,6 @@ export default function Home() {
       <div className="flex flex-row gap-24 justify-center">
         <ScheduleTable 
           schedule={schedule}
-          paliaCurrentHour={paliaCurrentHour}
-          paliaCurrentMinute={paliaCurrentMinute}
           removeFromSchedule={removeFromSchedule}
         />
         <ActivityTable schedule={schedule} addToSchedule={addToSchedule}/>

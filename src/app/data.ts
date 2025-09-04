@@ -1,9 +1,21 @@
 import { nanoid } from "nanoid";
 
+export const LOCATIONS = [
+  "Kilima",
+  "Kilima Village",
+  "Bahari Bay",
+  "Elderwood",
+  "Elderwood Freshwater",
+  "Elderwood Saltwater"
+] as const;
+
+export type Locations = typeof LOCATIONS[number];
+
 export type PaliaActivity = {
   id: string;
   name: string;
   desc: string;
+  location: Locations;
   startHour: number;
   endHour: number;
   colorBg: string;
@@ -16,6 +28,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     id: nanoid(),
     name: "Flow-Tree Grove Spawn",
     desc: "Find the Flow-Tree Grove in Bahari Bay. Make sure to let others know where it is!",
+    location: "Bahari Bay",
     startHour: 0,
     endHour: 1,
     colorBg: "#c4b5fd", // violet 300
@@ -25,7 +38,8 @@ export const paliaActivities: Array<PaliaActivity> = [
   {
     id: nanoid(),
     name: "Zeki's Underground",
-    desc: "Head to Zeki's Underground for a game of Hot Pot! GAMBA!",
+    desc: "Head to Zeki's Underground for a game of Hot Pot",
+    location: "Kilima Village",
     startHour: 18,
     endHour: 3,
     colorBg: "#fda4af", // rose 300
@@ -36,6 +50,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     id: nanoid(),
     name: "Piskii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
+    location: "Elderwood",
     startHour: 22,
     endHour: 23,
     colorBg: "#a5b4fc", // indigo 300
@@ -45,7 +60,8 @@ export const paliaActivities: Array<PaliaActivity> = [
   {
     id: nanoid(),
     name: "Kilima Flower Bloom",
-    desc: "Find the Flower Bloom in Kilima. Make sure to let others know where it is!",
+    desc: "Find the Flower Bloom event in Kilima. Make sure to let others know where it is!",
+    location: "Kilima",
     startHour: 12,
     endHour: 13,
     colorBg: "#86efac", // green 300
