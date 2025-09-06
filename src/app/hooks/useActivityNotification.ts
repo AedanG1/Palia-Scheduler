@@ -22,23 +22,21 @@ export default function useActivityNotification(schedule: Array<PaliaActivity>) 
     // if there's nothing on the schedule, do nothing
     if (!schedule.length) return;
     
-    // Find all activities starting in the next hour
-    const upcomingActivities = schedule.filter(
+    // Find first activity starting in the next hour
+    const upcomingActivity = schedule.find(
       (activity) => activity.startHour === (paliaCurrentHour + 1) % 24 // wrap to 0 after 23
     );
 
-    if (upcomingActivities) {
-      upcomingActivities.forEach((activity) => {
-        if (notifiedRecord[activity.id] !== paliaDayNumber) {
-          new Notification(activity.name, { body: activity.desc });
+    if (upcomingActivity) {
+      if (notifiedRecord[upcomingActivity.id] !== paliaDayNumber) {
+        new Notification(upcomingActivity.name, { body: upcomingActivity.desc });
 
-          // mark as notified
-          setNotifiedRecord((prev) => ({
-            ...prev,
-            [activity.id]: paliaDayNumber,
-          }));
-        }
-      });
+        // mark as notified
+        setNotifiedRecord((prev) => ({
+          ...prev,
+          [upcomingActivity.id]: paliaDayNumber,
+        }));
+      }
     }
 
   }, [paliaCurrentHour, schedule, permissionStatus, paliaDayNumber])

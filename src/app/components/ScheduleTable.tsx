@@ -52,8 +52,7 @@ export default function ScheduleTable({
                 #4338ca 0%,    /* 3am - indigo-700 */
                 #f87171 10%,    /* 5am - red-400 */
                 #fcd34d 15%,   /* 6am - amber-300 */
-                #fcd34d 40%,   /* 6am - amber-300 */
-                #f97316 60%,   /* 5pm - orange-500 */
+                #fcd34d 60%,   /* 6am - amber-300 */
                 #f87171 65%,    /* 6pm - red-400 */
                 #7c3aed 70%,   /* 7pm - violet-600 */
                 #4338ca 90%   /* 9pm - indigo-700 */

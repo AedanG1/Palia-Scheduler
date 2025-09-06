@@ -67,5 +67,192 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorBg: "#86efac", // green 300
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e" // green 500
-  }
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 1,
+    endHour: 2,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 2,
+    endHour: 3,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 3,
+    endHour: 4,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 4,
+    endHour: 5,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 5,
+    endHour: 6,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 6,
+    endHour: 7,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 7,
+    endHour: 8,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 8,
+    endHour: 9,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 9,
+    endHour: 10,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 10,
+    endHour: 11,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 11,
+    endHour: 12,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 12,
+    endHour: 13,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 13,
+    endHour: 14,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 14,
+    endHour: 15,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 15,
+    endHour: 16,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 16,
+    endHour: 17,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
+  {
+    id: nanoid(),
+    name: "Test",
+    desc: "Test description",
+    location: "Kilima",
+    startHour: 17,
+    endHour: 18,
+    colorBg: "#86efac", // green 300
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e" // green 500
+  },
 ];
