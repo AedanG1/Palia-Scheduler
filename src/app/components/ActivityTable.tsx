@@ -1,5 +1,6 @@
 import {JSX} from "react";
 import { paliaActivities, PaliaActivity } from "../data";
+import { CalendarPlus, MapPin } from "lucide-react";
 
 type ActivityTableProps = {
   schedule: Array<PaliaActivity>;
@@ -28,20 +29,28 @@ export default function ActivityTable({schedule, addToSchedule}: ActivityTablePr
 
   // create the Activity Elements from the activities that aren't on the user's schedule
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <button 
+    return <div 
               key={activity.id} 
-              onClick={() => addToSchedule(activity)} 
               style={{
                 background: `${activity.colorBg}`,
                 color: `${activity.colorText}`,
                 borderColor: `${activity.colorBorder}`
               }}
-              className={`hover: cursor-pointer border-2 rounded-md px-4 py-2 flex flex-col text-left shadow-md`}
+              className={`border-2 rounded-md px-4 py-2 flex flex-col text-left shadow-md relative gap-2`}
             >
-              <span className="font-bold">{activity.name}</span>
+              <button onClick={() => addToSchedule(activity)} className="absolute right-4 hover:cursor-pointer">
+                <CalendarPlus />
+              </button>
+              <div>
+                <span className="font-bold">{activity.name}</span>
+                <button className="flex flex-row items-center gap-1 hover:cursor-pointer"> 
+                  <MapPin size={16} />
+                  {activity.location}
+                </button>
+              </div>
               <span className="opacity-70 text-sm">{activity.desc}</span>
               <span className="font-bold text-sm">{formatHour(activity.startHour)} - {formatHour(activity.endHour)}</span>
-            </button>
+            </div>
   })
 
   return (

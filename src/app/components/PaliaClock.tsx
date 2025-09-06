@@ -5,6 +5,6 @@ export default function PaliaClock(): JSX.Element {
   const {paliaTime12Hour, paliaDayNumber} = usePaliaTime();
 
   return (
-    <h3 className="text-2xl font-bold">{paliaTime12Hour} {paliaDayNumber}</h3>
+    <h3 className="text-2xl font-bold">{paliaTime12Hour}</h3>
   )
 }
