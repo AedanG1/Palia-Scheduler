@@ -47,7 +47,7 @@ export default function ActivityTable({schedule, addToSchedule}: ActivityTablePr
   return (
     <div className="flex flex-col gap-4 w-1/4">
       <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Activities</h2>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 overflow-y-auto max-h-200">
         {activityElements}
       </div>
     </div>
