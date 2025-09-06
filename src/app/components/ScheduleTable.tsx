@@ -3,6 +3,8 @@
 import type { PaliaActivity } from "../data"
 import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
+import { CalendarOff, MapPin } from "lucide-react";
+import { formatHourMeridiem } from "../utils";
 
 type ScheduleTableProps = {
   schedule: Array<PaliaActivity> | null;
@@ -19,12 +21,6 @@ export default function ScheduleTable({
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   const scheduleRowHeight = 2; // this number is in rem
-
-  const formatHour = (hour: number): string => {
-    const displayHour = hour % 12 === 0 ? 12 : hour % 12;
-    const meridiem = hour >= 12 ? 'pm' : 'am';
-    return `${displayHour} ${meridiem}`;
-  }
 
   // get the grid position, 0-24, of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {
@@ -72,7 +68,7 @@ export default function ScheduleTable({
               }}
               className="flex items-center justify-end"
             >
-              <span className="text-sm text-slate-500">{formatHour(hour)}</span>
+              <span className="text-sm text-slate-500">{formatHourMeridiem(hour)}</span>
             </div>
           ))}
         </div>
@@ -97,7 +93,7 @@ export default function ScheduleTable({
           <div className="absolute inset-0 grid grid-rows-24">
             {schedule?.map((activity: PaliaActivity): JSX.Element => {
               return (
-                <button 
+                <div 
                   key={activity.id} 
                   style={{ 
                     gridRowStart: getStartPosition(activity.startHour),
@@ -106,11 +102,22 @@ export default function ScheduleTable({
                     color: `${activity.colorText}`,
                     borderColor: `${activity.colorBorder}`
                   }}
-                  className="hover:cursor-pointer border-2 rounded-lg shadow-md"
-                  onClick={() => removeFromSchedule(activity)}
+                  className="border-2 rounded-lg shadow-md px-2 py-0.5"
                 >
-                  {activity.name}
-                </button>
+                  <div className="w-full flex flex-row justify-between">
+                    <div className="flex flex-row items-center gap-2">
+                      {/* TODO */}
+                      {/* On click should open image modal of activity location */}
+                      <button>
+                        <MapPin size={20} />
+                      </button>
+                      <span>{activity.name}</span>
+                    </div>
+                    <button onClick={() => removeFromSchedule(activity)} className="hover: cursor-pointer">
+                      <CalendarOff size={20} />
+                    </button>
+                  </div>
+                </div>
               )
             })}
           </div>
