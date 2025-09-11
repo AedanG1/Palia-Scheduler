@@ -54,7 +54,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Piskii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
     location: "Elderwood",
-    imagePath: "/Elderwood-PiskiiBounce.png",
+    imagePath: "/Elderwood-PiskiiBounce.jpg",
     startHour: 22,
     endHour: 23,
     colorBg: "#a5b4fc", // indigo 300
