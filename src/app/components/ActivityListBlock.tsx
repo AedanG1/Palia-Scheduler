@@ -1,7 +1,7 @@
 import type { PaliaActivity } from "../data"
 import { CalendarPlus, MapPin } from "lucide-react"
 import { formatHourMeridiem } from "../utils"
-import { AnimatePresence, motion } from "motion/react"
+import { motion } from "motion/react"
 
 type ActivityListBlock = {
   activity: PaliaActivity;
@@ -21,7 +21,7 @@ export default function ActivityListBlock({activity, addToSchedule, toggleModal}
         color: `${activity.colorText}`,
         borderColor: `${activity.colorBorder}`
       }}
-      className={`border-2 rounded-md px-4 py-2 flex flex-col text-left shadow-md relative gap-2 no-scrollbar`}
+      className={`border-2 rounded-md px-4 py-2 flex flex-col text-left shadow-md relative gap-2 no-scrollbar overflow-x-clip`}
     >
       <button onClick={() => addToSchedule(activity)} className="absolute right-4 hover:cursor-pointer">
         <CalendarPlus />
