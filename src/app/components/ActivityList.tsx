@@ -29,7 +29,7 @@ export default function ActivityList({schedule, addToSchedule, toggleModal}: Act
   return (
     <div className="flex flex-col gap-4 w-1/4 overflow-x-clip">
       <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Activities</h2>
-      <div className="flex flex-col gap-2 overflow-y-auto max-h-200">
+      <div className="flex flex-col gap-2 overflow-y-auto overflow-x-clip max-h-200">
         {activityElements}
       </div>
     </div>
