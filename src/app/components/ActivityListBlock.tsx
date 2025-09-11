@@ -21,7 +21,7 @@ export default function ActivityListBlock({activity, addToSchedule, toggleModal}
         color: `${activity.colorText}`,
         borderColor: `${activity.colorBorder}`
       }}
-      className={`border-2 rounded-md px-4 py-2 flex flex-col text-left shadow-md relative gap-2 no-scrollbar overflow-x-clip`}
+      className={`border-2 rounded-md px-4 py-2 flex flex-col text-left shadow-md relative gap-2 overflow-x-clip`}
     >
       <button onClick={() => addToSchedule(activity)} className="absolute right-4 hover:cursor-pointer">
         <CalendarPlus />
