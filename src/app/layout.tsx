@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.className} antialiased py-10 px-24`}
+        className={`${dmSans.className} antialiased`}
       >
         {children}
       </body>

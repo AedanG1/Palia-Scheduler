@@ -5,9 +5,10 @@ import ActivityListBlock from "./ActivityListBlock";
 type ActivityListProps = {
   schedule: Array<PaliaActivity>;
   addToSchedule: (activity: PaliaActivity) => void;
+  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityList({schedule, addToSchedule}: ActivityListProps): JSX.Element {
+export default function ActivityList({schedule, addToSchedule, toggleModal}: ActivityListProps): JSX.Element {
   // get IDs of activities on schedule
   const scheduleIds: Array<string> | undefined = schedule.map((activity: PaliaActivity): string => {
     return activity.id;
@@ -22,7 +23,7 @@ export default function ActivityList({schedule, addToSchedule}: ActivityListProp
 
   // create the Activity Elements from the activities that aren't on the user's schedule
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <ActivityListBlock key={activity.id} activity={activity} addToSchedule={addToSchedule} />
+    return <ActivityListBlock key={activity.id} activity={activity} addToSchedule={addToSchedule} toggleModal={toggleModal} />
   })
 
   return (

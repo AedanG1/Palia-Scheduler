@@ -1,7 +1,7 @@
 'use client'
 
 import type { PaliaActivity } from "../data"
-import {JSX} from "react"
+import {act, JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
 import { CalendarOff, MapPin } from "lucide-react";
 import { formatHourMeridiem } from "../utils";
@@ -10,12 +10,14 @@ type ScheduleTableProps = {
   schedule: Array<PaliaActivity> | null;
   removeFromSchedule: (activity: PaliaActivity) => void;
   scheduleStartingHour: number;
+  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ScheduleTable({
    schedule, 
    removeFromSchedule, 
-   scheduleStartingHour
+   scheduleStartingHour,
+   toggleModal
   }: ScheduleTableProps): JSX.Element {
 
   // create an array to store each hour to display on the schedule
@@ -108,7 +110,10 @@ export default function ScheduleTable({
                     <div className="flex flex-row items-center gap-2">
                       {/* TODO */}
                       {/* On click should open image modal of activity location */}
-                      <button>
+                      <button 
+                        className="hover: cursor-pointer"
+                        onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}
+                      >
                         <MapPin size={20} />
                       </button>
                       <span>{activity.name}</span>

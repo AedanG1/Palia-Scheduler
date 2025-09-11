@@ -5,9 +5,10 @@ import { formatHourMeridiem } from "../utils"
 type ActivityListBlock = {
   activity: PaliaActivity;
   addToSchedule: (activity: PaliaActivity) => void;
+  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityListBlock({activity, addToSchedule}: ActivityListBlock) {
+export default function ActivityListBlock({activity, addToSchedule, toggleModal}: ActivityListBlock) {
   return (
     <div 
       key={activity.id} 
@@ -23,7 +24,10 @@ export default function ActivityListBlock({activity, addToSchedule}: ActivityLis
       </button>
       <div>
         <span className="font-bold">{activity.name}</span>
-        <button className="flex flex-row items-center gap-1 hover:cursor-pointer"> 
+        <button 
+          className="flex flex-row items-center gap-1 hover:cursor-pointer"
+          onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}
+        > 
           <MapPin size={16} />
           {activity.location}
         </button>

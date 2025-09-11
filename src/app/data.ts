@@ -16,6 +16,7 @@ export type PaliaActivity = {
   name: string;
   desc: string;
   location: Locations;
+  imagePath: string;
   startHour: number;
   endHour: number;
   colorBg: string;
@@ -29,6 +30,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Flow-Tree Grove Spawn",
     desc: "Find the Flow-Tree Grove in Bahari Bay. Make sure to let others know where it is!",
     location: "Bahari Bay",
+    imagePath: "/BahariBay-Clean.jpg",
     startHour: 0,
     endHour: 1,
     colorBg: "#c4b5fd", // violet 300
@@ -40,6 +42,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Zeki's Underground",
     desc: "Head to Zeki's Underground for a game of Hot Pot",
     location: "Kilima Village",
+    imagePath: "/Zeki-Underground.jpg",
     startHour: 18,
     endHour: 3,
     colorBg: "#fda4af", // rose 300
@@ -51,6 +54,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Piskii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
     location: "Elderwood",
+    imagePath: "/Elderwood-PiskiiBounce.png",
     startHour: 22,
     endHour: 23,
     colorBg: "#a5b4fc", // indigo 300
@@ -62,6 +66,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Kilima Flower Bloom",
     desc: "Find the Flower Bloom event in Kilima. Make sure to let others know where it is!",
     location: "Kilima",
+    imagePath: "/Kilima-Clean.jpg",
     startHour: 12,
     endHour: 13,
     colorBg: "#86efac", // green 300
