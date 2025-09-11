@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { dmSans } from "./fonts";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Palia Scheduler",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body
         className={`${dmSans.className} antialiased`}
       >
+        <SpeedInsights />
         {children}
       </body>
     </html>
