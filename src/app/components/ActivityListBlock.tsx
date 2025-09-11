@@ -1,6 +1,7 @@
 import type { PaliaActivity } from "../data"
 import { CalendarPlus, MapPin } from "lucide-react"
 import { formatHourMeridiem } from "../utils"
+import { AnimatePresence, motion } from "motion/react"
 
 type ActivityListBlock = {
   activity: PaliaActivity;
@@ -10,7 +11,10 @@ type ActivityListBlock = {
 
 export default function ActivityListBlock({activity, addToSchedule, toggleModal}: ActivityListBlock) {
   return (
-    <div 
+    <motion.div 
+      initial={{ transform: "translateX(-400px)" }} 
+      animate={{ transform: "translateX(0px)" }}
+      transition={{ type: "spring", duration: 0.6 }}
       key={activity.id} 
       style={{
         background: `${activity.colorBg}`,
@@ -34,6 +38,6 @@ export default function ActivityListBlock({activity, addToSchedule, toggleModal}
       </div>
       <span className="opacity-70 text-sm">{activity.desc}</span>
       <span className="font-bold text-sm">{formatHourMeridiem(activity.startHour)} - {formatHourMeridiem(activity.endHour)}</span>
-    </div>
+    </motion.div>
   )
 }

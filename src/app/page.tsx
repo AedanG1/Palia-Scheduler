@@ -77,10 +77,14 @@ export default function Home() {
           <ScheduleTable 
             schedule={schedule}
             removeFromSchedule={removeFromSchedule}
+            toggleModal={toggleModal}
             scheduleStartingHour={SCHEDULE_STARTING_HOUR}
+          />
+          <ActivityList 
+            schedule={schedule} 
+            addToSchedule={addToSchedule} 
             toggleModal={toggleModal}
           />
-          <ActivityList schedule={schedule} addToSchedule={addToSchedule} toggleModal={toggleModal}/>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 'use client'
 
 import type { PaliaActivity } from "../data"
-import {act, JSX} from "react"
+import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
-import { CalendarOff, MapPin } from "lucide-react";
 import { formatHourMeridiem } from "../utils";
+import ActivityScheduleBlock from "./ActivityScheduleBlock";
 
 type ScheduleTableProps = {
   schedule: Array<PaliaActivity> | null;
@@ -23,19 +23,6 @@ export default function ScheduleTable({
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   const scheduleRowHeight = 2; // this number is in rem
-
-  // get the grid position, 0-24, of the activity based on it's starting hour
-  const getStartPosition = (startHour: number): number => {
-    return ((startHour - scheduleStartingHour + 24) % 24) + 1;
-  }
-
-  const getSpan = (activity: PaliaActivity): number => {
-    if (activity.endHour >= activity.startHour) {
-      return activity.endHour - activity.startHour;
-    } else {
-      return 24 - activity.startHour + activity.endHour;
-    }
-  }
 
   return (
     <div className="w-1/2 flex flex-col gap-4">
@@ -92,40 +79,12 @@ export default function ScheduleTable({
           <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
           {/* Activity Blocks */}
-          <div className="absolute inset-0 grid grid-rows-24">
-            {schedule?.map((activity: PaliaActivity): JSX.Element => {
-              return (
-                <div 
-                  key={activity.id} 
-                  style={{ 
-                    gridRowStart: getStartPosition(activity.startHour),
-                    gridRowEnd: `span ${getSpan(activity)}`,
-                    background: `${activity.colorBg}`,
-                    color: `${activity.colorText}`,
-                    borderColor: `${activity.colorBorder}`
-                  }}
-                  className="border-2 rounded-lg shadow-md px-2 py-0.5"
-                >
-                  <div className="w-full flex flex-row justify-between">
-                    <div className="flex flex-row items-center gap-2">
-                      {/* TODO */}
-                      {/* On click should open image modal of activity location */}
-                      <button 
-                        className="hover: cursor-pointer"
-                        onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}
-                      >
-                        <MapPin size={20} />
-                      </button>
-                      <span>{activity.name}</span>
-                    </div>
-                    <button onClick={() => removeFromSchedule(activity)} className="hover: cursor-pointer">
-                      <CalendarOff size={20} />
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+          <ActivityScheduleBlock 
+            schedule={schedule} 
+            removeFromSchedule={removeFromSchedule} 
+            scheduleStartingHour={scheduleStartingHour} 
+            toggleModal={toggleModal}
+          />
         </div>
       </div>
     </div>

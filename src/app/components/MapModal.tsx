@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { X } from "lucide-react"
 import { JSX } from "react"
+import { motion } from "motion/react"
 
 type MapModalProps = {
   activityName: string;
@@ -16,7 +17,11 @@ export default function MapModal({activityName, imagePath, location, toggleModal
       <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
 
       {/* Image Modal */}
-      <div className="flex flex-col p-4 bg-slate-500 rounded-xl gap-2 z-50">
+      <motion.div 
+        initial={{ scale: 0.5 }} 
+        animate={{ scale: 1 }}
+        className="flex flex-col p-4 bg-slate-500 rounded-xl gap-2 z-50"
+      >
         <div className="flex flex-row justify-between">
           <p className="text-xl">{activityName}, {location}</p>
           <button 
@@ -27,13 +32,15 @@ export default function MapModal({activityName, imagePath, location, toggleModal
           </button>
         </div>
         <Image 
+          placeholder="blur"
+          blurDataURL="/PlaceholderMap.jpg"
           className="relative w-180"
           src={`${imagePath}`}
-          width={4437}
-          height={3993}
+          width={800}
+          height={600}
           alt=""
         />
-        </div>
+      </motion.div>
     </div>
   )
 }
