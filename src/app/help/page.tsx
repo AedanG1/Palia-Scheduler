@@ -17,7 +17,7 @@ export default function HelpPage() {
       </div>
       <div className="flex flex-col gap-4 w-140">
         <ul>
-          Under the "Turn on do not disturb automatically" tab, <em>uncheck</em> 
+          Under the 'Turn on do not disturb automatically' tab, <em>uncheck</em> 
           <li>- When playing a game</li> 
           <li>- When using an app in full-screen mode...</li>
         </ul>
