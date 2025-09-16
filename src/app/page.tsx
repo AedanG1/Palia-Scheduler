@@ -16,6 +16,9 @@ type ModalStatus = {
   isOpen: boolean;
 };
 
+// TODO: Add instructions to allow notifications to sound when playing a game as well as when fullscreen apps are open
+// Also to make sure that notifications are enabled for their browser
+
 export default function Home() {
   const [schedule, setSchedule] = useState<Array<PaliaActivity>>([]);
   const [modalStatus, setModalStatus] = useState<ModalStatus>({
