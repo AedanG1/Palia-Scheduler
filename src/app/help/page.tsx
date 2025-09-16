@@ -16,8 +16,8 @@ export default function HelpPage() {
         <Image src={"/NotificationSettings1.png"} width={871} height={742} alt="Windows 11 notification settings" />
       </div>
       <div className="flex flex-col gap-4 w-140">
+        <p>Under the "Turn on do not disturb automatically" tab, <em>uncheck</em></p> 
         <ul>
-          Under the 'Turn on do not disturb automatically' tab, <em>uncheck</em> 
           <li>- When playing a game</li> 
           <li>- When using an app in full-screen mode...</li>
         </ul>
