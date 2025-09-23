@@ -25,7 +25,7 @@ export default function ScheduleTable({
   const scheduleRowHeight = 2; // this number is in rem
 
   return (
-    <div className="w-1/2 flex flex-col gap-4">
+    <div className="md:w-1/2 flex flex-col gap-4">
       <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Daily Schedule</h2>
       <div className="flex bg-white rounded-lg shadow-lg p-4">
         {/* Time of day color indicator */}

@@ -66,14 +66,14 @@ export default function Home() {
       : 
         null}
 
-      <div className="relative py-10 px-24">
+      <div className="relative py-8 px-4 md:py-10 md:px-24">
         <div className="flex flex-col items-center mb-8">
           <h1 className="text-4xl font-bold">Palia Scheduler</h1>
           <h2 className="text-slate-500">Current time in Palia</h2>
           <PaliaClock />
           <NotificationSettings />
         </div>
-        <div className="flex flex-row gap-20 justify-center">
+        <div className="flex flex-col md:flex-row gap-20 justify-center">
           <ScheduleTable 
             schedule={schedule}
             removeFromSchedule={removeFromSchedule}

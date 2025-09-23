@@ -4,18 +4,18 @@ import Link from "next/link"
 
 export default function HelpPage() {
   return (
-    <div className="flex flex-col gap-12 items-center py-10">
-      <Link href={"/"} className="w-140 flex flex-row items-center gap-2">
+    <div className="flex flex-col gap-12 items-start py-8 px-4 md:px-0 md:py-10 md:w-140">
+      <Link href={"/"} className="flex flex-row items-center gap-2">
         <ArrowLeft size={16}/>
         <u>Home</u>
       </Link>
-      <h1 className="text-2xl">Not getting notifications?</h1>
-      <div className="flex flex-col gap-4 w-140">
+      <h1 className="text-2xl w-full text-center">Not getting notifications?</h1>
+      <div className="flex flex-col gap-4">
         <p>Navigate to Notification settings in System settings</p>
         <p>Make sure Notifications are on and Do Not Disturb is off. Also make sure notifications are on for the web browser you use.</p>
         <Image src={"/NotificationSettings1.png"} width={871} height={742} alt="Windows 11 notification settings" />
       </div>
-      <div className="flex flex-col gap-4 w-140">
+      <div className="flex flex-col gap-4">
         <p>Under the <b>Turn on do not disturb automatically</b> tab, <em>uncheck</em></p> 
         <ul>
           <li>- When playing a game</li> 
