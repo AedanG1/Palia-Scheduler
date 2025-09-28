@@ -39,6 +39,7 @@ export default function MapModal({activityName, imagePath, location, toggleModal
           width={800}
           height={600}
           alt=""
+          priority
         />
       </motion.div>
     </div>
