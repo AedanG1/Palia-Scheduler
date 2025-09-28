@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function HelpPage() {
   return (
-    <div className="flex flex-col gap-12 items-start py-8 px-4 md:px-0 md:py-10 md:w-140">
+    <div className="flex flex-col gap-12 items-start py-8 px-4 md:mx-auto md:px-0 md:py-10 md:w-140">
       <Link href={"/"} className="flex flex-row items-center gap-2">
         <ArrowLeft size={16}/>
         <u>Home</u>
