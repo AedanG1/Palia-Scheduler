@@ -1,7 +1,6 @@
 import type { PaliaActivity } from "../data";
 import { CalendarOff, MapPin } from "lucide-react";
 import { JSX } from "react";
-import { motion } from "motion/react";
 
 type ActivityScheduleBlockProps = {
   schedule: Array<PaliaActivity> | null;
@@ -31,12 +30,7 @@ export default function ActivityScheduleBlock({
   }
 
   return (
-    <motion.div 
-      className="absolute inset-0 grid grid-rows-24"
-      initial={{ transform: "scale(0)"}}
-      animate={{ transform: "scale(1)"}}
-      transition={{ type: "spring", duration: 0.6 }}
-    >
+    <div className="absolute inset-0 grid grid-rows-24">
       {schedule?.map((activity: PaliaActivity): JSX.Element => {
         return (
           <div 
@@ -67,6 +61,6 @@ export default function ActivityScheduleBlock({
           </div>
         )
       })}
-    </motion.div>
+    </div>
   )
 }
