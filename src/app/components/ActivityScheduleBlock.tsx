@@ -30,7 +30,7 @@ export default function ActivityScheduleBlock({
   }
 
   return (
-    <div className="absolute inset-0 grid grid-rows-24">
+    <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
       {schedule?.map((activity: PaliaActivity): JSX.Element => {
         return (
           <div 
@@ -42,7 +42,7 @@ export default function ActivityScheduleBlock({
               color: `${activity.colorText}`,
               borderColor: `${activity.colorBorder}`
             }}
-            className="border-2 rounded-lg shadow-md px-2 py-0.5"
+            className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
           >
             <div className="w-full flex flex-row justify-between">
               <div className="flex flex-row items-center gap-2">
