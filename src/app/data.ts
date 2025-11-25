@@ -11,6 +11,8 @@ export const LOCATIONS = [
 
 export type Locations = typeof LOCATIONS[number];
 
+// add fish etc. to palia activities but create a new property "type" within the type
+
 export type PaliaActivity = {
   id: string;
   name: string;
@@ -22,6 +24,7 @@ export type PaliaActivity = {
   colorBg: string;
   colorText: string;
   colorBorder: string;
+  type: "event" | "fish";
 };
 
 export const paliaActivities: Array<PaliaActivity> = [
@@ -35,7 +38,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     endHour: 1,
     colorBg: "#c4b5fd", // violet 300
     colorText: "#2e1065", // violet 950
-    colorBorder: "#8b5cf6" // violet 500
+    colorBorder: "#8b5cf6", // violet 500
+    type: "event"
   },
   {
     id: nanoid(),
@@ -47,7 +51,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     endHour: 3,
     colorBg: "#fda4af", // rose 300
     colorText: "#4c0519", // rose 950
-    colorBorder: "#f43f5e" // rose 500
+    colorBorder: "#f43f5e", // rose 500
+    type: "event"
   },
   {
     id: nanoid(),
@@ -59,7 +64,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     endHour: 23,
     colorBg: "#a5b4fc", // indigo 300
     colorText: "#1e1b4b", // indigo 950
-    colorBorder: "#6366f1" // indigo 500
+    colorBorder: "#6366f1", // indigo 500
+    type: "event"
   },
   {
     id: nanoid(),
@@ -71,6 +77,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     endHour: 13,
     colorBg: "#86efac", // green 300
     colorText: "#052e16", // green 950
-    colorBorder: "#22c55e" // green 500
+    colorBorder: "#22c55e", // green 500
+    type: "event"
   },
 ];

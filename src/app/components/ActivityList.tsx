@@ -21,11 +21,14 @@ export default function ActivityList({schedule, addToSchedule, toggleModal}: Act
     }
   }).sort((a, b) => a.startHour - b.startHour);
 
+  // filter activities based on the selected type
+
   // create the Activity Elements from the activities that aren't on the user's schedule
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
     return <ActivityListBlock key={activity.id} activity={activity} addToSchedule={addToSchedule} toggleModal={toggleModal} />
   })
 
+  // needs buttons for different types of activites
   return (
     <div className="flex flex-col gap-4 md:w-1/4 overflow-x-clip">
       <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Activities</h2>
