@@ -9,6 +9,15 @@ type ActivityListBlock = {
 }
 
 export default function ActivityListBlock({activity, addToSchedule, toggleModal}: ActivityListBlock) {
+
+  {/* IF AN ACTIVITY HAS A TIME OF DAY SPECIFIED, RENDER A LIST OF BUTTONS THAT CORRESPONDS TO EACH TIME OF DAY. THE
+    TIMES OF DAY THAT ARE AVAILABLE TO SCHEDULE FOR THE GIVEN ACTIVITY SHOULD BE IN COLOR AND THE REST GREYED OUT. 
+    WHEN CLICKED, THE ACTIVITY SHOULD BE ADDED TO THE SCHEDULE BUT NOT REMOVED FROM THE ACTIVITY LIST UNLESS ALL AVAILABLE TIMES OF DAY
+    ARE SCHEDULED */}
+
+  {/* CHANGE THE ACTIVITY LIST SO THAT THEY DON'T DISAPPEAR WHEN SCHEDULED BUT RATHER, THEIR BUTTON CHANGES FROM ADD TO SCHEDULE TO
+    REMOVE FROM SCHEDULE */}
+
   return (
     <div 
       key={activity.id} 
@@ -23,7 +32,7 @@ export default function ActivityListBlock({activity, addToSchedule, toggleModal}
         <CalendarPlus />
       </button>
       <div>
-        <span className="font-bold">{activity.name}</span>
+        <span className="font-bold">{activity.name} <span className="font-normal">{activity.timeOfDay ? `(${activity.timeOfDay})` : ""}</span></span>
         <button 
           className="flex flex-row items-center gap-1 hover:cursor-pointer"
           onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}

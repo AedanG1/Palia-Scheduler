@@ -34,13 +34,13 @@ export default function ScheduleTable({
             background: `
               linear-gradient(
                 to bottom,
-                #4338ca 0%,    /* 3am - indigo-700 */
-                #f87171 10%,    /* 5am - red-400 */
-                #fcd34d 15%,   /* 6am - amber-300 */
-                #fcd34d 60%,   /* 6am - amber-300 */
-                #f87171 65%,    /* 6pm - red-400 */
-                #7c3aed 70%,   /* 7pm - violet-600 */
-                #4338ca 90%   /* 9pm - indigo-700 */
+                #ffd230 0%,    /* 3am - amber-300 */
+                #ffd230 12.5%,   /* 6am - amber-300 */
+                #74d4ff 12.5%,   /* 6am - sky-300 */
+                #74d4ff 62.5%,    /* 6pm - sky-300 */
+                #ffa2a2 62.5%,    /* 6pm - red-300 */
+                #ffa2a2 74.7%,   /* 9pm - red-300 */
+                #312c85 74.7%   /* 9pm - indigo-900 */
               )
             `
           }}

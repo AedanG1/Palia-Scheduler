@@ -4,6 +4,7 @@ export const LOCATIONS = [
   "Kilima",
   "Kilima Village",
   "Bahari Bay",
+  "Bahari Coast",
   "Elderwood",
   "Elderwood Freshwater",
   "Elderwood Saltwater"
@@ -11,7 +12,31 @@ export const LOCATIONS = [
 
 export type Locations = typeof LOCATIONS[number];
 
+export const ACTIVITYTYPE = [
+  "Events",
+  "Fish",
+  "Bugs"
+] as const;
+
+export type ActivityType = typeof ACTIVITYTYPE[number];
+
+export const TIMEOFDAY = [
+  "Morning",
+  "Day",
+  "Evening",
+  "Night"
+] as const;
+
+export type TimeOfDay = typeof TIMEOFDAY[number];
+
 // add fish etc. to palia activities but create a new property "type" within the type
+
+// Possibly change startHour and endHour to 4 boolean variables corresponding to the 4 palia time of day phases (morning, day, evening, night)
+
+// How would this affect activities that don't align with one of the 4 day phases?
+
+// Could we just use both startHour and endHour for activities that do have a specific start and end and use the 4 day phases for
+// the activities that go by the 4 phases?
 
 export type PaliaActivity = {
   id: string;
@@ -24,7 +49,8 @@ export type PaliaActivity = {
   colorBg: string;
   colorText: string;
   colorBorder: string;
-  type: "event" | "fish";
+  type: ActivityType;
+  timeOfDay?: TimeOfDay;
 };
 
 export const paliaActivities: Array<PaliaActivity> = [
@@ -39,7 +65,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorBg: "#c4b5fd", // violet 300
     colorText: "#2e1065", // violet 950
     colorBorder: "#8b5cf6", // violet 500
-    type: "event"
+    type: "Events"
   },
   {
     id: nanoid(),
@@ -52,7 +78,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorBg: "#fda4af", // rose 300
     colorText: "#4c0519", // rose 950
     colorBorder: "#f43f5e", // rose 500
-    type: "event"
+    type: "Events"
   },
   {
     id: nanoid(),
@@ -65,7 +91,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorBg: "#a5b4fc", // indigo 300
     colorText: "#1e1b4b", // indigo 950
     colorBorder: "#6366f1", // indigo 500
-    type: "event"
+    type: "Events"
   },
   {
     id: nanoid(),
@@ -78,6 +104,47 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorBg: "#86efac", // green 300
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e", // green 500
-    type: "event"
+    type: "Events"
   },
+  {
+    id: nanoid(),
+    name: "Cactus Moray",
+    desc: "Requires Glow Worms",
+    location: "Bahari Coast",
+    imagePath: "",
+    startHour: 21,
+    endHour: 3,
+    colorBg: "#86efac",
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e", // green 500
+    type: "Fish",
+    timeOfDay: "Night"
+  },
+  {
+    id: nanoid(),
+    name: "Cactus Moray",
+    desc: "Requires Glow Worms",
+    location: "Bahari Coast",
+    imagePath: "",
+    startHour: 6,
+    endHour: 18,
+    colorBg: "#86efac",
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e", // green 500
+    type: "Fish",
+    timeOfDay: "Day"
+  },
+  {
+    id: nanoid(),
+    name: "Rainbow Butterfly",
+    desc: "rare",
+    location: "Bahari Bay",
+    imagePath: "",
+    startHour: 10,
+    endHour: 13,
+    colorBg: "#86efac",
+    colorText: "#052e16", // green 950
+    colorBorder: "#22c55e", // green 500
+    type: "Bugs"
+  }
 ];
