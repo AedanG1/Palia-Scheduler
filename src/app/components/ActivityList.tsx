@@ -8,10 +8,11 @@ import ActivityTypeSelect from "./ActivityTypeSelect";
 type ActivityListProps = {
   schedule: Array<PaliaActivity>;
   addToSchedule: (activity: PaliaActivity) => void;
+  removeFromSchedule: (activity: PaliaActivity) => void;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityList({schedule, addToSchedule, toggleModal}: ActivityListProps): JSX.Element {
+export default function ActivityList({schedule, addToSchedule, removeFromSchedule, toggleModal}: ActivityListProps): JSX.Element {
   // handle state of activities that should be displayed in the list
   const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
   
@@ -25,10 +26,9 @@ export default function ActivityList({schedule, addToSchedule, toggleModal}: Act
     return activity.id;
   }) 
 
-  // show all activities that aren't already on the user's schedule and that are the same type as the one
-  // selected, sorted by start time
+  // show all activities that are the same type as the one selected
   const activitiesToDisplay: Array<PaliaActivity> = paliaActivities.filter((activity: PaliaActivity) => {
-    if (!scheduleIds?.includes(activity.id) && typeToDisplay === activity.type) {
+    if (typeToDisplay === activity.type) {
       return activity;
     }
   }).sort((a, b) => a.startHour - b.startHour);
@@ -37,7 +37,14 @@ export default function ActivityList({schedule, addToSchedule, toggleModal}: Act
 
   // create the Activity Elements from the activities that aren't on the user's schedule
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <ActivityListBlock key={activity.id} activity={activity} addToSchedule={addToSchedule} toggleModal={toggleModal} />
+    return <ActivityListBlock 
+      key={activity.id} 
+      activity={activity} 
+      addToSchedule={addToSchedule} 
+      removeFromSchedule={removeFromSchedule}
+      toggleModal={toggleModal}
+      scheduleIds={scheduleIds} 
+    />
   })
 
   // needs buttons for different types of activites

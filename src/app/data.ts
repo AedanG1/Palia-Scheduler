@@ -20,17 +20,6 @@ export const ACTIVITYTYPE = [
 
 export type ActivityType = typeof ACTIVITYTYPE[number];
 
-export const TIMEOFDAY = [
-  "Morning",
-  "Day",
-  "Evening",
-  "Night"
-] as const;
-
-export type TimeOfDay = typeof TIMEOFDAY[number];
-
-// add fish etc. to palia activities but create a new property "type" within the type
-
 // Possibly change startHour and endHour to 4 boolean variables corresponding to the 4 palia time of day phases (morning, day, evening, night)
 
 // How would this affect activities that don't align with one of the 4 day phases?
@@ -50,7 +39,6 @@ export type PaliaActivity = {
   colorText: string;
   colorBorder: string;
   type: ActivityType;
-  timeOfDay?: TimeOfDay;
 };
 
 export const paliaActivities: Array<PaliaActivity> = [
@@ -118,7 +106,6 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e", // green 500
     type: "Fish",
-    timeOfDay: "Night"
   },
   {
     id: nanoid(),
@@ -132,7 +119,6 @@ export const paliaActivities: Array<PaliaActivity> = [
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e", // green 500
     type: "Fish",
-    timeOfDay: "Day"
   },
   {
     id: nanoid(),

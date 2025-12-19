@@ -83,6 +83,7 @@ export default function Home() {
           <ActivityList 
             schedule={schedule} 
             addToSchedule={addToSchedule} 
+            removeFromSchedule={removeFromSchedule}
             toggleModal={toggleModal}
           />
         </div>
