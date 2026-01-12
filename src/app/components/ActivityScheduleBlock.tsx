@@ -29,6 +29,21 @@ export default function ActivityScheduleBlock({
     }
   }
 
+  const getZIndex = (activity: PaliaActivity): number => {
+    const span = getSpan(activity);
+    let zIndex = 0;
+    if (span > 6) {
+      zIndex = 0;  
+    } else if (span <= 6 && span > 3) {
+      zIndex = 1;
+    } else if (span <= 3 && span > 1) {
+      zIndex = 2;
+    } else {
+      zIndex = 3;
+    }
+    return zIndex;
+  }
+
   return (
     <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
       {schedule?.map((activity: PaliaActivity): JSX.Element => {
@@ -40,7 +55,8 @@ export default function ActivityScheduleBlock({
               gridRowEnd: `span ${getSpan(activity)}`,
               background: `${activity.colorBg}`,
               color: `${activity.colorText}`,
-              borderColor: `${activity.colorBorder}`
+              borderColor: `${activity.colorBorder}`,
+              zIndex: `${getZIndex(activity)}`
             }}
             className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
           >
