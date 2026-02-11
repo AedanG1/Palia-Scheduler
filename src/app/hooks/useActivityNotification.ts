@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import useNotificationPermission from "./useNotificationPermission";
 import usePaliaTime from "./usePaliaTime";
-import type { PaliaActivity } from "../data";
+import { paliaActivities, type ScheduledActivity } from "../data";
 
 // TODO: Make sure NotifiedRecord isn't blocking the wrong notifications
 export type NotifiedRecord = {
   [key: string]: number;
 };
 
-export default function useActivityNotification(schedule: Array<PaliaActivity>) {
+export default function useActivityNotification(schedule: Array<ScheduledActivity>) {
   const [notifiedRecord, setNotifiedRecord] = useState<NotifiedRecord>({});
   const {permissionStatus} = useNotificationPermission();
   const {paliaCurrentHour, paliaDayNumber} = usePaliaTime();
@@ -21,11 +21,12 @@ export default function useActivityNotification(schedule: Array<PaliaActivity>) 
 
     // if there's nothing on the schedule, do nothing
     if (!schedule.length) return;
-    
+
     // Find first activity starting in the next hour
+    // === (paliaCurrentHour + 1) % 24
     const upcomingActivity = schedule.find(
-      (activity) => activity.startHour === (paliaCurrentHour + 1) % 24 // wrap to 0 after 23
-    );
+      a => a.startHour === (paliaCurrentHour + 1) % 24 // wrap to 0 after 23
+    )
 
     if (upcomingActivity) {
       if (notifiedRecord[upcomingActivity.id] !== paliaDayNumber) {

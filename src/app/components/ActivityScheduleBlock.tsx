@@ -1,17 +1,17 @@
-import type { PaliaActivity } from "../data";
+import { paliaActivities, TimeSlot, type PaliaActivity, type ScheduledActivity } from "../data";
 import { CalendarOff, MapPin } from "lucide-react";
 import { JSX } from "react";
 
 type ActivityScheduleBlockProps = {
-  schedule: Array<PaliaActivity> | null;
-  removeFromSchedule: (activity: PaliaActivity) => void;
+  activity: ScheduledActivity;
+  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   scheduleStartingHour: number;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ActivityScheduleBlock({ 
-  schedule, 
-  removeFromSchedule, 
+  activity,
+  toggleScheduleSlot, 
   scheduleStartingHour, 
   toggleModal
 } : ActivityScheduleBlockProps) {
@@ -21,7 +21,7 @@ export default function ActivityScheduleBlock({
     return ((startHour - scheduleStartingHour + 24) % 24) + 1;
   }
 
-  const getSpan = (activity: PaliaActivity): number => {
+  const getSpan = (activity: ScheduledActivity): number => {
     if (activity.endHour >= activity.startHour) {
       return activity.endHour - activity.startHour;
     } else {
@@ -29,54 +29,50 @@ export default function ActivityScheduleBlock({
     }
   }
 
-  const getZIndex = (activity: PaliaActivity): number => {
+  const getZIndex = (activity: ScheduledActivity): number => {
     const span = getSpan(activity);
-    let zIndex = 0;
+    let zIndex = 1;
     if (span > 6) {
-      zIndex = 0;  
+      zIndex = 1;  
     } else if (span <= 6 && span > 3) {
-      zIndex = 1;
-    } else if (span <= 3 && span > 1) {
       zIndex = 2;
-    } else {
+    } else if (span <= 3 && span > 1) {
       zIndex = 3;
+    } else {
+      zIndex = 4;
     }
     return zIndex;
   }
 
   return (
     <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
-      {schedule?.map((activity: PaliaActivity): JSX.Element => {
-        return (
-          <div 
-            key={activity.id} 
-            style={{ 
-              gridRowStart: getStartPosition(activity.startHour),
-              gridRowEnd: `span ${getSpan(activity)}`,
-              background: `${activity.colorBg}`,
-              color: `${activity.colorText}`,
-              borderColor: `${activity.colorBorder}`,
-              zIndex: `${getZIndex(activity)}`
-            }}
-            className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
-          >
-            <div className="w-full flex flex-row justify-between">
-              <div className="flex flex-row items-center gap-2">
-                <button 
-                  className="hover: cursor-pointer"
-                  onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}
-                >
-                  <MapPin size={20} />
-                </button>
-                <span>{activity.name}</span>
-              </div>
-              <button onClick={() => removeFromSchedule(activity)} className="hover: cursor-pointer">
-                <CalendarOff size={20} />
-              </button>
-            </div>
+      <div 
+        key={activity.id} 
+        style={{ 
+          gridRowStart: getStartPosition(activity.startHour),
+          gridRowEnd: `span ${getSpan(activity)}`,
+          background: `${activity.colorBg}`,
+          color: `${activity.colorText}`,
+          borderColor: `${activity.colorBorder}`,
+          zIndex: `${getZIndex(activity)}`
+        }}
+        className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
+      >
+        <div className="w-full flex flex-row justify-between">
+          <div className="flex flex-row items-center gap-2">
+            <button 
+              className="hover: cursor-pointer"
+              onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}
+            >
+              <MapPin size={20} />
+            </button>
+            <span>{activity.name}</span>
           </div>
-        )
-      })}
+          <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
+            <CalendarOff size={20} />
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

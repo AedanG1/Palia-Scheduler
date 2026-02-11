@@ -9,7 +9,9 @@ export default function ActivityTypeSelect({typeToDisplay, handleClick}: Activit
   const activityButtonElements = ACTIVITYTYPE.map((activity: ActivityType) => {
     return ( 
       <li key={activity}>
-        <button onClick={() => {handleClick(activity)}} className="text-2xl font-bold pb-2 hover:cursor-pointer">{activity}</button>
+        <button onClick={() => {handleClick(activity)}} className="text-2xl font-bold pb-2 hover:cursor-pointer">
+          {activity}
+        </button>
       </li>
     )
   })

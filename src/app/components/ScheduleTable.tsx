@@ -1,21 +1,21 @@
 'use client'
 
-import type { PaliaActivity } from "../data"
+import type { PaliaActivity, ScheduledActivity } from "../data"
 import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
 import { formatHourMeridiem } from "../utils";
 import ActivityScheduleBlock from "./ActivityScheduleBlock";
 
 type ScheduleTableProps = {
-  schedule: Array<PaliaActivity> | null;
-  removeFromSchedule: (activity: PaliaActivity) => void;
+  schedule: Array<ScheduledActivity> | null;
+  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   scheduleStartingHour: number;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ScheduleTable({
    schedule, 
-   removeFromSchedule, 
+   toggleScheduleSlot, 
    scheduleStartingHour,
    toggleModal
   }: ScheduleTableProps): JSX.Element {
@@ -23,6 +23,18 @@ export default function ScheduleTable({
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   const scheduleRowHeight = 2; // this number is in rem
+
+  const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
+    return (
+      <ActivityScheduleBlock 
+        key={activity.id}
+        activity={activity}
+        toggleScheduleSlot={toggleScheduleSlot}
+        scheduleStartingHour={scheduleStartingHour} 
+        toggleModal={toggleModal}
+      />
+    )
+  })
 
   return (
     <div className="md:w-1/2 flex flex-col gap-4">
@@ -49,7 +61,7 @@ export default function ScheduleTable({
 
         {/* Time Labels Column */}
         <div className="w-16 text-right pr-2 border-r border-slate-200">
-          {hoursToDisplay.map(hour => (
+          {hoursToDisplay.map((hour: number): JSX.Element => (
             <div 
               key={hour}
               style={{
@@ -78,13 +90,11 @@ export default function ScheduleTable({
           {/* Current Time Indicator */}
           <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
-          {/* Activity Blocks */}
-          <ActivityScheduleBlock 
-            schedule={schedule} 
-            removeFromSchedule={removeFromSchedule} 
-            scheduleStartingHour={scheduleStartingHour} 
-            toggleModal={toggleModal}
-          />
+          {/* Activity Blocks need to be given the timeslot ID as well as the activity ID */}
+          <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
+            {/* Create a block for each activity on the schedule */}
+            {activityScheduleBlocks}
+          </div>
         </div>
       </div>
     </div>

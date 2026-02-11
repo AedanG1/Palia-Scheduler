@@ -12,9 +12,9 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "lucide-react": "^0.542.0",
-    "motion": "^12.23.12",
+    "motion": "^12.34.0",
     "nanoid": "^5.1.5",
-    "next": "15.5.9",
+    "next": "^15.5.12",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

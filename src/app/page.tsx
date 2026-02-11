@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import NotificationSettings from "./components/NotificationSettings";
-import type { PaliaActivity } from "./data";
+import type { ScheduledActivity } from "./data";
 import ScheduleTable from "./components/ScheduleTable";
 import ActivityList from "./components/ActivityList";
 import useActivityNotification from "./hooks/useActivityNotification";
@@ -17,7 +17,7 @@ type ModalStatus = {
 };
 
 export default function Home() {
-  const [schedule, setSchedule] = useState<Array<PaliaActivity>>([]);
+  const [schedule, setSchedule] = useState<Array<ScheduledActivity>>([]);
   const [modalStatus, setModalStatus] = useState<ModalStatus>({
     activityName: "",
     imagePath: "",
@@ -27,18 +27,22 @@ export default function Home() {
   const SCHEDULE_STARTING_HOUR = 3; // 0-24
   useActivityNotification(schedule);
 
-  const addToSchedule = (activity: PaliaActivity): void => {
-    setSchedule((prev: Array<PaliaActivity>): Array<PaliaActivity> => {
-      return [...prev, activity]; 
-    })
-  }
-  
-  const removeFromSchedule = (activity: PaliaActivity): void => {
-    setSchedule((prev: Array<PaliaActivity>): Array<PaliaActivity> => {
-      return prev.filter((prevActivity: PaliaActivity): PaliaActivity | null => {
-        return prevActivity.id !== activity.id ? prevActivity : null;
-      }) 
-    })
+  const toggleScheduleSlot = (activityToSchedule: ScheduledActivity) => {
+    const exists = schedule.some(a => a.id === activityToSchedule.id);
+
+    if (exists) {
+      const newSchedule = schedule.filter(a => a.id !== activityToSchedule.id);
+      setSchedule(() => {
+        return newSchedule;
+      })
+    } else {
+      setSchedule((prev) => {
+        return [
+          ...prev,
+          activityToSchedule
+        ]
+      })
+    }
   }
 
   const toggleModal = (activityName: string, imagePath: string, location: string, isOpen: boolean): void => {
@@ -76,14 +80,13 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-20 justify-center">
           <ScheduleTable 
             schedule={schedule}
-            removeFromSchedule={removeFromSchedule}
+            toggleScheduleSlot={toggleScheduleSlot}
             toggleModal={toggleModal}
             scheduleStartingHour={SCHEDULE_STARTING_HOUR}
           />
           <ActivityList 
             schedule={schedule} 
-            addToSchedule={addToSchedule} 
-            removeFromSchedule={removeFromSchedule}
+            toggleScheduleSlot={toggleScheduleSlot}
             toggleModal={toggleModal}
           />
         </div>

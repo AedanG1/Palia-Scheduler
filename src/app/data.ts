@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid";
-
 export const LOCATIONS = [
   "Kilima",
   "Kilima Village",
@@ -20,12 +18,22 @@ export const ACTIVITYTYPE = [
 
 export type ActivityType = typeof ACTIVITYTYPE[number];
 
-// Possibly change startHour and endHour to 4 boolean variables corresponding to the 4 palia time of day phases (morning, day, evening, night)
+export const TIMELABEL = [
+  "morning",
+  "day",
+  "evening",
+  "night",
+  "other"
+] as const;
 
-// How would this affect activities that don't align with one of the 4 day phases?
+export type TimeLabel = typeof TIMELABEL[number];
 
-// Could we just use both startHour and endHour for activities that do have a specific start and end and use the 4 day phases for
-// the activities that go by the 4 phases?
+export type TimeSlot = {
+  id: string;
+  label: TimeLabel;
+  startHour: number;
+  endHour: number;
+}
 
 export type PaliaActivity = {
   id: string;
@@ -33,6 +41,20 @@ export type PaliaActivity = {
   desc: string;
   location: Locations;
   imagePath: string;
+  timesAvailable: TimeSlot[];
+  colorBg: string;
+  colorText: string;
+  colorBorder: string;
+  type: ActivityType;
+};
+
+export type ScheduledActivity = {
+  id: string;
+  name: string;
+  desc: string;
+  location: Locations;
+  imagePath: string;
+  label: TimeLabel;
   startHour: number;
   endHour: number;
   colorBg: string;
@@ -43,91 +65,120 @@ export type PaliaActivity = {
 
 export const paliaActivities: Array<PaliaActivity> = [
   {
-    id: nanoid(),
+    id: "flow-tree-grove-spawn",
     name: "Flow-Tree Grove Spawn",
     desc: "Find the Flow-Tree Grove in Bahari Bay. Make sure to let others know where it is!",
     location: "Bahari Bay",
     imagePath: "/BahariBay-Clean.jpg",
-    startHour: 0,
-    endHour: 1,
+    timesAvailable: [
+      {
+        id: "flow-tree-grove-spawn-other",
+        label: 'other',
+        startHour: 0,
+        endHour: 1
+      }
+    ],
     colorBg: "#c4b5fd", // violet 300
     colorText: "#2e1065", // violet 950
     colorBorder: "#8b5cf6", // violet 500
     type: "Events"
   },
   {
-    id: nanoid(),
+    id: "zekis-underground",
     name: "Zeki's Underground",
     desc: "Head to Zeki's Underground for a game of Hot Pot",
     location: "Kilima Village",
     imagePath: "/Zeki-Underground.jpg",
-    startHour: 18,
-    endHour: 3,
+    timesAvailable: [
+      {
+        id: "zekis-underground-other",
+        label: 'other',
+        startHour: 18,
+        endHour: 3
+      }
+    ],
     colorBg: "#fda4af", // rose 300
     colorText: "#4c0519", // rose 950
     colorBorder: "#f43f5e", // rose 500
     type: "Events"
   },
   {
-    id: nanoid(),
+    id: "piskii-blossom-bounce",
     name: "Piskii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
     location: "Elderwood",
     imagePath: "/Elderwood-PiskiiBounce.jpg",
-    startHour: 22,
-    endHour: 23,
+    timesAvailable: [
+      {
+        id: "piskii-blossom-bounce-other",
+        label: 'other',
+        startHour: 22,
+        endHour: 23
+      }
+    ],
     colorBg: "#a5b4fc", // indigo 300
     colorText: "#1e1b4b", // indigo 950
     colorBorder: "#6366f1", // indigo 500
     type: "Events"
   },
   {
-    id: nanoid(),
+    id: "kilima-flower-bloom",
     name: "Kilima Flower Bloom",
     desc: "Find the Flower Bloom event in Kilima. Make sure to let others know where it is!",
     location: "Kilima",
     imagePath: "/Kilima-Clean.jpg",
-    startHour: 12,
-    endHour: 13,
+    timesAvailable: [
+      {
+        id: "kilima-flower-bloom-other",
+        label: 'other',
+        startHour: 12, 
+        endHour: 13
+      }
+    ],
     colorBg: "#86efac", // green 300
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e", // green 500
     type: "Events"
   },
   {
-    id: nanoid(),
+    id: "cactus-moray",
     name: "Cactus Moray",
     desc: "Requires Glow Worms",
     location: "Bahari Coast",
     imagePath: "",
-    startHour: 21,
-    endHour: 3,
+    timesAvailable: [
+      {
+        id: "cactus-moray-night",
+        label: 'night',
+        startHour: 21,
+        endHour: 3
+      },
+      {
+        id: "cactus-moray-day",
+        label: 'day',
+        startHour: 6,
+        endHour: 18
+      }
+    ],
     colorBg: "#86efac",
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e", // green 500
     type: "Fish",
   },
   {
-    id: nanoid(),
-    name: "Cactus Moray",
-    desc: "Requires Glow Worms",
-    location: "Bahari Coast",
-    imagePath: "",
-    startHour: 6,
-    endHour: 18,
-    colorBg: "#86efac",
-    colorText: "#052e16", // green 950
-    colorBorder: "#22c55e", // green 500
-    type: "Fish",
-  },
-  {
-    id: nanoid(),
+    id: "rainbow-butterfly",
     name: "Rainbow Butterfly",
     desc: "rare",
     location: "Bahari Bay",
     imagePath: "",
-    startHour: 10,
-    endHour: 13,
+    timesAvailable: [
+      {
+        id: "rainbow-butterfly-other",
+        label: 'other',
+        startHour: 10,
+        endHour: 13
+      }
+    ],
     colorBg: "#86efac",
     colorText: "#052e16", // green 950
     colorBorder: "#22c55e", // green 500
