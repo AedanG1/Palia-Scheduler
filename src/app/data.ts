@@ -28,6 +28,67 @@ export const TIMELABEL = [
 
 export type TimeLabel = typeof TIMELABEL[number];
 
+export const RARITY = [
+  "none",
+  "common",
+  "uncommon",
+  "rare",
+  "epic",
+  "legendary"
+] as const;
+
+export type Rarity = typeof RARITY[number];
+
+const rarity = {
+  none: {
+    rarity: "none",
+    rarityColor: "none"
+  },
+  common: {
+    rarity: "common",
+    rarityColor: "#62748e"
+  },
+  uncommon: {
+    rarity: "uncommon",
+    rarityColor: "#00a63e"
+  },
+  rare: {
+    rarity: "rare",
+    rarityColor: "#0084d1"
+  },
+  epic: {
+    rarity: "epic",
+    rarityColor: "#432dd7"
+  },
+  legendary: {
+    rarity: "legendary",
+    rarityColor: "#c70036"
+  }
+} as const;
+
+const defaultTimeSlots = {
+  morning: {
+    label: "morning",
+    startHour: 3,
+    endHour: 6
+  },
+  day: {
+    label: "day",
+    startHour: 6,
+    endHour: 18
+  },
+  evening: {
+    label: "evening",
+    startHour: 18,
+    endHour: 21
+  },
+  night: {
+    label: "night",
+    startHour: 21,
+    endHour: 3
+  }
+} as const;
+
 export type TimeSlot = {
   id: string;
   label: TimeLabel;
@@ -40,11 +101,11 @@ export type PaliaActivity = {
   name: string;
   desc: string;
   location: Locations;
-  imagePath: string;
+  locationImage: string;
+  displayImage: string;
   timesAvailable: TimeSlot[];
-  colorBg: string;
-  colorText: string;
-  colorBorder: string;
+  rarity: Rarity;
+  rarityColor: string;
   type: ActivityType;
 };
 
@@ -53,13 +114,13 @@ export type ScheduledActivity = {
   name: string;
   desc: string;
   location: Locations;
-  imagePath: string;
+  locationImage: string;
+  displayImage: string;
   label: TimeLabel;
   startHour: number;
   endHour: number;
-  colorBg: string;
-  colorText: string;
-  colorBorder: string;
+  rarity: Rarity;
+  rarityColor: string;
   type: ActivityType;
 };
 
@@ -69,7 +130,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Flow-Tree Grove Spawn",
     desc: "Find the Flow-Tree Grove in Bahari Bay. Make sure to let others know where it is!",
     location: "Bahari Bay",
-    imagePath: "/BahariBay-Clean.jpg",
+    locationImage: "/BahariBay-Clean.jpg",
+    displayImage: "",
     timesAvailable: [
       {
         id: "flow-tree-grove-spawn-other",
@@ -78,9 +140,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 1
       }
     ],
-    colorBg: "#c4b5fd", // violet 300
-    colorText: "#2e1065", // violet 950
-    colorBorder: "#8b5cf6", // violet 500
+    ...rarity.none,
     type: "Events"
   },
   {
@@ -88,7 +148,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Zeki's Underground",
     desc: "Head to Zeki's Underground for a game of Hot Pot",
     location: "Kilima Village",
-    imagePath: "/Zeki-Underground.jpg",
+    locationImage: "/Zeki-Underground.jpg",
+    displayImage: "",
     timesAvailable: [
       {
         id: "zekis-underground-other",
@@ -97,9 +158,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 3
       }
     ],
-    colorBg: "#fda4af", // rose 300
-    colorText: "#4c0519", // rose 950
-    colorBorder: "#f43f5e", // rose 500
+    ...rarity.none,
     type: "Events"
   },
   {
@@ -107,7 +166,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Piskii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
     location: "Elderwood",
-    imagePath: "/Elderwood-PiskiiBounce.jpg",
+    locationImage: "/Elderwood-PiskiiBounce.jpg",
+    displayImage: "",
     timesAvailable: [
       {
         id: "piskii-blossom-bounce-other",
@@ -116,9 +176,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 23
       }
     ],
-    colorBg: "#a5b4fc", // indigo 300
-    colorText: "#1e1b4b", // indigo 950
-    colorBorder: "#6366f1", // indigo 500
+    ...rarity.none,
     type: "Events"
   },
   {
@@ -126,7 +184,8 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Kilima Flower Bloom",
     desc: "Find the Flower Bloom event in Kilima. Make sure to let others know where it is!",
     location: "Kilima",
-    imagePath: "/Kilima-Clean.jpg",
+    locationImage: "/Kilima-Clean.jpg",
+    displayImage: "",
     timesAvailable: [
       {
         id: "kilima-flower-bloom-other",
@@ -135,9 +194,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 13
       }
     ],
-    colorBg: "#86efac", // green 300
-    colorText: "#052e16", // green 950
-    colorBorder: "#22c55e", // green 500
+    ...rarity.none,
     type: "Events"
   },
   {
@@ -145,32 +202,28 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Cactus Moray",
     desc: "Requires Glow Worms",
     location: "Bahari Coast",
-    imagePath: "/fish-cactus-moray.png",
+    locationImage: "",
+    displayImage: "/fish-cactus-moray.png",
     timesAvailable: [
       {
         id: "cactus-moray-night",
-        label: 'night',
-        startHour: 21,
-        endHour: 3
+        ...defaultTimeSlots.night  
       },
       {
         id: "cactus-moray-day",
-        label: 'day',
-        startHour: 6,
-        endHour: 18
+        ...defaultTimeSlots.day
       }
     ],
-    colorBg: "#86efac",
-    colorText: "#052e16", // green 950
-    colorBorder: "#22c55e", // green 500
+    ...rarity.uncommon,
     type: "Fish",
   },
   {
-    id: "rainbow-butterfly",
+    id: "rainbow-tipped-butterfly",
     name: "Rainbow-Tipped Butterfly",
-    desc: "rare",
+    desc: "Supreme smoke bombs would be useful",
     location: "Bahari Bay",
-    imagePath: "/bug-rainbow-tipped-butterfly.png",
+    locationImage: "",
+    displayImage: "/bug-rainbow-tipped-butterfly.png",
     timesAvailable: [
       {
         id: "rainbow-butterfly-other",
@@ -179,9 +232,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 13
       }
     ],
-    colorBg: "#86efac",
-    colorText: "#052e16", // green 950
-    colorBorder: "#22c55e", // green 500
+    ...rarity.epic,
     type: "Bugs"
   }
 ];

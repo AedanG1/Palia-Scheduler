@@ -51,9 +51,9 @@ export default function ActivityScheduleBlock({
         style={{ 
           gridRowStart: getStartPosition(activity.startHour),
           gridRowEnd: `span ${getSpan(activity)}`,
-          background: `${activity.colorBg}`,
-          color: `${activity.colorText}`,
-          borderColor: `${activity.colorBorder}`,
+          background: `color-mix(in srgb, ${activity.rarityColor} 10%, white)`,
+          color: `${activity.rarityColor}`,
+          borderColor: `${activity.rarityColor}`,
           zIndex: `${getZIndex(activity)}`
         }}
         className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
@@ -62,7 +62,7 @@ export default function ActivityScheduleBlock({
           <div className="flex flex-row items-center gap-2">
             <button 
               className="hover: cursor-pointer"
-              onClick={() => {toggleModal(activity.name, activity.imagePath, activity.location, true)}}
+              onClick={() => {toggleModal(activity.name, activity.locationImage, activity.location, true)}}
             >
               <MapPin size={20} />
             </button>

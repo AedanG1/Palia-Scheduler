@@ -11,7 +11,7 @@ import MapModal from "./components/MapModal";
 
 type ModalStatus = {
   activityName: string;
-  imagePath: string;
+  locationImage: string;
   location: string;
   isOpen: boolean;
 };
@@ -20,7 +20,7 @@ export default function Home() {
   const [schedule, setSchedule] = useState<Array<ScheduledActivity>>([]);
   const [modalStatus, setModalStatus] = useState<ModalStatus>({
     activityName: "",
-    imagePath: "",
+    locationImage: "",
     location: "",
     isOpen: false
   });
@@ -45,11 +45,11 @@ export default function Home() {
     }
   }
 
-  const toggleModal = (activityName: string, imagePath: string, location: string, isOpen: boolean): void => {
+  const toggleModal = (activityName: string, locationImage: string, location: string, isOpen: boolean): void => {
     setModalStatus(() => {
       return {
         activityName: activityName,
-        imagePath: imagePath,
+        locationImage: locationImage,
         location: location,
         isOpen: isOpen,
       }
@@ -63,7 +63,7 @@ export default function Home() {
       {modalStatus.isOpen ? 
         <MapModal 
           activityName={modalStatus.activityName} 
-          imagePath={modalStatus.imagePath} 
+          imagePath={modalStatus.locationImage} 
           location={modalStatus.location} 
           toggleModal={toggleModal} 
         />

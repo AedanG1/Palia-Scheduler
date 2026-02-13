@@ -6,7 +6,7 @@ import { CalendarPlus, CalendarOff, MapPin, Sun, Moon, Sunset, Sunrise } from "l
 type ActivityListBlock = {
   activity: PaliaActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
-  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
+  toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ActivityListBlock({ activity, toggleScheduleSlot, toggleModal }: ActivityListBlock) {
@@ -44,7 +44,7 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
                 <Image
                   placeholder="blur"
                   blurDataURL="/PlaceholderMap.jpg"
-                  src={activity.imagePath}
+                  src={activity.displayImage}
                   width={56}
                   height={56}
                   alt={activity.name}
@@ -55,23 +55,28 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
             <div>
               <h3 className="font-bold text-lg text-slate-800">{activity.name}</h3>
               <button 
-                className="flex items-center gap-1 text-sm text-slate-600 hover:text-slate-800"
-                onClick={() => toggleModal(activity.name, activity.imagePath, activity.location, true)}
+                className="flex items-center gap-1 text-sm text-slate-600 hover:text-slate-800 hover:cursor-pointer"
+                onClick={() => toggleModal(activity.name, activity.locationImage, activity.location, true)}
               >
                 <MapPin size={14} />
                 {activity.location}
               </button>
             </div>
           </div>
-          <span 
-            className="px-3 py-1 rounded-full text-xs font-semibold"
-            style={{ 
-              backgroundColor: `${activity.colorBg}`, 
-              color: `${activity.colorText}` 
-            }}
-          >
-            {activity.type}
-          </span>
+          {
+            activity.rarity !== "none" ?
+              <span 
+                className="px-3 py-1 rounded-full text-xs font-semibold"
+                style={{ 
+                  backgroundColor: `${activity.rarityColor}30`, 
+                  color: `${activity.rarityColor}` 
+                }}
+              >
+                {activity.rarity}
+              </span>
+            :
+              null
+          }
         </div>
         
         <p className="text-sm text-slate-600 mb-4">{activity.desc}</p>
