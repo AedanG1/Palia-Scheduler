@@ -1,4 +1,5 @@
 import { ACTIVITYTYPE, ActivityType } from "../data"
+import { motion } from "motion/react"
 
 type ActivityTypeSelectProps = {
   typeToDisplay: ActivityType;
@@ -7,11 +8,30 @@ type ActivityTypeSelectProps = {
 
 export default function ActivityTypeSelect({typeToDisplay, handleClick}: ActivityTypeSelectProps) {
   const activityButtonElements = ACTIVITYTYPE.map((activity: ActivityType) => {
+    const isSelected = typeToDisplay === activity;
+    
     return ( 
-      <li key={activity}>
-        <button onClick={() => {handleClick(activity)}} className="text-2xl font-bold pb-2 hover:cursor-pointer">
+      <li key={activity} className="relative">
+        <button 
+          onClick={() => {handleClick(activity)}} 
+          className={`text-2xl font-bold pb-2 hover:cursor-pointer transition-colors ${
+            isSelected ? "text-slate-800" : "text-slate-400 hover:text-slate-600"
+          }`}
+        >
           {activity}
         </button>
+        {isSelected && (
+          <motion.div
+            layoutId="underline"
+            className="absolute bottom-0 left-0 right-0 h-0.25 bg-slate-800"
+            initial={false}
+            transition={{
+              type: "spring",
+              stiffness: 500,
+              damping: 30
+            }}
+          />
+        )}
       </li>
     )
   })
