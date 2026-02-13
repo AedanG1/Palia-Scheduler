@@ -54,9 +54,9 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
 
   // needs buttons for different types of activites
   return (
-    <div className="flex flex-col gap-4 md:w-1/4 overflow-x-clip">
+    <div className="flex flex-col gap-4 w-1/3">
       <ActivityTypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
-      <div className="flex flex-col gap-2 overflow-y-auto overflow-x-clip max-h-200">
+      <div className="flex flex-col gap-2 max-h-200">
         {activityElements}
       </div>
     </div>

@@ -145,7 +145,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     name: "Cactus Moray",
     desc: "Requires Glow Worms",
     location: "Bahari Coast",
-    imagePath: "",
+    imagePath: "/fish-cactus-moray.png",
     timesAvailable: [
       {
         id: "cactus-moray-night",
@@ -167,10 +167,10 @@ export const paliaActivities: Array<PaliaActivity> = [
   },
   {
     id: "rainbow-butterfly",
-    name: "Rainbow Butterfly",
+    name: "Rainbow-Tipped Butterfly",
     desc: "rare",
     location: "Bahari Bay",
-    imagePath: "",
+    imagePath: "/bug-rainbow-tipped-butterfly.png",
     timesAvailable: [
       {
         id: "rainbow-butterfly-other",
