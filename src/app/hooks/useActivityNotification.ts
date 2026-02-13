@@ -30,7 +30,7 @@ export default function useActivityNotification(schedule: Array<ScheduledActivit
 
     if (upcomingActivity) {
       if (notifiedRecord[upcomingActivity.id] !== paliaDayNumber) {
-        new Notification(upcomingActivity.name, { body: upcomingActivity.desc });
+        new Notification(upcomingActivity.name, { body: `${upcomingActivity.location} - ${upcomingActivity.desc}` });
 
         // mark as notified
         setNotifiedRecord((prev) => ({

@@ -39,19 +39,17 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
-            {(activity.type === "Bugs" || activity.type === "Fish") && (
-              <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center shadow-md flex-shrink-0">
-                <Image
-                  placeholder="blur"
-                  blurDataURL="/PlaceholderMap.jpg"
-                  src={activity.displayImage}
-                  width={56}
-                  height={56}
-                  alt={activity.name}
-                  className="object-contain"
-                />
-              </div>
-            )}
+            <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center shadow-md flex-shrink-0">
+              <Image
+                placeholder="blur"
+                blurDataURL="/PlaceholderMap.jpg"
+                src={activity.displayImage}
+                width={56}
+                height={56}
+                alt={activity.name}
+                className="object-contain"
+              />
+            </div>
             <div>
               <h3 className="font-bold text-lg text-slate-800">{activity.name}</h3>
               <button 
@@ -96,7 +94,14 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
                 className="flex-1 p-3 text-slate-600 bg-white/70 hover:bg-white hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2"
               >
                 {getIcon(slot.label)}
-                <span className="capitalize text-slate-600">{slot.label}</span>
+                <span className="capitalize text-slate-600">
+                  {
+                    slot.label === "other" ?
+                      `${slot.startHour} - ${slot.endHour}`
+                    :
+                      slot.label
+                  }
+                </span>
               </button>
             )
           })}

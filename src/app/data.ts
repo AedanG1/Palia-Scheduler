@@ -131,7 +131,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     desc: "Find the Flow-Tree Grove in Bahari Bay. Make sure to let others know where it is!",
     location: "Bahari Bay",
     locationImage: "/BahariBay-Clean.jpg",
-    displayImage: "",
+    displayImage: "/flow-tree-grove.png",
     timesAvailable: [
       {
         id: "flow-tree-grove-spawn-other",
@@ -149,7 +149,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     desc: "Head to Zeki's Underground for a game of Hot Pot",
     location: "Kilima Village",
     locationImage: "/Zeki-Underground.jpg",
-    displayImage: "",
+    displayImage: "/zeki.png",
     timesAvailable: [
       {
         id: "zekis-underground-other",
@@ -162,15 +162,15 @@ export const paliaActivities: Array<PaliaActivity> = [
     type: "Events"
   },
   {
-    id: "piskii-blossom-bounce",
-    name: "Piskii Blossom Bounce",
+    id: "piksii-blossom-bounce",
+    name: "Piksii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
     location: "Elderwood",
     locationImage: "/Elderwood-PiskiiBounce.jpg",
-    displayImage: "",
+    displayImage: "/piksii-blossom-bounce.png",
     timesAvailable: [
       {
-        id: "piskii-blossom-bounce-other",
+        id: "piksii-blossom-bounce-other",
         label: 'other',
         startHour: 22,
         endHour: 23
@@ -185,7 +185,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     desc: "Find the Flower Bloom event in Kilima. Make sure to let others know where it is!",
     location: "Kilima",
     locationImage: "/Kilima-Clean.jpg",
-    displayImage: "",
+    displayImage: "/kilima-flower-bloom.png",
     timesAvailable: [
       {
         id: "kilima-flower-bloom-other",

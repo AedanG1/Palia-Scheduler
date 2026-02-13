@@ -16,6 +16,19 @@ export default function ActivityScheduleBlock({
   toggleModal
 } : ActivityScheduleBlockProps) {
 
+  const format12Hour = (hour: number): string => {
+  if (hour > 12) {
+    hour = hour - 12;
+  } else if (hour === 0) {
+    hour = 12;
+  }
+    return hour.toFixed(0);
+  }
+
+  const getMeridiem = (hour: number): string => {
+    return hour >= 12 ? "PM" : "AM";
+  }
+
   // get the grid position, 0-24, of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {
     return ((startHour - scheduleStartingHour + 24) % 24) + 1;
@@ -67,6 +80,11 @@ export default function ActivityScheduleBlock({
               <MapPin size={20} />
             </button>
             <span>{activity.name}</span>
+            <span className="text-sm">
+              ({format12Hour(activity.startHour)}{getMeridiem(activity.startHour).toLocaleLowerCase()}
+              {` - `} 
+              {format12Hour(activity.endHour)}{getMeridiem(activity.endHour).toLocaleLowerCase()})
+            </span>
           </div>
           <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
             <CalendarOff size={20} />
