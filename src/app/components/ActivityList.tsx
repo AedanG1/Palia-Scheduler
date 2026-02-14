@@ -12,11 +12,11 @@ type ActivityListProps = {
 }
 
 export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}: ActivityListProps): JSX.Element {
-  // handle state of activities that should be displayed in the list
+  // handle state of type of activities that should be displayed in the list
   const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
   
   const handleClick = (activityType: ActivityType) => {
-    setTypeToDisplay((prev) => {
+    setTypeToDisplay(() => {
       return activityType; 
     })
   };
@@ -27,20 +27,8 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
       return activity;
     }
   }).sort((a, b) => {
-    const nameA = a.name.toLocaleUpperCase();
-    const nameB = b.name.toLocaleUpperCase();
-
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-
-    return 0;
+    return a.name.localeCompare(b.name);
   });
-
-  // filter activities based on the selected type
 
   // create the Activity Elements from the activities
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {

@@ -27,6 +27,7 @@ export default function ScheduleTable({
   // set the total schedule div height
   const scheduleHeight = 24 * scheduleRowHeight;
 
+  // create a schedule item for each of the activities on the schedule
   const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
     return (
       <ActivityScheduleBlock 
