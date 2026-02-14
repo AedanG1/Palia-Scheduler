@@ -90,9 +90,8 @@ export default function ScheduleTable({
           {/* Current Time Indicator */}
           <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
-          {/* Activity Blocks need to be given the timeslot ID as well as the activity ID */}
+          {/* Create a block for each activity on the schedule */}
           <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
-            {/* Create a block for each activity on the schedule */}
             {activityScheduleBlocks}
           </div>
         </div>

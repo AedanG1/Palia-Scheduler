@@ -48,38 +48,36 @@ export default function ActivityScheduleBlock({
   }
 
   return (
-    <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
-      <div 
-        key={activity.id} 
-        style={{ 
-          gridRowStart: getStartPosition(activity.startHour),
-          gridRowEnd: `span ${getSpan(activity)}`,
-          background: `color-mix(in srgb, ${activity.rarityColor} 10%, white)`,
-          color: `${activity.rarityColor}`,
-          borderColor: `${activity.rarityColor}`,
-          zIndex: `${getZIndex(activity)}`
-        }}
-        className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
-      >
-        <div className="w-full flex flex-row justify-between">
-          <div className="flex flex-row items-center gap-2">
-            <button 
-              className="hover: cursor-pointer"
-              onClick={() => {toggleModal(activity.name, activity.locationImage, activity.location, true)}}
-            >
-              <MapPin size={20} />
-            </button>
-            <span>{activity.name}</span>
-            <span className="text-sm">
-              {format(activity.startHour).toLocaleLowerCase()}
-              {` - `} 
-              {format(activity.endHour).toLocaleLowerCase()}
-            </span>
-          </div>
-          <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
-            <CalendarOff size={20} />
+    <div 
+      key={activity.id} 
+      style={{ 
+        gridRowStart: getStartPosition(activity.startHour),
+        gridRowEnd: `span ${getSpan(activity)}`,
+        background: `color-mix(in srgb, ${activity.rarityColor} 10%, white)`,
+        color: `${activity.rarityColor}`,
+        borderColor: `${activity.rarityColor}`,
+        zIndex: `${getZIndex(activity)}`
+      }}
+      className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
+    >
+      <div className="w-full flex flex-row justify-between">
+        <div className="flex flex-row items-center gap-2">
+          <button 
+            className="hover: cursor-pointer"
+            onClick={() => {toggleModal(activity.name, activity.locationImage, activity.location, true)}}
+          >
+            <MapPin size={20} />
           </button>
+          <span>{activity.name}</span>
+          <span className="text-sm">
+            {format(activity.startHour).toLocaleLowerCase()}
+            {` - `} 
+            {format(activity.endHour).toLocaleLowerCase()}
+          </span>
         </div>
+        <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
+          <CalendarOff size={20} />
+        </button>
       </div>
     </div>
   )

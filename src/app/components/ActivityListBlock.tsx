@@ -2,6 +2,7 @@ import { JSX } from "react"
 import Image from "next/image"
 import type { PaliaActivity, ScheduledActivity, TimeSlot } from "../data"
 import { CalendarPlus, CalendarOff, MapPin, Sun, Moon, Sunset, Sunrise } from "lucide-react"
+import useFormatHourString from "../hooks/useFormatHourString"
 
 type ActivityListBlock = {
   activity: PaliaActivity;
@@ -10,6 +11,9 @@ type ActivityListBlock = {
 }
 
 export default function ActivityListBlock({ activity, toggleScheduleSlot, toggleModal }: ActivityListBlock) {
+
+  const format = useFormatHourString();
+
   const getIcon = (label: string) => {
     switch (label) {
       case "morning":
@@ -62,7 +66,7 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
             </div>
           </div>
           {
-            activity.rarity !== "none" ?
+            activity.rarity ?
               <span 
                 className="px-3 py-1 rounded-full text-xs font-semibold"
                 style={{ 
@@ -77,6 +81,24 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
           }
         </div>
         
+        {
+          activity.bait && activity.baitImage ?
+            <div className="flex flex-row gap-2 items-center mb-4">
+              <Image
+                placeholder="blur"
+                blurDataURL="/PlaceholderMap.jpg"
+                src={activity.baitImage}
+                width={24}
+                height={24}
+                alt={activity.name}
+                className="object-contain"
+              />
+              <p className="text-sm text-slate-600">Requires {activity.bait}s</p>
+            </div>
+          :
+            null
+        }
+
         <p className="text-sm text-slate-600 mb-4">{activity.desc}</p>
         
         <div className="flex gap-2">
@@ -97,7 +119,7 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
                 <span className="capitalize text-slate-600">
                   {
                     slot.label === "other" ?
-                      `${slot.startHour} - ${slot.endHour}`
+                      `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
                     :
                       slot.label
                   }

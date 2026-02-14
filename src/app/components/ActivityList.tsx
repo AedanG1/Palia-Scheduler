@@ -56,7 +56,7 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
   return (
     <div className="flex flex-col gap-4 w-1/3">
       <ActivityTypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
-      <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pr-2 pb-8">
+      <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pr-2 pb-80">
         {activityElements}
       </div>
     </div>

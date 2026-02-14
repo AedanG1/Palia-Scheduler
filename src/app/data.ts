@@ -29,7 +29,6 @@ export const TIMELABEL = [
 export type TimeLabel = typeof TIMELABEL[number];
 
 export const RARITY = [
-  "none",
   "common",
   "uncommon",
   "rare",
@@ -39,11 +38,25 @@ export const RARITY = [
 
 export type Rarity = typeof RARITY[number];
 
-const rarity = {
-  none: {
-    rarity: "none",
-    rarityColor: "none"
+export const BAIT = [
+  "Worm",
+  "Glow Worm"
+] as const;
+
+export type Bait = typeof BAIT[number];
+
+const bait = {
+  worm: {
+    bait: "Worm",
+    baitImage: "/worm.png"
   },
+  glowWorm: {
+    bait: "Glow Worm",
+    baitImage: "/glow-worm.png" 
+  }
+} as const;
+
+const rarity = {
   common: {
     rarity: "common",
     rarityColor: "#62748e"
@@ -104,8 +117,10 @@ export type PaliaActivity = {
   locationImage: string;
   displayImage: string;
   timesAvailable: TimeSlot[];
-  rarity: Rarity;
-  rarityColor: string;
+  bait?: Bait;
+  baitImage?: string;
+  rarity?: Rarity;
+  rarityColor?: string;
   type: ActivityType;
 };
 
@@ -119,8 +134,10 @@ export type ScheduledActivity = {
   label: TimeLabel;
   startHour: number;
   endHour: number;
-  rarity: Rarity;
-  rarityColor: string;
+  bait?: Bait;
+  baitImage?: string;
+  rarity?: Rarity;
+  rarityColor?: string;
   type: ActivityType;
 };
 
@@ -140,7 +157,6 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 1
       }
     ],
-    ...rarity.none,
     type: "Events"
   },
   {
@@ -158,7 +174,6 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 3
       }
     ],
-    ...rarity.none,
     type: "Events"
   },
   {
@@ -176,7 +191,6 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 23
       }
     ],
-    ...rarity.none,
     type: "Events"
   },
   {
@@ -194,13 +208,12 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 13
       }
     ],
-    ...rarity.none,
     type: "Events"
   },
   {
     id: "cactus-moray",
     name: "Cactus Moray",
-    desc: "Requires Glow Worms",
+    desc: "An eel with sharp spines growing along its length to deter predators. Found off the coast of Bahari Bay using glow worms in the day and night.",
     location: "Bahari Coast",
     locationImage: "",
     displayImage: "/fish-cactus-moray.png",
@@ -214,22 +227,25 @@ export const paliaActivities: Array<PaliaActivity> = [
         ...defaultTimeSlots.day
       }
     ],
+    ...bait.glowWorm,
     ...rarity.uncommon,
     type: "Fish",
   },
   {
     id: "rainbow-tipped-butterfly",
     name: "Rainbow-Tipped Butterfly",
-    desc: "Supreme smoke bombs would be useful",
+    desc: "Ancient legends say this rare butterfly got its beautiful coloring from dipping the tip of its wings in a Well of Flow. Found in the Fields of Bahari Bay during the morning and day.",
     location: "Bahari Bay",
     locationImage: "",
     displayImage: "/bug-rainbow-tipped-butterfly.png",
     timesAvailable: [
       {
-        id: "rainbow-butterfly-other",
-        label: 'other',
-        startHour: 10,
-        endHour: 13
+        id: "rainbow-butterfly-morning",
+        ...defaultTimeSlots.morning
+      },
+      {
+        id: "rainbow-butterfly-day",
+        ...defaultTimeSlots.day
       }
     ],
     ...rarity.epic,
