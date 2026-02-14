@@ -20,10 +20,9 @@ export default function ScheduleTable({
    toggleModal
   }: ScheduleTableProps): JSX.Element {
 
-  //test commit
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
-  const scheduleRowHeight = 2; // this number is in rem
+  const scheduleRowHeight = 2; // value in rem
   const scheduleHeight = 24 * scheduleRowHeight;
 
   const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
@@ -32,6 +31,7 @@ export default function ScheduleTable({
         key={activity.id}
         activity={activity}
         toggleScheduleSlot={toggleScheduleSlot}
+        scheduleRowHeight={scheduleRowHeight}
         scheduleStartingHour={scheduleStartingHour} 
         toggleModal={toggleModal}
       />
@@ -93,7 +93,12 @@ export default function ScheduleTable({
           <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
           {/* Create a block for each activity on the schedule */}
-          <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
+          <div 
+            className="absolute inset-0"
+            style={{
+              height: `${scheduleHeight}rem`
+            }} 
+          >
             {activityScheduleBlocks}
           </div>
         </div>

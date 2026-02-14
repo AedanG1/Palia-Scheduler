@@ -6,6 +6,7 @@ import useFormatHourString from "../hooks/useFormatHourString";
 type ActivityScheduleBlockProps = {
   activity: ScheduledActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  scheduleRowHeight: number;
   scheduleStartingHour: number;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
@@ -13,52 +14,49 @@ type ActivityScheduleBlockProps = {
 export default function ActivityScheduleBlock({ 
   activity,
   toggleScheduleSlot, 
+  scheduleRowHeight,
   scheduleStartingHour, 
   toggleModal
 } : ActivityScheduleBlockProps) {
 
   const format = useFormatHourString();
 
-  // get the grid position, 0-24, of the activity based on it's starting hour
+  // get the top position of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {
-    return ((startHour - scheduleStartingHour + 24) % 24) + 1;
+    return (((startHour - scheduleStartingHour) + 24) % 24) * scheduleRowHeight;
   }
 
+  // get the span of the activity in hours
   const getSpan = (activity: ScheduledActivity): number => {
     if (activity.endHour >= activity.startHour) {
-      return activity.endHour - activity.startHour;
+      return (activity.endHour - activity.startHour);
     } else {
-      return 24 - activity.startHour + activity.endHour;
+      return (24 - activity.startHour + activity.endHour);
     }
   }
 
   const getZIndex = (activity: ScheduledActivity): number => {
     const span = getSpan(activity);
-    let zIndex = 1;
-    if (span > 6) {
-      zIndex = 1;  
-    } else if (span <= 6 && span > 3) {
-      zIndex = 2;
-    } else if (span <= 3 && span > 1) {
-      zIndex = 3;
-    } else {
-      zIndex = 4;
-    }
+    let zIndex = 25 - span;
     return zIndex;
   }
 
+  /*
+  ** TODO: add collision detection to the div's width property so that if there are multiple items with the same
+  ** start time, the row gets divided into however many columns needed to fit the items.
+  */
   return (
     <div 
       key={activity.id} 
       style={{ 
-        gridRowStart: getStartPosition(activity.startHour),
-        gridRowEnd: `span ${getSpan(activity)}`,
+        top: `${getStartPosition(activity.startHour)}rem`,
+        height: `${getSpan(activity) * scheduleRowHeight}rem`,
         background: `color-mix(in srgb, ${activity.rarityColor} 10%, white)`,
         color: `${activity.rarityColor}`,
         borderColor: `${activity.rarityColor}`,
         zIndex: `${getZIndex(activity)}`
       }}
-      className="border-2 rounded-lg shadow-md px-2 py-0.5 col-start-1 row-start-1"
+      className="border-2 rounded-lg shadow-md px-2 py-0.5 absolute w-full"
     >
       <div className="w-full flex flex-row justify-between">
         <div className="flex flex-row items-center gap-2">
