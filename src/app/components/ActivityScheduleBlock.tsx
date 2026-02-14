@@ -35,9 +35,10 @@ export default function ActivityScheduleBlock({
     }
   }
 
+  // get the z-index by subtracting the span from largest span size possible + 1
   const getZIndex = (activity: ScheduledActivity): number => {
     const span = getSpan(activity);
-    let zIndex = 25 - span;
+    const zIndex = 25 - span;
     return zIndex;
   }
 

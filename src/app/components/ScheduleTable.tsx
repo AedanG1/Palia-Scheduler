@@ -20,9 +20,11 @@ export default function ScheduleTable({
    toggleModal
   }: ScheduleTableProps): JSX.Element {
 
-  // create an array to store each hour to display on the schedule
+  // create an array to store each hour to display on the schedule, used for grid lines
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
-  const scheduleRowHeight = 2; // value in rem
+  // set the height of each row in rem
+  const scheduleRowHeight = 2;
+  // set the total schedule div height
   const scheduleHeight = 24 * scheduleRowHeight;
 
   const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
