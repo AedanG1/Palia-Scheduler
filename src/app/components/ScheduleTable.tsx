@@ -20,6 +20,7 @@ export default function ScheduleTable({
    toggleModal
   }: ScheduleTableProps): JSX.Element {
 
+  //test commit
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   const scheduleRowHeight = 2; // this number is in rem
