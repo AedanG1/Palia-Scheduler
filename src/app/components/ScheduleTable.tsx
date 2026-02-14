@@ -1,21 +1,21 @@
 'use client'
 
-import type { PaliaActivity } from "../data"
+import type { PaliaActivity, ScheduledActivity } from "../data"
 import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
 import { formatHourMeridiem } from "../utils";
 import ActivityScheduleBlock from "./ActivityScheduleBlock";
 
 type ScheduleTableProps = {
-  schedule: Array<PaliaActivity> | null;
-  removeFromSchedule: (activity: PaliaActivity) => void;
+  schedule: Array<ScheduledActivity> | null;
+  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   scheduleStartingHour: number;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ScheduleTable({
    schedule, 
-   removeFromSchedule, 
+   toggleScheduleSlot, 
    scheduleStartingHour,
    toggleModal
   }: ScheduleTableProps): JSX.Element {
@@ -23,6 +23,19 @@ export default function ScheduleTable({
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   const scheduleRowHeight = 2; // this number is in rem
+  const scheduleHeight = 24 * scheduleRowHeight;
+
+  const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
+    return (
+      <ActivityScheduleBlock 
+        key={activity.id}
+        activity={activity}
+        toggleScheduleSlot={toggleScheduleSlot}
+        scheduleStartingHour={scheduleStartingHour} 
+        toggleModal={toggleModal}
+      />
+    )
+  })
 
   return (
     <div className="md:w-1/2 flex flex-col gap-4">
@@ -34,13 +47,13 @@ export default function ScheduleTable({
             background: `
               linear-gradient(
                 to bottom,
-                #4338ca 0%,    /* 3am - indigo-700 */
-                #f87171 10%,    /* 5am - red-400 */
-                #fcd34d 15%,   /* 6am - amber-300 */
-                #fcd34d 60%,   /* 6am - amber-300 */
-                #f87171 65%,    /* 6pm - red-400 */
-                #7c3aed 70%,   /* 7pm - violet-600 */
-                #4338ca 90%   /* 9pm - indigo-700 */
+                #ffd230 0%,    /* 3am - amber-300 */
+                #ffd230 12.5%,   /* 6am - amber-300 */
+                #74d4ff 12.5%,   /* 6am - sky-300 */
+                #74d4ff 62.5%,    /* 6pm - sky-300 */
+                #ffa2a2 62.5%,    /* 6pm - red-300 */
+                #ffa2a2 74.7%,   /* 9pm - red-300 */
+                #312c85 74.7%   /* 9pm - indigo-900 */
               )
             `
           }}
@@ -49,7 +62,7 @@ export default function ScheduleTable({
 
         {/* Time Labels Column */}
         <div className="w-16 text-right pr-2 border-r border-slate-200">
-          {hoursToDisplay.map(hour => (
+          {hoursToDisplay.map((hour: number): JSX.Element => (
             <div 
               key={hour}
               style={{
@@ -78,13 +91,10 @@ export default function ScheduleTable({
           {/* Current Time Indicator */}
           <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
-          {/* Activity Blocks */}
-          <ActivityScheduleBlock 
-            schedule={schedule} 
-            removeFromSchedule={removeFromSchedule} 
-            scheduleStartingHour={scheduleStartingHour} 
-            toggleModal={toggleModal}
-          />
+          {/* Create a block for each activity on the schedule */}
+          <div className="absolute inset-0 grid grid-rows-24 grid-cols-1">
+            {activityScheduleBlocks}
+          </div>
         </div>
       </div>
     </div>

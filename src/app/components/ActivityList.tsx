@@ -1,38 +1,62 @@
-import {JSX} from "react";
-import { paliaActivities, PaliaActivity } from "../data";
+'use client'
+
+import {JSX, useState} from "react";
+import { ActivityType, paliaActivities, PaliaActivity, ScheduledActivity } from "../data";
 import ActivityListBlock from "./ActivityListBlock";
+import ActivityTypeSelect from "./ActivityTypeSelect";
 
 type ActivityListProps = {
-  schedule: Array<PaliaActivity>;
-  addToSchedule: (activity: PaliaActivity) => void;
+  schedule: Array<ScheduledActivity>;
+  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityList({schedule, addToSchedule, toggleModal}: ActivityListProps): JSX.Element {
-  // get IDs of activities on schedule
-  const scheduleIds: Array<string> | undefined = schedule.map((activity: PaliaActivity): string => {
-    return activity.id;
-  }) 
+export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}: ActivityListProps): JSX.Element {
+  // handle state of activities that should be displayed in the list
+  const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
+  
+  const handleClick = (activityType: ActivityType) => {
+    setTypeToDisplay((prev) => {
+      return activityType; 
+    })
+  };
 
-  // show all activities that aren't already on the user's schedule, sorted by start time
+  // show all activities that are the same type as the one selected in alphabetical order
   const activitiesToDisplay: Array<PaliaActivity> = paliaActivities.filter((activity: PaliaActivity) => {
-    if (!scheduleIds?.includes(activity.id)) {
+    if (typeToDisplay === activity.type) {
       return activity;
     }
-  }).sort((a, b) => a.startHour - b.startHour);
+  }).sort((a, b) => {
+    const nameA = a.name.toLocaleUpperCase();
+    const nameB = b.name.toLocaleUpperCase();
+
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+
+    return 0;
+  });
 
   // filter activities based on the selected type
 
-  // create the Activity Elements from the activities that aren't on the user's schedule
+  // create the Activity Elements from the activities
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <ActivityListBlock key={activity.id} activity={activity} addToSchedule={addToSchedule} toggleModal={toggleModal} />
+    return <ActivityListBlock 
+      key={activity.id} 
+      activity={activity} 
+      toggleScheduleSlot={toggleScheduleSlot}
+      toggleModal={toggleModal}
+    />
   })
 
   // needs buttons for different types of activites
   return (
-    <div className="flex flex-col gap-4 md:w-1/4 overflow-x-clip">
-      <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Activities</h2>
-      <div className="flex flex-col gap-2 overflow-y-auto overflow-x-clip max-h-200">
+    <div className="flex flex-col gap-4 w-1/3">
+      <ActivityTypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
+      <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pr-2 pb-80">
         {activityElements}
       </div>
     </div>

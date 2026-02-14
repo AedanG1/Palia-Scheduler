@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect } from "react"; 
+import { format12Hour, getMeridiem } from "./useFormatHourString";
 
-export interface PaliaTime { 
+export type PaliaTime = { 
   paliaTime24Hour: string; 
   paliaTime12Hour: string; 
   paliaCurrentHour: number;
@@ -26,21 +27,8 @@ export default function usePaliaTime(): PaliaTime {
   const HOUR = 60 * 60;
   const DAY = 60 * 60 * 24;
 
-  const format12Hour = (hour: number): string => {
-  if (hour > 12) {
-    hour = hour - 12;
-  } else if (hour === 0) {
-    hour = 12;
-  }
-    return hour.toFixed(0);
-  }
-
   const formatSegment = (minute: number): string => {
     return minute.toFixed(0).padStart(2, '0');
-  }
-
-  const getMeridiem = (hour: number): string => {
-    return hour >= 12 ? "PM" : "AM";
   }
 
   useEffect(() => {

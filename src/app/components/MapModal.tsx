@@ -20,7 +20,7 @@ export default function MapModal({activityName, imagePath, location, toggleModal
       <motion.div 
         initial={{ scale: 0.5 }} 
         animate={{ scale: 1 }}
-        className="flex flex-col p-4 bg-slate-500 rounded-xl gap-2 z-50"
+        className="flex flex-col p-4 bg-slate-100 text-slate-700 rounded-xl gap-2 z-50"
       >
         <div className="flex flex-row justify-between">
           <p className="text-xl">{activityName}, {location}</p>
