@@ -23,6 +23,7 @@ export default function ScheduleTable({
   // create an array to store each hour to display on the schedule
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   const scheduleRowHeight = 2; // this number is in rem
+  const scheduleHeight = 24 * scheduleRowHeight;
 
   const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
     return (

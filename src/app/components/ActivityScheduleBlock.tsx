@@ -68,7 +68,7 @@ export default function ActivityScheduleBlock({
           >
             <MapPin size={20} />
           </button>
-          <span>{activity.name}</span>
+          <span className="truncate">{activity.name}</span>
           <span className="text-sm">
             {format(activity.startHour).toLocaleLowerCase()}
             {` - `} 
