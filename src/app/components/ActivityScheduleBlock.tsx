@@ -1,6 +1,7 @@
 import { paliaActivities, TimeSlot, type PaliaActivity, type ScheduledActivity } from "../data";
 import { CalendarOff, MapPin } from "lucide-react";
 import { JSX } from "react";
+import useFormatHourString from "../hooks/useFormatHourString";
 
 type ActivityScheduleBlockProps = {
   activity: ScheduledActivity;
@@ -16,18 +17,7 @@ export default function ActivityScheduleBlock({
   toggleModal
 } : ActivityScheduleBlockProps) {
 
-  const format12Hour = (hour: number): string => {
-  if (hour > 12) {
-    hour = hour - 12;
-  } else if (hour === 0) {
-    hour = 12;
-  }
-    return hour.toFixed(0);
-  }
-
-  const getMeridiem = (hour: number): string => {
-    return hour >= 12 ? "PM" : "AM";
-  }
+  const format = useFormatHourString();
 
   // get the grid position, 0-24, of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {
@@ -81,9 +71,9 @@ export default function ActivityScheduleBlock({
             </button>
             <span>{activity.name}</span>
             <span className="text-sm">
-              ({format12Hour(activity.startHour)}{getMeridiem(activity.startHour).toLocaleLowerCase()}
+              {format(activity.startHour).toLocaleLowerCase()}
               {` - `} 
-              {format12Hour(activity.endHour)}{getMeridiem(activity.endHour).toLocaleLowerCase()})
+              {format(activity.endHour).toLocaleLowerCase()}
             </span>
           </div>
           <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
