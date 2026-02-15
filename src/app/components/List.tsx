@@ -2,16 +2,16 @@
 
 import {JSX, useState} from "react";
 import { ActivityType, paliaActivities, PaliaActivity, ScheduledActivity } from "../data";
-import ActivityListBlock from "./ActivityListBlock";
-import ActivityTypeSelect from "./ActivityTypeSelect";
+import ListItem from "./ListItem";
+import TypeSelect from "./TypeSelect";
 
-type ActivityListProps = {
+type ListProps = {
   schedule: Array<ScheduledActivity>;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}: ActivityListProps): JSX.Element {
+export default function List({schedule, toggleScheduleSlot, toggleModal}: ListProps): JSX.Element {
   // handle state of type of activities that should be displayed in the list
   const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
   
@@ -31,7 +31,7 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
 
   // create the Activity Elements from the activities
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <ActivityListBlock 
+    return <ListItem 
       key={activity.id} 
       schedule={schedule}
       activity={activity} 
@@ -42,7 +42,7 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
 
   return (
     <div className="flex flex-col gap-4 w-1/3">
-      <ActivityTypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
+      <TypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
       <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pr-2 pb-80">
         {activityElements}
       </div>

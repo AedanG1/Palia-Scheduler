@@ -1,24 +1,24 @@
 'use client'
 
-import type { PaliaActivity, ScheduledActivity } from "../data"
+import type { ScheduledActivity } from "../data"
 import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
 import { formatHourMeridiem } from "../utils";
-import ActivityScheduleBlock from "./ActivityScheduleBlock";
+import ScheduleItem from "./ScheduleItem";
 
-type ScheduleTableProps = {
+type ScheduleProps = {
   schedule: Array<ScheduledActivity> | null;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   scheduleStartingHour: number;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ScheduleTable({
+export default function Schedule({
    schedule, 
    toggleScheduleSlot, 
    scheduleStartingHour,
    toggleModal
-  }: ScheduleTableProps): JSX.Element {
+  }: ScheduleProps): JSX.Element {
 
   // create an array to store each hour to display on the schedule, used for grid lines
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
@@ -30,7 +30,7 @@ export default function ScheduleTable({
   // create a schedule item for each of the activities on the schedule
   const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
     return (
-      <ActivityScheduleBlock 
+      <ScheduleItem 
         key={activity.id}
         activity={activity}
         toggleScheduleSlot={toggleScheduleSlot}

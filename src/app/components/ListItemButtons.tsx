@@ -2,13 +2,13 @@ import { TimeSlot, PaliaActivity, ScheduledActivity } from "../data";
 import { Sunrise, Sun, Sunset, Moon, CalendarPlus } from "lucide-react";
 import useFormatHourString from "../hooks/useFormatHourString";
             
-type ListScheduleButtonsProps = {
+type ListItemButtonsProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
 }
 
-export default function ListScheduleButtons({schedule, activity, toggleScheduleSlot}: ListScheduleButtonsProps) {
+export default function ListItemButtons({schedule, activity, toggleScheduleSlot}: ListItemButtonsProps) {
   const format = useFormatHourString();
 
   const getIcon = (label: string) => {

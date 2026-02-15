@@ -1,16 +1,16 @@
 import Image from "next/image"
 import type { PaliaActivity, ScheduledActivity } from "../data"
 import { MapPin } from "lucide-react"
-import ListScheduleButtons from "./ListScheduleButtons"
+import ListItemButtons from "./ListItemButtons"
 
-type ActivityListBlockProps = {
+type ListItemProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityListBlock({ schedule, activity, toggleScheduleSlot, toggleModal }: ActivityListBlockProps) {
+export default function ListItem({ schedule, activity, toggleScheduleSlot, toggleModal }: ListItemProps) {
 
   return (
     <div
@@ -85,7 +85,7 @@ export default function ActivityListBlock({ schedule, activity, toggleScheduleSl
         <p className="text-sm text-slate-600 mb-4">{activity.desc}</p>
         
         {/* Toggle Schedule Buttons */}
-        <ListScheduleButtons
+        <ListItemButtons
           schedule={schedule}
           activity={activity} 
           toggleScheduleSlot={toggleScheduleSlot}

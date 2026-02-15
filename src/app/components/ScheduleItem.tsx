@@ -1,9 +1,8 @@
-import { paliaActivities, TimeSlot, type PaliaActivity, type ScheduledActivity } from "../data";
+import { type ScheduledActivity } from "../data";
 import { CalendarOff, MapPin } from "lucide-react";
-import { JSX } from "react";
 import useFormatHourString from "../hooks/useFormatHourString";
 
-type ActivityScheduleBlockProps = {
+type ScheduleItemProps = {
   activity: ScheduledActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   scheduleRowHeight: number;
@@ -11,13 +10,13 @@ type ActivityScheduleBlockProps = {
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityScheduleBlock({ 
+export default function ScheduleItem({ 
   activity,
   toggleScheduleSlot, 
   scheduleRowHeight,
   scheduleStartingHour, 
   toggleModal
-} : ActivityScheduleBlockProps) {
+} : ScheduleItemProps) {
 
   const format = useFormatHourString();
 

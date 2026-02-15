@@ -3,8 +3,8 @@
 import { useState } from "react";
 import NotificationSettings from "./components/NotificationSettings";
 import type { ScheduledActivity } from "./data";
-import ScheduleTable from "./components/ScheduleTable";
-import ActivityList from "./components/ActivityList";
+import Schedule from "./components/Schedule";
+import List from "./components/List";
 import useActivityNotification from "./hooks/useActivityNotification";
 import PaliaClock from "./components/PaliaClock";
 import MapModal from "./components/MapModal";
@@ -78,13 +78,13 @@ export default function Home() {
           <NotificationSettings />
         </div>
         <div className="flex flex-col md:flex-row gap-20 justify-center">
-          <ScheduleTable 
+          <Schedule 
             schedule={schedule}
             toggleScheduleSlot={toggleScheduleSlot}
             toggleModal={toggleModal}
             scheduleStartingHour={SCHEDULE_STARTING_HOUR}
           />
-          <ActivityList 
+          <List 
             schedule={schedule} 
             toggleScheduleSlot={toggleScheduleSlot}
             toggleModal={toggleModal}
