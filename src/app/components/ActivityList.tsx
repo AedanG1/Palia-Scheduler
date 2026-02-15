@@ -33,6 +33,7 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
     return <ActivityListBlock 
       key={activity.id} 
+      schedule={schedule}
       activity={activity} 
       toggleScheduleSlot={toggleScheduleSlot}
       toggleModal={toggleModal}

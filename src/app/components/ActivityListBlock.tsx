@@ -4,12 +4,13 @@ import { MapPin } from "lucide-react"
 import ListScheduleButtons from "./ListScheduleButtons"
 
 type ActivityListBlockProps = {
+  schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ActivityListBlock({ activity, toggleScheduleSlot, toggleModal }: ActivityListBlockProps) {
+export default function ActivityListBlock({ schedule, activity, toggleScheduleSlot, toggleModal }: ActivityListBlockProps) {
 
   return (
     <div
@@ -85,6 +86,7 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
         
         {/* Toggle Schedule Buttons */}
         <ListScheduleButtons
+          schedule={schedule}
           activity={activity} 
           toggleScheduleSlot={toggleScheduleSlot}
         />
