@@ -45,6 +45,7 @@ export default function ActivityScheduleBlock({
   /*
   ** TODO: add collision detection to the div's width property so that if there are multiple items with the same
   ** start time, the row gets divided into however many columns needed to fit the items.
+  ** To improve visibility of overlapping items, indent items which are positioned on top of items with greater spans.
   */
   return (
     <div 
@@ -68,11 +69,6 @@ export default function ActivityScheduleBlock({
             <MapPin size={20} />
           </button>
           <span className="truncate">{activity.name}</span>
-          <span className="text-sm">
-            {format(activity.startHour).toLocaleLowerCase()}
-            {` - `} 
-            {format(activity.endHour).toLocaleLowerCase()}
-          </span>
         </div>
         <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
           <CalendarOff size={20} />

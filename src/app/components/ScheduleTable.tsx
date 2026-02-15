@@ -64,7 +64,7 @@ export default function ScheduleTable({
           className="h-full w-1/128 rounded-lg">
         </div>
 
-        {/* Time Labels Column */}
+        {/* Hour Labels Column */}
         <div className="w-16 text-right pr-2 border-r border-slate-200">
           {hoursToDisplay.map((hour: number): JSX.Element => (
             <div 
@@ -89,7 +89,7 @@ export default function ScheduleTable({
               style={{
                 height: `${scheduleRowHeight}rem`
               }}
-              className="border-b border-slate-200"></div>
+              className="border-t border-slate-200"></div>
           ))}
 
           {/* Current Time Indicator */}

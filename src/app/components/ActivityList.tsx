@@ -26,9 +26,8 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
     if (typeToDisplay === activity.type) {
       return activity;
     }
-  }).sort((a, b) => {
-    return a.name.localeCompare(b.name);
-  });
+  }).sort((a, b) => a.name.localeCompare(b.name)
+  );
 
   // create the Activity Elements from the activities
   const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
@@ -40,7 +39,6 @@ export default function ActivityList({schedule, toggleScheduleSlot, toggleModal}
     />
   })
 
-  // needs buttons for different types of activites
   return (
     <div className="flex flex-col gap-4 w-1/3">
       <ActivityTypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
