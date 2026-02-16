@@ -45,11 +45,6 @@ export default function ScheduleItem({
     return zIndex;
   }
 
-  /*
-  ** TODO: add collision detection to the div's width property so that if there are multiple items with the same
-  ** start time, the row gets divided into however many columns needed to fit the items.
-  ** To improve visibility of overlapping items, indent items which are positioned on top of items with greater spans.
-  */
   return (
     <div 
       key={activity.id} 
