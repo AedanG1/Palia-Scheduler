@@ -8,34 +8,89 @@ import ScheduleItem from "./ScheduleItem";
 
 type ScheduleProps = {
   schedule: Array<ScheduledActivity> | null;
-  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  handleClearSchedule: () => void;
+  toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   scheduleStartingHour: number;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function Schedule({
-   schedule, 
-   toggleScheduleSlot, 
-   scheduleStartingHour,
-   toggleModal
-  }: ScheduleProps): JSX.Element {
+export type ItemPosition = {
+  width: string;
+  leftPosition: string;
+}
 
-  // create an array to store each hour to display on the schedule, used for grid lines
+export default function Schedule({
+  schedule, 
+  handleClearSchedule,
+  toggleScheduleItem, 
+  scheduleStartingHour,
+  toggleModal
+}: ScheduleProps): JSX.Element {
+
+  // create an array to store each hour to display on the schedule for grid lines
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
   // set the height of each row in rem
   const scheduleRowHeight = 2;
   // set the total schedule div height
   const scheduleHeight = 24 * scheduleRowHeight;
 
+  // create an object to store item positions by ID
+  const itemPositionsById: Record<string, ItemPosition> = {};
+  // group each item by startHour
+  const startHourGroups = new Map();
+
+  if (schedule) {
+    for (const item of schedule) {
+      // set the startHour as key for the map
+      const key = item.startHour;
+      // if the key doesn't exist
+      if (!startHourGroups.has(key)) {
+        // create the key value pair
+        startHourGroups.set(key, []);
+      }
+      // push the item to the key's array
+      startHourGroups.get(key).push(item);
+    }
+
+    startHourGroups.forEach((group) => {
+      let leftPosition = 0;
+      group.forEach((item: ScheduledActivity) => {
+        // create an empty object to store width and left position
+        const positions = { width: "", leftPosition: ""};
+
+        if (group.length > 1) {
+          // set width to 1/group.length
+          positions.width = `1/${group.length}`;
+          // set left position to left position count/group.length
+          positions.leftPosition = `${leftPosition}/${group.length}`;
+          // add to itemPositionsById
+          itemPositionsById[item.id] = positions;
+          // increment left position value
+          leftPosition++;
+        } else {
+          positions.width = "full";
+          positions.leftPosition = "0"
+          itemPositionsById[item.id] = positions;
+        }
+      })
+      // reset left position value
+      leftPosition = 0;
+    })
+  }
+
   // create a schedule item for each of the activities on the schedule
-  const activityScheduleBlocks = schedule?.map((activity: ScheduledActivity) => {
+  const scheduleItems = schedule?.map((activity: ScheduledActivity) => {
+    const itemPosition = itemPositionsById[activity.id];
+
     return (
       <ScheduleItem 
+        schedule={schedule}
         key={activity.id}
         activity={activity}
-        toggleScheduleSlot={toggleScheduleSlot}
+        toggleScheduleItem={toggleScheduleItem}
         scheduleRowHeight={scheduleRowHeight}
         scheduleStartingHour={scheduleStartingHour} 
+        itemPosition={itemPosition}
         toggleModal={toggleModal}
       />
     )
@@ -43,7 +98,15 @@ export default function Schedule({
 
   return (
     <div className="md:w-1/2 flex flex-col gap-4">
-      <h2 className="text-2xl font-bold border-b pb-2 border-slate-600">Daily Schedule</h2>
+      <div className="flex flex-row w-full justify-between border-b border-slate-600">
+        <h2 className="text-2xl font-bold pb-2">Daily Schedule</h2>
+        <button 
+          className="hover: cursor-pointer"
+          onClick={() => {handleClearSchedule()}}
+        >
+          Clear Schedule
+        </button>
+      </div>
       <div className="flex bg-white rounded-lg shadow-lg p-4">
         {/* Time of day color indicator */}
         <div  
@@ -102,7 +165,7 @@ export default function Schedule({
               height: `${scheduleHeight}rem`
             }} 
           >
-            {activityScheduleBlocks}
+            {scheduleItems}
           </div>
         </div>
       </div>

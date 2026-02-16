@@ -6,12 +6,12 @@ import ListItemButtons from "./ListItemButtons"
 type ListItemProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
-  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
   setHoveredButton: (slotId: string | null) => void;
 }
 
-export default function ListItem({ schedule, activity, toggleScheduleSlot, toggleModal, setHoveredButton }: ListItemProps) {
+export default function ListItem({ schedule, activity, toggleScheduleItem, toggleModal, setHoveredButton }: ListItemProps) {
 
   return (
     <div
@@ -35,6 +35,7 @@ export default function ListItem({ schedule, activity, toggleScheduleSlot, toggl
                 width={56}
                 height={56}
                 alt={activity.name}
+                title={activity.name}
                 className="object-contain"
               />
             </div>
@@ -66,7 +67,7 @@ export default function ListItem({ schedule, activity, toggleScheduleSlot, toggl
         </div>
         
         {
-          activity.bait && activity.baitImage ?
+          activity.bait && activity.baitImage &&
             <div className="flex flex-row gap-2 items-center mb-4">
               <Image
                 placeholder="blur"
@@ -74,13 +75,12 @@ export default function ListItem({ schedule, activity, toggleScheduleSlot, toggl
                 src={activity.baitImage}
                 width={24}
                 height={24}
-                alt={activity.name}
+                alt={activity.bait}
+                title={activity.bait}
                 className="object-contain"
               />
               <p className="text-sm text-slate-600">Requires {activity.bait}s</p>
             </div>
-          :
-            null
         }
 
         <p className="text-sm text-slate-600 mb-4">{activity.desc}</p>
@@ -89,7 +89,7 @@ export default function ListItem({ schedule, activity, toggleScheduleSlot, toggl
         <ListItemButtons
           schedule={schedule}
           activity={activity} 
-          toggleScheduleSlot={toggleScheduleSlot}
+          toggleScheduleItem={toggleScheduleItem}
           setHoveredButton={setHoveredButton}
         />
       </div>

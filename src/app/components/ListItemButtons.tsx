@@ -5,11 +5,11 @@ import useFormatHourString from "../hooks/useFormatHourString";
 type ListItemButtonsProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
-  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   setHoveredButton: (slotId: string | null) => void;
 }
 
-export default function ListItemButtons({schedule, activity, toggleScheduleSlot, setHoveredButton}: ListItemButtonsProps) {
+export default function ListItemButtons({schedule, activity, toggleScheduleItem, setHoveredButton}: ListItemButtonsProps) {
   const format = useFormatHourString();
 
   const getIcon = (label: string) => {
@@ -41,7 +41,7 @@ export default function ListItemButtons({schedule, activity, toggleScheduleSlot,
           key={slot.id}
           onMouseEnter={() => setHoveredButton(slot.id)}
           onMouseLeave={() => setHoveredButton(null)}
-          onClick={() => toggleScheduleSlot(activityToSchedule)}
+          onClick={() => toggleScheduleItem(activityToSchedule)}
           className={`flex-1 p-3 hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2 
             ${
               isScheduled

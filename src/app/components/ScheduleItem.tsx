@@ -1,24 +1,28 @@
 import { type ScheduledActivity } from "../data";
 import { CalendarOff, MapPin } from "lucide-react";
-import useFormatHourString from "../hooks/useFormatHourString";
+import Image from "next/image";
+import { ItemPosition } from "./Schedule";
 
 type ScheduleItemProps = {
   activity: ScheduledActivity;
-  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  schedule: Array<ScheduledActivity>;
+  toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   scheduleRowHeight: number;
   scheduleStartingHour: number;
+  itemPosition: ItemPosition;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ScheduleItem({ 
   activity,
-  toggleScheduleSlot, 
+  schedule,
+  toggleScheduleItem, 
   scheduleRowHeight,
   scheduleStartingHour, 
+  itemPosition,
   toggleModal
 } : ScheduleItemProps) {
 
-  const format = useFormatHourString();
 
   // get the top position of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {
@@ -55,21 +59,37 @@ export default function ScheduleItem({
         background: `color-mix(in srgb, ${activity.rarityColor} 10%, white)`,
         color: `${activity.rarityColor}`,
         borderColor: `${activity.rarityColor}`,
-        zIndex: `${getZIndex(activity)}`
+        zIndex: `${getZIndex(activity)}`,
       }}
-      className="border-2 rounded-lg shadow-md px-2 py-0.5 absolute w-full"
+      className={`border-2 rounded-lg shadow-md px-2 py-0.5 absolute w-${itemPosition.width} left-${itemPosition.leftPosition}`}
     >
       <div className="w-full flex flex-row justify-between">
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center gap-2 min-w-0 overflow-hidden">
           <button 
             className="hover: cursor-pointer"
             onClick={() => {toggleModal(activity.name, activity.locationImage, activity.location, true)}}
           >
             <MapPin size={20} />
           </button>
-          <span className="truncate">{activity.name}</span>
+          <span className="overflow-hidden shrink-0">{activity.name}</span>
+          {
+            activity.bait && activity.baitImage &&
+            <div className="flex flex-row gap-2 shrink-0">
+                <Image
+                  placeholder="blur"
+                  blurDataURL="/PlaceholderMap.jpg"
+                  src={activity.baitImage}
+                  width={20}
+                  height={20}
+                  alt={activity.bait}
+                  title={activity.bait}
+                  className="object-contain"
+                />
+                <span className="text-sm">Required</span>
+            </div>
+          }
         </div>
-        <button onClick={() => toggleScheduleSlot(activity)} className="hover: cursor-pointer">
+        <button onClick={() => toggleScheduleItem(activity)} className="hover: cursor-pointer pl-2">
           <CalendarOff size={20} />
         </button>
       </div>

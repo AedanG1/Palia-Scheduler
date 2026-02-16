@@ -8,11 +8,11 @@ import CursorBadge from "./CursorBadge";
 
 type ListProps = {
   schedule: Array<ScheduledActivity>;
-  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function List({schedule, toggleScheduleSlot, toggleModal}: ListProps): JSX.Element {
+export default function List({schedule, toggleScheduleItem, toggleModal}: ListProps): JSX.Element {
   // handle state of type of activities that should be displayed in the list
   const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
   // handle state of cursor position
@@ -42,6 +42,7 @@ export default function List({schedule, toggleScheduleSlot, toggleModal}: ListPr
     // run useEffect on every change to schedule state or hoveredButton state
   }, [hoveredButton, schedule])
   
+  // handle type button click
   const handleClick = (activityType: ActivityType) => {
     setTypeToDisplay(() => {
       return activityType; 
@@ -62,7 +63,7 @@ export default function List({schedule, toggleScheduleSlot, toggleModal}: ListPr
       key={activity.id} 
       schedule={schedule}
       activity={activity} 
-      toggleScheduleSlot={toggleScheduleSlot}
+      toggleScheduleItem={toggleScheduleItem}
       toggleModal={toggleModal}
       setHoveredButton={setHoveredButton}
     />
@@ -71,7 +72,7 @@ export default function List({schedule, toggleScheduleSlot, toggleModal}: ListPr
   return (
     <div className="flex flex-col gap-4 w-1/3">
       <TypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
-      <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pr-2 pb-80">
+      <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pr-2 pb-4">
         {activityElements}
       </div>
       {showBadge && <CursorBadge cursorPosition={cursorPosition} />}
