@@ -1,14 +1,15 @@
 import { TimeSlot, PaliaActivity, ScheduledActivity } from "../data";
-import { Sunrise, Sun, Sunset, Moon, CalendarPlus } from "lucide-react";
+import { Sunrise, Sun, Sunset, Moon, CalendarPlus, CalendarCheck } from "lucide-react";
 import useFormatHourString from "../hooks/useFormatHourString";
             
 type ListItemButtonsProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  setHoveredButton: (slotId: string | null) => void;
 }
 
-export default function ListItemButtons({schedule, activity, toggleScheduleSlot}: ListItemButtonsProps) {
+export default function ListItemButtons({schedule, activity, toggleScheduleSlot, setHoveredButton}: ListItemButtonsProps) {
   const format = useFormatHourString();
 
   const getIcon = (label: string) => {
@@ -38,16 +39,26 @@ export default function ListItemButtons({schedule, activity, toggleScheduleSlot}
       return (
         <button 
           key={slot.id}
+          onMouseEnter={() => setHoveredButton(slot.id)}
+          onMouseLeave={() => setHoveredButton(null)}
           onClick={() => toggleScheduleSlot(activityToSchedule)}
-          className="flex-1 p-3 text-slate-600 bg-white/70 hover:bg-white hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2"
+          className={`flex-1 p-3 hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2 
+            ${
+              isScheduled
+              ? "text-green-800 bg-green-200/70 hover:bg-green-200 hover:shadow-green-500/50"
+              : "text-slate-600 bg-white/70 hover:bg-white"
+            }`}
         >
-          {getIcon(slot.label)}
-          <span className="capitalize text-slate-600">
+          {
+            isScheduled 
+            ? <CalendarCheck size={20} /> 
+            : getIcon(slot.label)
+          }
+          <span className="capitalize">
             {
-              slot.label === "other" ?
-                `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
-              :
-                slot.label
+              slot.label === "other"
+              ? `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
+              : slot.label
             }
           </span>
         </button>
