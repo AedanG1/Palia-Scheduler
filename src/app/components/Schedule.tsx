@@ -15,8 +15,8 @@ type ScheduleProps = {
 }
 
 export type ItemPosition = {
-  width: string;
-  leftPosition: string;
+  widthPercent: number;
+  leftPercent: number;
 }
 
 export default function Schedule({
@@ -53,28 +53,14 @@ export default function Schedule({
     }
 
     startHourGroups.forEach((group) => {
-      let leftPosition = 0;
-      group.forEach((item: ScheduledActivity) => {
-        // create an empty object to store width and left position
-        const positions = { width: "", leftPosition: ""};
-
-        if (group.length > 1) {
-          // set width to 1/group.length
-          positions.width = `1/${group.length}`;
-          // set left position to left position count/group.length
-          positions.leftPosition = `${leftPosition}/${group.length}`;
-          // add to itemPositionsById
-          itemPositionsById[item.id] = positions;
-          // increment left position value
-          leftPosition++;
-        } else {
-          positions.width = "full";
-          positions.leftPosition = "0"
-          itemPositionsById[item.id] = positions;
+      group.forEach((item: ScheduledActivity, index: number) => {
+        const positions = {
+          widthPercent: 100 / group.length,
+          leftPercent: ( index / group.length ) * 100
         }
+
+        itemPositionsById[item.id] = positions;
       })
-      // reset left position value
-      leftPosition = 0;
     })
   }
 

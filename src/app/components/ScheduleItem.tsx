@@ -55,8 +55,10 @@ export default function ScheduleItem({
         color: `${activity.rarityColor}`,
         borderColor: `${activity.rarityColor}`,
         zIndex: `${getZIndex(activity)}`,
+        width: `${itemPosition.widthPercent}%`,
+        left: `${itemPosition.leftPercent}%`
       }}
-      className={`border-2 rounded-lg shadow-md px-2 py-0.5 absolute w-${itemPosition.width} left-${itemPosition.leftPosition}`}
+      className="border-2 rounded-lg shadow-md px-2 py-0.5 absolute"
     >
       <div className="w-full flex flex-row justify-between">
         <div className="flex flex-row items-center gap-2 min-w-0 overflow-hidden">
