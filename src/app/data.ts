@@ -159,6 +159,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     ],
     type: "Events"
   },
+
   {
     id: "zekis-underground",
     name: "Zeki's Underground",
@@ -176,6 +177,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     ],
     type: "Events"
   },
+
   {
     id: "piksii-blossom-bounce",
     name: "Piksii Blossom Bounce",
@@ -193,6 +195,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     ],
     type: "Events"
   },
+
   {
     id: "kilima-flower-bloom",
     name: "Kilima Flower Bloom",
@@ -210,6 +213,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     ],
     type: "Events"
   },
+
   {
     id: "cactus-moray",
     name: "Cactus Moray",
@@ -231,6 +235,7 @@ export const paliaActivities: Array<PaliaActivity> = [
     ...rarity.uncommon,
     type: "Fish",
   },
+  
   {
     id: "rainbow-tipped-butterfly",
     name: "Rainbow-Tipped Butterfly",

@@ -1,12 +1,12 @@
 import { ACTIVITYTYPE, ActivityType } from "../data"
 import { motion } from "motion/react"
 
-type ActivityTypeSelectProps = {
+type TypeSelectProps = {
   typeToDisplay: ActivityType;
   handleClick: (activityType: ActivityType) => void;
 }
 
-export default function ActivityTypeSelect({typeToDisplay, handleClick}: ActivityTypeSelectProps) {
+export default function TypeSelect({typeToDisplay, handleClick}: TypeSelectProps) {
   const activityButtonElements = ACTIVITYTYPE.map((activity: ActivityType) => {
     const isSelected = typeToDisplay === activity;
     

@@ -1,33 +1,17 @@
-import { JSX } from "react"
 import Image from "next/image"
-import type { PaliaActivity, ScheduledActivity, TimeSlot } from "../data"
-import { CalendarPlus, CalendarOff, MapPin, Sun, Moon, Sunset, Sunrise } from "lucide-react"
-import useFormatHourString from "../hooks/useFormatHourString"
+import type { PaliaActivity, ScheduledActivity } from "../data"
+import { MapPin } from "lucide-react"
+import ListItemButtons from "./ListItemButtons"
 
-type ActivityListBlock = {
+type ListItemProps = {
+  schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
-  toggleScheduleSlot: (activityToSchedule: ScheduledActivity) => void;
+  toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
+  setHoveredButton: (slotId: string | null) => void;
 }
 
-export default function ActivityListBlock({ activity, toggleScheduleSlot, toggleModal }: ActivityListBlock) {
-
-  const format = useFormatHourString();
-
-  const getIcon = (label: string) => {
-    switch (label) {
-      case "morning":
-        return <Sunrise size={20} />
-      case "day":
-        return <Sun size={20} />
-      case "evening":
-        return <Sunset size={20} />
-      case "night":
-        return <Moon size={20} />
-      default:
-        return <CalendarPlus size={20} />
-    }
-  }
+export default function ListItem({ schedule, activity, toggleScheduleItem, toggleModal, setHoveredButton }: ListItemProps) {
 
   return (
     <div
@@ -51,6 +35,7 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
                 width={56}
                 height={56}
                 alt={activity.name}
+                title={activity.name}
                 className="object-contain"
               />
             </div>
@@ -82,7 +67,7 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
         </div>
         
         {
-          activity.bait && activity.baitImage ?
+          activity.bait && activity.baitImage &&
             <div className="flex flex-row gap-2 items-center mb-4">
               <Image
                 placeholder="blur"
@@ -90,44 +75,23 @@ export default function ActivityListBlock({ activity, toggleScheduleSlot, toggle
                 src={activity.baitImage}
                 width={24}
                 height={24}
-                alt={activity.name}
+                alt={activity.bait}
+                title={activity.bait}
                 className="object-contain"
               />
               <p className="text-sm text-slate-600">Requires {activity.bait}s</p>
             </div>
-          :
-            null
         }
 
         <p className="text-sm text-slate-600 mb-4">{activity.desc}</p>
         
-        <div className="flex gap-2">
-          {activity.timesAvailable.sort((a, b) => a.startHour - b.startHour).map((slot: TimeSlot) => {
-            const { id, timesAvailable, ...rest } = activity;
-            const activityToSchedule = {
-              ...rest,
-              ...slot
-            }
-            
-            return (
-              <button 
-                key={slot.id}
-                onClick={() => toggleScheduleSlot(activityToSchedule)}
-                className="flex-1 p-3 text-slate-600 bg-white/70 hover:bg-white hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2"
-              >
-                {getIcon(slot.label)}
-                <span className="capitalize text-slate-600">
-                  {
-                    slot.label === "other" ?
-                      `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
-                    :
-                      slot.label
-                  }
-                </span>
-              </button>
-            )
-          })}
-        </div>
+        {/* Toggle Schedule Buttons */}
+        <ListItemButtons
+          schedule={schedule}
+          activity={activity} 
+          toggleScheduleItem={toggleScheduleItem}
+          setHoveredButton={setHoveredButton}
+        />
       </div>
     </div>
   )
