@@ -70,15 +70,15 @@ export default function Home() {
     <div className="relative">
 
       {/* Map Modal */}
-      {modalStatus.isOpen ? 
-        <MapModal 
-          activityName={modalStatus.activityName} 
-          imagePath={modalStatus.locationImage} 
-          location={modalStatus.location} 
-          toggleModal={toggleModal} 
-        />
-      : 
-        null}
+      {
+        modalStatus.isOpen && 
+          <MapModal 
+            activityName={modalStatus.activityName} 
+            imagePath={modalStatus.locationImage} 
+            location={modalStatus.location} 
+            toggleModal={toggleModal} 
+          />
+      }
 
       <div className="relative py-8 px-4 md:py-10 md:px-24">
         <div className="flex flex-col items-center mb-8">

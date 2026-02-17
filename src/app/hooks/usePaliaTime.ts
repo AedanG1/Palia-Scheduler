@@ -16,7 +16,7 @@ export default function usePaliaTime(): PaliaTime {
     paliaCurrentMinute: 0,
     paliaCurrentHour: 0,
     paliaTime24Hour: "00:00",
-    paliaTime12Hour: "12:00 AM",
+    paliaTime12Hour: "00:00",
     paliaDayNumber: 0,
   });
 
@@ -38,7 +38,7 @@ export default function usePaliaTime(): PaliaTime {
       const now = new Date();
       const epochSeconds = now.getTime() / 1000;
       const realSecondsSincePaliaEpoch = epochSeconds - PST_UTC_SUNDAY_OFFSET;
-      // Palia time is x24 faster than real time.
+      // Palia time is 24x faster than real time.
       // Convert real seconds since Palia's epoch to Palia seconds
       const totalPaliaSeconds = realSecondsSincePaliaEpoch * 24;
       // Calculate the total number of Palia days that have passed since Palia's epoch

@@ -9,7 +9,7 @@ export default function NotificationSettings(): JSX.Element {
 
   if (permissionStatus === "granted") {
     return (
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-9">
         <p>Notifications enabled ✅</p>
         <Link href="/help"><u>Not getting notifications?</u></Link>
       </div>
@@ -18,7 +18,7 @@ export default function NotificationSettings(): JSX.Element {
 
   if (permissionStatus === "denied") {
     return (
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mb-9">
         <p>❌ Notifications have been disabled. Please enable them in browser settings. ❌</p>
         <Link href="/help"><u>Not getting notifications?</u></Link>
       </div>
@@ -27,7 +27,7 @@ export default function NotificationSettings(): JSX.Element {
 
   return (
     <div className="flex flex-col items-center">
-      <p className="mb-4">Please click the button below and allow your browser to notify when your activities are about to start!</p>
+      <p className="mb-4">Click the button below and allow your browser to notify when your activities are about to start!</p>
       <button 
         onClick={requestPermission} 
         className="hover:cursor-pointer py-2 px-4 bg-green-300 text-green-900 w-fit rounded-lg border-2"

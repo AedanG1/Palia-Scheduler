@@ -80,7 +80,7 @@ const rarity = {
   },
   none: {
     rarity: "none",
-    rarityColor: "#f54a00"
+    rarityColor: "#44403b"
   }
 } as const;
 
