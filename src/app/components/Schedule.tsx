@@ -72,7 +72,6 @@ export default function Schedule({
 
     return (
       <ScheduleItem 
-        schedule={schedule}
         key={activity.id}
         activity={activity}
         toggleScheduleItem={toggleScheduleItem}
