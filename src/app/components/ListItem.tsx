@@ -51,7 +51,7 @@ export default function ListItem({ schedule, activity, toggleScheduleItem, toggl
             </div>
           </div>
           {
-            activity.rarity ?
+            activity.rarity !== "none" &&
               <span 
                 className="px-3 py-1 rounded-full text-xs font-semibold"
                 style={{ 
@@ -61,8 +61,6 @@ export default function ListItem({ schedule, activity, toggleScheduleItem, toggl
               >
                 {activity.rarity}
               </span>
-            :
-              null
           }
         </div>
         

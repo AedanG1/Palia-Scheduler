@@ -33,7 +33,8 @@ export const RARITY = [
   "uncommon",
   "rare",
   "epic",
-  "legendary"
+  "legendary",
+  "none"
 ] as const;
 
 export type Rarity = typeof RARITY[number];
@@ -76,6 +77,10 @@ const rarity = {
   legendary: {
     rarity: "legendary",
     rarityColor: "#c70036"
+  },
+  none: {
+    rarity: "none",
+    rarityColor: "#f54a00"
   }
 } as const;
 
@@ -119,8 +124,8 @@ export type PaliaActivity = {
   timesAvailable: TimeSlot[];
   bait?: Bait;
   baitImage?: string;
-  rarity?: Rarity;
-  rarityColor?: string;
+  rarity: Rarity;
+  rarityColor: string;
   type: ActivityType;
 };
 
@@ -136,8 +141,8 @@ export type ScheduledActivity = {
   endHour: number;
   bait?: Bait;
   baitImage?: string;
-  rarity?: Rarity;
-  rarityColor?: string;
+  rarity: Rarity;
+  rarityColor: string;
   type: ActivityType;
 };
 
@@ -157,6 +162,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 1
       }
     ],
+    ...rarity.none,
     type: "Events"
   },
 
@@ -175,6 +181,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 3
       }
     ],
+    ...rarity.none,
     type: "Events"
   },
 
@@ -193,6 +200,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 23
       }
     ],
+    ...rarity.none,
     type: "Events"
   },
 
@@ -211,6 +219,7 @@ export const paliaActivities: Array<PaliaActivity> = [
         endHour: 13
       }
     ],
+    ...rarity.none,
     type: "Events"
   },
 

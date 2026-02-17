@@ -54,11 +54,13 @@ export default function Schedule({
 
     startHourGroups.forEach((group) => {
       group.forEach((item: ScheduledActivity, index: number) => {
+        // calculate the percentage for width and left position
         const positions = {
           widthPercent: 100 / group.length,
           leftPercent: ( index / group.length ) * 100
-        }
+        };
 
+        // set calculated positions to current item ID
         itemPositionsById[item.id] = positions;
       })
     })

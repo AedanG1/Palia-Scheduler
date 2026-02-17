@@ -5,7 +5,6 @@ import { ItemPosition } from "./Schedule";
 
 type ScheduleItemProps = {
   activity: ScheduledActivity;
-  schedule: Array<ScheduledActivity>;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   scheduleRowHeight: number;
   scheduleStartingHour: number;
@@ -15,7 +14,6 @@ type ScheduleItemProps = {
 
 export default function ScheduleItem({ 
   activity,
-  schedule,
   toggleScheduleItem, 
   scheduleRowHeight,
   scheduleStartingHour, 
