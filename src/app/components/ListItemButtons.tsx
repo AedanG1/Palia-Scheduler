@@ -6,10 +6,9 @@ type ListItemButtonsProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
-  setHoveredButton: (slotId: string | null) => void;
 }
 
-export default function ListItemButtons({schedule, activity, toggleScheduleItem, setHoveredButton}: ListItemButtonsProps) {
+export default function ListItemButtons({schedule, activity, toggleScheduleItem}: ListItemButtonsProps) {
   const format = useFormatHourString();
 
   const getIcon = (label: string) => {
@@ -28,42 +27,40 @@ export default function ListItemButtons({schedule, activity, toggleScheduleItem,
   }
 
   const scheduleButtons = activity.timesAvailable.sort((a, b) => a.startHour - b.startHour).map((slot: TimeSlot) => {
-      const { id, timesAvailable, ...rest } = activity;
-      const activityToSchedule = {
-        ...rest,
-        ...slot
-      }
+    const { id, timesAvailable, ...rest } = activity;
+    const activityToSchedule = {
+      ...rest,
+      ...slot
+    }
 
-      const isScheduled = schedule.some(s => s.id === slot.id);
-      
-      return (
-        <button 
-          key={slot.id}
-          onMouseEnter={() => setHoveredButton(slot.id)}
-          onMouseLeave={() => setHoveredButton(null)}
-          onClick={() => toggleScheduleItem(activityToSchedule)}
-          className={`flex-1 p-3 hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2 
-            ${
-              isScheduled
-              ? "text-green-800 bg-green-200/70 hover:bg-green-200 hover:shadow-green-500/50"
-              : "text-slate-600 bg-white/70 hover:bg-white"
-            }`}
-        >
+    const isScheduled = schedule.some(s => s.id === slot.id);
+    
+    return (
+      <button 
+        key={slot.id}
+        onClick={() => toggleScheduleItem(activityToSchedule)}
+        className={`flex-1 p-3 hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2 
+          ${
+            isScheduled
+            ? "text-green-800 bg-green-200/70 hover:bg-green-200 hover:shadow-green-500/50"
+            : "text-slate-600 bg-white/70 hover:bg-white"
+          }`}
+      >
+        {
+          isScheduled 
+          ? <CalendarCheck size={20} /> 
+          : getIcon(slot.label)
+        }
+        <span className="capitalize">
           {
-            isScheduled 
-            ? <CalendarCheck size={20} /> 
-            : getIcon(slot.label)
+            slot.label === "other"
+            ? `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
+            : slot.label
           }
-          <span className="capitalize">
-            {
-              slot.label === "other"
-              ? `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
-              : slot.label
-            }
-          </span>
-        </button>
-      )
-    })
+        </span>
+      </button>
+    )
+  })
 
   return (
     <div className="flex gap-2">

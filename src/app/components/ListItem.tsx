@@ -8,10 +8,9 @@ type ListItemProps = {
   activity: PaliaActivity;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
-  setHoveredButton: (slotId: string | null) => void;
 }
 
-export default function ListItem({ schedule, activity, toggleScheduleItem, toggleModal, setHoveredButton }: ListItemProps) {
+export default function ListItem({ schedule, activity, toggleScheduleItem, toggleModal}: ListItemProps) {
 
   return (
     <div
@@ -88,7 +87,6 @@ export default function ListItem({ schedule, activity, toggleScheduleItem, toggl
           schedule={schedule}
           activity={activity} 
           toggleScheduleItem={toggleScheduleItem}
-          setHoveredButton={setHoveredButton}
         />
       </div>
     </div>
