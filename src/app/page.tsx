@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import NotificationSettings from "./components/NotificationSettings";
-import type { ScheduledActivity } from "./data";
+import type { ScheduledActivity } from "./data/data";
 import Schedule from "./components/Schedule";
 import List from "./components/List";
 import useActivityNotification from "./hooks/useActivityNotification";

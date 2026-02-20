@@ -1,4 +1,4 @@
-import { ACTIVITYTYPE, ActivityType } from "../data"
+import { ACTIVITYTYPE, ActivityType } from "../data/data"
 import { motion } from "motion/react"
 
 type TypeSelectProps = {

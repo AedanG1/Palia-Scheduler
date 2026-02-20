@@ -1,4 +1,4 @@
-import { type ScheduledActivity } from "../data";
+import { type ScheduledActivity } from "../data/data";
 import { CalendarOff, MapPin } from "lucide-react";
 import Image from "next/image";
 import { ItemPosition } from "./Schedule";

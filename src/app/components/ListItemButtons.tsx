@@ -1,4 +1,4 @@
-import { TimeSlot, PaliaActivity, ScheduledActivity } from "../data";
+import { TimeSlot, PaliaActivity, ScheduledActivity } from "../data/data";
 import { Sunrise, Sun, Sunset, Moon, CalendarPlus, CalendarCheck } from "lucide-react";
 import useFormatHourString from "../hooks/useFormatHourString";
             

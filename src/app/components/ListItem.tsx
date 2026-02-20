@@ -1,5 +1,5 @@
 import Image from "next/image"
-import type { PaliaActivity, ScheduledActivity } from "../data"
+import type { PaliaActivity, ScheduledActivity } from "../data/data"
 import { MapPin } from "lucide-react"
 import ListItemButtons from "./ListItemButtons"
 

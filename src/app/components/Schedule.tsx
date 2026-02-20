@@ -1,6 +1,6 @@
 'use client'
 
-import type { ScheduledActivity } from "../data"
+import type { ScheduledActivity } from "../data/data"
 import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
 import { formatHourMeridiem } from "../utils";

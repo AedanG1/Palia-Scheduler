@@ -1,7 +1,8 @@
 'use client'
 
 import {JSX, useEffect, useState} from "react";
-import { ActivityType, paliaActivities, PaliaActivity, ScheduledActivity } from "../data";
+import { ActivityType, PaliaActivity, ScheduledActivity } from "../data/data";
+import { allActivites } from "../data/allActivites";
 import ListItem from "./ListItem";
 import TypeSelect from "./TypeSelect";
 import CursorBadge from "./CursorBadge";
@@ -50,7 +51,7 @@ export default function List({schedule, toggleScheduleItem, toggleModal}: ListPr
   };
 
   // show all activities that are the same type as the one selected in alphabetical order
-  const activitiesToDisplay: Array<PaliaActivity> = paliaActivities.filter((activity: PaliaActivity) => {
+  const activitiesToDisplay: Array<PaliaActivity> = allActivites.filter((activity: PaliaActivity) => {
     if (typeToDisplay === activity.type) {
       return activity;
     }
