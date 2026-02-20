@@ -167,10 +167,6 @@ export const fish: Array<PaliaActivity> = [
         id: "angelfish-evening",
         ...defaultTimeSlots.evening,
       },
-      {
-        id: "angelfish-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.glowWorm,
     ...rarity.rare,
@@ -271,14 +267,6 @@ export const fish: Array<PaliaActivity> = [
     locationImage: "",
     displayImage: "/fish-barracuda.png",
     timesAvailable: [
-      {
-        id: "barracuda-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "barracuda-day",
-        ...defaultTimeSlots.day,
-      },
       {
         id: "barracuda-evening",
         ...defaultTimeSlots.evening,
@@ -457,10 +445,6 @@ export const fish: Array<PaliaActivity> = [
         id: "blue-spotted-ray-evening",
         ...defaultTimeSlots.evening,
       },
-      {
-        id: "blue-spotted-ray-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.glowWorm,
     ...rarity.rare,
@@ -533,16 +517,8 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-cactus-moray.png",
     timesAvailable: [
       {
-        id: "cactus-moray-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
         id: "cactus-moray-day",
         ...defaultTimeSlots.day,
-      },
-      {
-        id: "cactus-moray-evening",
-        ...defaultTimeSlots.evening,
       },
       {
         id: "cactus-moray-night",
@@ -591,16 +567,8 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-cantankerous-koi.png",
     timesAvailable: [
       {
-        id: "cantankerous-koi-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
         id: "cantankerous-koi-day",
         ...defaultTimeSlots.day,
-      },
-      {
-        id: "cantankerous-koi-evening",
-        ...defaultTimeSlots.evening,
       },
       {
         id: "cantankerous-koi-night",
@@ -684,14 +652,6 @@ export const fish: Array<PaliaActivity> = [
       {
         id: "cloudfish-day",
         ...defaultTimeSlots.day,
-      },
-      {
-        id: "cloudfish-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "cloudfish-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.glowWorm,
@@ -797,18 +757,6 @@ export const fish: Array<PaliaActivity> = [
         id: "dawnray-morning",
         ...defaultTimeSlots.morning,
       },
-      {
-        id: "dawnray-day",
-        ...defaultTimeSlots.day,
-      },
-      {
-        id: "dawnray-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "dawnray-night",
-        ...defaultTimeSlots.night,
-      },
     ],
 
     ...rarity.uncommon,
@@ -825,10 +773,6 @@ export const fish: Array<PaliaActivity> = [
       {
         id: "devilfish-morning",
         ...defaultTimeSlots.morning,
-      },
-      {
-        id: "devilfish-day",
-        ...defaultTimeSlots.day,
       },
       {
         id: "devilfish-evening",
@@ -852,20 +796,8 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-duskray.png",
     timesAvailable: [
       {
-        id: "duskray-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "duskray-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "duskray-evening",
         ...defaultTimeSlots.evening,
-      },
-      {
-        id: "duskray-night",
-        ...defaultTimeSlots.night,
       },
     ],
 
@@ -883,10 +815,6 @@ export const fish: Array<PaliaActivity> = [
       {
         id: "eleroo-eel-morning",
         ...defaultTimeSlots.morning,
-      },
-      {
-        id: "eleroo-eel-day",
-        ...defaultTimeSlots.day,
       },
       {
         id: "eleroo-eel-evening",
@@ -1001,16 +929,8 @@ export const fish: Array<PaliaActivity> = [
         ...defaultTimeSlots.morning,
       },
       {
-        id: "fairy-carp-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "fairy-carp-evening",
         ...defaultTimeSlots.evening,
-      },
-      {
-        id: "fairy-carp-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.worm,
@@ -1062,14 +982,6 @@ export const fish: Array<PaliaActivity> = [
         id: "flametongue-ray-day",
         ...defaultTimeSlots.day,
       },
-      {
-        id: "flametongue-ray-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "flametongue-ray-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.glowWorm,
     ...rarity.epic,
@@ -1083,14 +995,6 @@ export const fish: Array<PaliaActivity> = [
     locationImage: "",
     displayImage: "/fish-freshwater-eel.png",
     timesAvailable: [
-      {
-        id: "freshwater-eel-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "freshwater-eel-day",
-        ...defaultTimeSlots.day,
-      },
       {
         id: "freshwater-eel-evening",
         ...defaultTimeSlots.evening,
@@ -1153,10 +1057,6 @@ export const fish: Array<PaliaActivity> = [
         id: "giant-kilima-stingray-evening",
         ...defaultTimeSlots.evening,
       },
-      {
-        id: "giant-kilima-stingray-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.glowWorm,
     ...rarity.epic,
@@ -1207,14 +1107,6 @@ export const fish: Array<PaliaActivity> = [
         id: "golden-salmon-day",
         ...defaultTimeSlots.day,
       },
-      {
-        id: "golden-salmon-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "golden-salmon-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.worm,
     ...rarity.common,
@@ -1229,16 +1121,8 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-honey-loach.png",
     timesAvailable: [
       {
-        id: "honey-loach-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
         id: "honey-loach-day",
         ...defaultTimeSlots.day,
-      },
-      {
-        id: "honey-loach-evening",
-        ...defaultTimeSlots.evening,
       },
       {
         id: "honey-loach-night",
@@ -1286,14 +1170,6 @@ export const fish: Array<PaliaActivity> = [
     locationImage: "",
     displayImage: "/fish-indigo-lamprey.png",
     timesAvailable: [
-      {
-        id: "indigo-lamprey-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "indigo-lamprey-day",
-        ...defaultTimeSlots.day,
-      },
       {
         id: "indigo-lamprey-evening",
         ...defaultTimeSlots.evening,
@@ -1519,20 +1395,8 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-long-nosed-unicorn-fish.png",
     timesAvailable: [
       {
-        id: "long-nosed-unicorn-fish-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
         id: "long-nosed-unicorn-fish-day",
         ...defaultTimeSlots.day,
-      },
-      {
-        id: "long-nosed-unicorn-fish-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "long-nosed-unicorn-fish-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.glowWorm,
@@ -1552,16 +1416,8 @@ export const fish: Array<PaliaActivity> = [
         ...defaultTimeSlots.morning,
       },
       {
-        id: "majiri-of-war-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "majiri-of-war-evening",
         ...defaultTimeSlots.evening,
-      },
-      {
-        id: "majiri-of-war-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.glowWorm,
@@ -1606,14 +1462,6 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-midnight-floatfish.png",
     timesAvailable: [
       {
-        id: "midnight-floatfish-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "midnight-floatfish-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "midnight-floatfish-evening",
         ...defaultTimeSlots.evening,
       },
@@ -1634,18 +1482,6 @@ export const fish: Array<PaliaActivity> = [
     locationImage: "",
     displayImage: "/fish-midnight-paddlefish.png",
     timesAvailable: [
-      {
-        id: "midnight-paddlefish-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "midnight-paddlefish-day",
-        ...defaultTimeSlots.day,
-      },
-      {
-        id: "midnight-paddlefish-evening",
-        ...defaultTimeSlots.evening,
-      },
       {
         id: "midnight-paddlefish-night",
         ...defaultTimeSlots.night,
@@ -1907,10 +1743,6 @@ export const fish: Array<PaliaActivity> = [
         id: "paddlefish-evening",
         ...defaultTimeSlots.evening,
       },
-      {
-        id: "paddlefish-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.worm,
     ...rarity.uncommon,
@@ -1991,10 +1823,6 @@ export const fish: Array<PaliaActivity> = [
         ...defaultTimeSlots.day,
       },
       {
-        id: "piksii-floatfish-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
         id: "piksii-floatfish-night",
         ...defaultTimeSlots.night,
       },
@@ -2047,14 +1875,6 @@ export const fish: Array<PaliaActivity> = [
       {
         id: "prism-trout-day",
         ...defaultTimeSlots.day,
-      },
-      {
-        id: "prism-trout-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "prism-trout-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.worm,
@@ -2161,16 +1981,8 @@ export const fish: Array<PaliaActivity> = [
         ...defaultTimeSlots.morning,
       },
       {
-        id: "ribbontail-ray-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "ribbontail-ray-evening",
         ...defaultTimeSlots.evening,
-      },
-      {
-        id: "ribbontail-ray-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.worm,
@@ -2331,14 +2143,6 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-silver-salmon.png",
     timesAvailable: [
       {
-        id: "silver-salmon-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "silver-salmon-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "silver-salmon-evening",
         ...defaultTimeSlots.evening,
       },
@@ -2447,14 +2251,6 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-stalking-catfish.png",
     timesAvailable: [
       {
-        id: "stalking-catfish-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "stalking-catfish-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "stalking-catfish-evening",
         ...defaultTimeSlots.evening,
       },
@@ -2512,14 +2308,6 @@ export const fish: Array<PaliaActivity> = [
         id: "stickleback-day",
         ...defaultTimeSlots.day,
       },
-      {
-        id: "stickleback-evening",
-        ...defaultTimeSlots.evening,
-      },
-      {
-        id: "stickleback-night",
-        ...defaultTimeSlots.night,
-      },
     ],
     ...bait.worm,
     ...rarity.uncommon,
@@ -2567,16 +2355,8 @@ export const fish: Array<PaliaActivity> = [
         ...defaultTimeSlots.morning,
       },
       {
-        id: "stormray-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "stormray-evening",
         ...defaultTimeSlots.evening,
-      },
-      {
-        id: "stormray-night",
-        ...defaultTimeSlots.night,
       },
     ],
     ...bait.glowWorm,
@@ -2620,14 +2400,6 @@ export const fish: Array<PaliaActivity> = [
     locationImage: "",
     displayImage: "/fish-striped-sturgeon.png",
     timesAvailable: [
-      {
-        id: "striped-sturgeon-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "striped-sturgeon-day",
-        ...defaultTimeSlots.day,
-      },
       {
         id: "striped-sturgeon-evening",
         ...defaultTimeSlots.evening,
@@ -2795,14 +2567,6 @@ export const fish: Array<PaliaActivity> = [
     displayImage: "/fish-umbraan-betta.png",
     timesAvailable: [
       {
-        id: "umbraan-betta-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "umbraan-betta-day",
-        ...defaultTimeSlots.day,
-      },
-      {
         id: "umbraan-betta-evening",
         ...defaultTimeSlots.evening,
       },
@@ -2881,18 +2645,6 @@ export const fish: Array<PaliaActivity> = [
     locationImage: "",
     displayImage: "/fish-willow-lamprey.png",
     timesAvailable: [
-      {
-        id: "willow-lamprey-morning",
-        ...defaultTimeSlots.morning,
-      },
-      {
-        id: "willow-lamprey-day",
-        ...defaultTimeSlots.day,
-      },
-      {
-        id: "willow-lamprey-evening",
-        ...defaultTimeSlots.evening,
-      },
       {
         id: "willow-lamprey-night",
         ...defaultTimeSlots.night,
