@@ -19,8 +19,8 @@ export default function ListItem({ schedule, activity, toggleScheduleItem, toggl
     >
       {/* Subtle gradient overlay */}
       <div 
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{ background: `linear-gradient(135deg, #00bcff 0%, transparent 100%)` }}
+        className="absolute inset-0 opacity-15 pointer-events-none"
+        style={{ background: `linear-gradient(135deg, ${activity.typeColor} 0%, transparent 100%)` }}
       ></div>
       
       <div className="relative z-10">

@@ -1,4 +1,4 @@
-import { rarity } from "./data";
+import { activityType, rarity } from "./data";
 import type { PaliaActivity } from "./data";
 
 export const events: Array<PaliaActivity> = [
@@ -18,7 +18,7 @@ export const events: Array<PaliaActivity> = [
       }
     ],
     ...rarity.none,
-    type: "Events"
+    ...activityType.events
   },
 
   {
@@ -37,7 +37,7 @@ export const events: Array<PaliaActivity> = [
       }
     ],
     ...rarity.none,
-    type: "Events"
+    ...activityType.events
   },
 
   {
@@ -56,7 +56,7 @@ export const events: Array<PaliaActivity> = [
       }
     ],
     ...rarity.none,
-    type: "Events"
+    ...activityType.events
   },
 
   {
@@ -75,6 +75,6 @@ export const events: Array<PaliaActivity> = [
       }
     ],
     ...rarity.none,
-    type: "Events"
+    ...activityType.events
   },
 ];

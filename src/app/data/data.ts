@@ -63,6 +63,21 @@ export const bait = {
   }
 } as const;
 
+export const activityType = {
+  events: {
+    type: "Events",
+    typeColor: "#6f68ff"
+  },
+  fish: {
+    type: "Fish",
+    typeColor: "#00bcff"
+  },
+  bugs: {
+    type: "Bugs",
+    typeColor: "#3a9948"
+  }
+} as const;
+
 export const rarity = {
   common: {
     rarity: "common",
@@ -133,6 +148,7 @@ export type PaliaActivity = {
   rarity: Rarity;
   rarityColor: string;
   type: ActivityType;
+  typeColor: string;
 };
 
 export type ScheduledActivity = {
@@ -150,4 +166,5 @@ export type ScheduledActivity = {
   rarity: Rarity;
   rarityColor: string;
   type: ActivityType;
+  typeColor: string;
 };

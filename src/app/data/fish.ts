@@ -1,4 +1,4 @@
-import { defaultTimeSlots, bait, rarity } from "./data";
+import { defaultTimeSlots, bait, rarity, activityType } from "./data";
 import type { PaliaActivity } from "./data";
 
 export const fish: Array<PaliaActivity> = [
@@ -29,7 +29,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "alligator-gar",
@@ -58,7 +58,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "ancient-cloudminnow",
@@ -87,7 +87,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.legendary,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "ancient-fish",
@@ -116,7 +116,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "ancient-koi",
@@ -145,7 +145,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "angelfish",
@@ -170,7 +170,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "bahari-bass",
@@ -199,7 +199,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "bahari-bream",
@@ -228,7 +228,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "bahari-pike",
@@ -257,7 +257,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "barracuda",
@@ -278,7 +278,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "bat-ray",
@@ -307,7 +307,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "beluga-sturgeon",
@@ -336,7 +336,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "black-sea-bass",
@@ -365,7 +365,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "blobfish",
@@ -394,7 +394,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "blue-marlin",
@@ -423,7 +423,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "blue-spotted-ray",
@@ -448,7 +448,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "bluefin-tuna",
@@ -477,7 +477,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "bronze-bluegill",
@@ -506,7 +506,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "cactus-moray",
@@ -527,7 +527,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "calico-koi",
@@ -556,7 +556,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "cantankerous-koi",
@@ -577,7 +577,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "channel-catfish",
@@ -606,7 +606,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "chub",
@@ -635,7 +635,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "cloudfish",
@@ -656,7 +656,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "crimson-fangtooth",
@@ -685,7 +685,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "crucian-carp",
@@ -714,7 +714,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "cutthroat-trout",
@@ -743,7 +743,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "dawnray",
@@ -760,7 +760,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "devilfish",
@@ -785,7 +785,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "duskray",
@@ -802,7 +802,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "eleroo-eel",
@@ -827,7 +827,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "enchanted-pupfish",
@@ -856,7 +856,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "energized-piranha",
@@ -885,7 +885,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "eyeless-minnow",
@@ -914,7 +914,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "fairy-carp",
@@ -935,7 +935,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "fathead-minnow",
@@ -964,7 +964,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "flametongue-ray",
@@ -985,7 +985,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "freshwater-eel",
@@ -1006,7 +1006,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "giant-goldfish",
@@ -1035,7 +1035,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "giant-kilima-stingray",
@@ -1060,7 +1060,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "gillyfin",
@@ -1089,7 +1089,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "golden-salmon",
@@ -1110,7 +1110,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "honey-loach",
@@ -1131,7 +1131,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "hypnotic-moray",
@@ -1160,7 +1160,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "indigo-lamprey",
@@ -1181,7 +1181,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "inyrevn-mermaid",
@@ -1210,7 +1210,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "kenli's-carp",
@@ -1239,7 +1239,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "kilima-catfish",
@@ -1268,7 +1268,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "kilima-grayling",
@@ -1297,7 +1297,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "kilima-redfin",
@@ -1326,7 +1326,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "lake-shark",
@@ -1355,7 +1355,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "largemouth-bass",
@@ -1384,7 +1384,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "long-nosed-unicorn-fish",
@@ -1401,7 +1401,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "majiri-of-war",
@@ -1422,7 +1422,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "maws",
@@ -1451,7 +1451,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.legendary,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "midnight-floatfish",
@@ -1472,7 +1472,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "midnight-paddlefish",
@@ -1489,7 +1489,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "mini-mullet",
@@ -1518,7 +1518,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "mirror-carp",
@@ -1547,7 +1547,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "mossyfin",
@@ -1576,7 +1576,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "mottled-gobi",
@@ -1605,7 +1605,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "mudminnow",
@@ -1634,7 +1634,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "mutated-angler",
@@ -1663,7 +1663,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "oily-anchovy",
@@ -1692,7 +1692,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "orange-bluegill",
@@ -1721,7 +1721,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "paddlefish",
@@ -1746,7 +1746,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "painted-perch",
@@ -1775,7 +1775,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "palian-betta",
@@ -1804,7 +1804,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "piksii-floatfish",
@@ -1829,7 +1829,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "platinum-chad",
@@ -1858,7 +1858,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "prism-trout",
@@ -1879,7 +1879,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "radiant-sunfish",
@@ -1908,7 +1908,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "rainbow-trout",
@@ -1937,7 +1937,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "red-bellied-piranha",
@@ -1966,7 +1966,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "ribbontail-ray",
@@ -1987,7 +1987,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "rosy-bitterling",
@@ -2016,7 +2016,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "sabertoothed-anchovy",
@@ -2045,7 +2045,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "sardine",
@@ -2074,7 +2074,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "scarlet-koi",
@@ -2103,7 +2103,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "shimmerfin",
@@ -2132,7 +2132,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "silver-salmon",
@@ -2153,7 +2153,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "silvery-minnow",
@@ -2182,7 +2182,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "smallmouth-bass",
@@ -2211,7 +2211,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "spotted-bullhead",
@@ -2240,7 +2240,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "stalking-catfish",
@@ -2261,7 +2261,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "starry-bitterling",
@@ -2290,7 +2290,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "stickleback",
@@ -2311,7 +2311,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "stonefish",
@@ -2340,7 +2340,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "stormray",
@@ -2361,7 +2361,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "striped-dace",
@@ -2390,7 +2390,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "striped-sturgeon",
@@ -2411,7 +2411,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "swordfin-eel",
@@ -2440,7 +2440,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "thundering-eel",
@@ -2469,7 +2469,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "tinfin",
@@ -2498,7 +2498,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "toadstool-floatfish",
@@ -2527,7 +2527,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "turn-pike",
@@ -2556,7 +2556,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "umbraan-betta",
@@ -2577,7 +2577,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "umbran-carp",
@@ -2606,7 +2606,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.uncommon,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "void-ray",
@@ -2635,7 +2635,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.epic,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "willow-lamprey",
@@ -2652,7 +2652,7 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.worm,
     ...rarity.rare,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "yellow-perch",
@@ -2681,7 +2681,7 @@ export const fish: Array<PaliaActivity> = [
     ],
 
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
   {
     id: "yellowfin-tuna",
@@ -2710,6 +2710,6 @@ export const fish: Array<PaliaActivity> = [
     ],
     ...bait.glowWorm,
     ...rarity.common,
-    type: "Fish",
+    ...activityType.fish,
   },
 ];

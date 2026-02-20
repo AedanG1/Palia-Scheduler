@@ -49,9 +49,9 @@ export default function ScheduleItem({
       style={{ 
         top: `${getStartPosition(activity.startHour)}rem`,
         height: `${getSpan(activity) * scheduleRowHeight}rem`,
-        background: `color-mix(in srgb, ${activity.rarityColor} 10%, white)`,
-        color: `${activity.rarityColor}`,
-        borderColor: `${activity.rarityColor}`,
+        background: `color-mix(in srgb, ${activity.typeColor} 10%, white)`,
+        color: `${activity.typeColor}`,
+        borderColor: `${activity.typeColor}`,
         zIndex: `${getZIndex(activity)}`,
         width: `${itemPosition.widthPercent}%`,
         left: `${itemPosition.leftPercent}%`
