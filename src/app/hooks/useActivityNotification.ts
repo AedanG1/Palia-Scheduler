@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import useNotificationPermission from "./useNotificationPermission";
 import usePaliaTime from "./usePaliaTime";
-import { paliaActivities, type ScheduledActivity } from "../data/data";
+import { type ScheduledActivity } from "../data/data";
 
-// TODO: Make sure NotifiedRecord isn't blocking the wrong notifications
 export type NotifiedRecord = {
   [key: string]: number;
 };
