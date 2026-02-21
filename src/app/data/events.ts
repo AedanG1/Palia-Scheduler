@@ -7,8 +7,8 @@ export const events: Array<PaliaActivity> = [
     name: "Flow-Tree Grove Spawn",
     desc: "Find the Flow-Tree Grove in Bahari Bay. Make sure to let others know where it is!",
     location: "Bahari Bay",
-    locationImage: "/BahariBay-Clean.jpg",
-    displayImage: "/flow-tree-grove.png",
+    locationImage: "/BahariBay-Clean.webp",
+    displayImage: "/flow-tree-grove.webp",
     timesAvailable: [
       {
         id: "flow-tree-grove-spawn-other",
@@ -26,8 +26,8 @@ export const events: Array<PaliaActivity> = [
     name: "Zeki's Underground",
     desc: "Head to Zeki's Underground for a game of Hot Pot",
     location: "Kilima Village",
-    locationImage: "/Zeki-Underground.jpg",
-    displayImage: "/zeki.png",
+    locationImage: "/Zeki-Underground.webp",
+    displayImage: "/zeki.webp",
     timesAvailable: [
       {
         id: "zekis-underground-other",
@@ -45,8 +45,8 @@ export const events: Array<PaliaActivity> = [
     name: "Piksii Blossom Bounce",
     desc: "Travel to the Elderwood and collect the floating seeds before time runs out!",
     location: "Elderwood",
-    locationImage: "/Elderwood-PiskiiBounce.jpg",
-    displayImage: "/piksii-blossom-bounce.png",
+    locationImage: "/Elderwood-PiskiiBounce.webp",
+    displayImage: "/piksii-blossom-bounce.webp",
     timesAvailable: [
       {
         id: "piksii-blossom-bounce-other",
@@ -64,8 +64,8 @@ export const events: Array<PaliaActivity> = [
     name: "Kilima Flower Bloom",
     desc: "Find the Flower Bloom event in Kilima. Make sure to let others know where it is!",
     location: "Kilima",
-    locationImage: "/Kilima-Clean.jpg",
-    displayImage: "/kilima-flower-bloom.png",
+    locationImage: "/Kilima-Clean.webp",
+    displayImage: "/kilima-flower-bloom.webp",
     timesAvailable: [
       {
         id: "kilima-flower-bloom-other",

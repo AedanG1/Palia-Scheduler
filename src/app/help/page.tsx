@@ -13,7 +13,7 @@ export default function HelpPage() {
       <div className="flex flex-col gap-4">
         <p>Navigate to Notification settings in System settings</p>
         <p>Make sure Notifications are on and Do Not Disturb is off. Also make sure notifications are on for the web browser you use.</p>
-        <Image src={"/NotificationSettings1.png"} width={871} height={742} alt="Windows 11 notification settings" />
+        <Image src={"/NotificationSettings1.webp"} width={871} height={742} alt="Windows 11 notification settings" />
       </div>
       <div className="flex flex-col gap-4">
         <p>Under the <b>Turn on do not disturb automatically</b> tab, <em>uncheck</em></p> 
@@ -21,7 +21,7 @@ export default function HelpPage() {
           <li>- When playing a game</li> 
           <li>- When using an app in full-screen mode...</li>
         </ul>
-        <Image src={"/NotificationSettings2.png"} width={867} height={863} alt="Windows 11 notification settings with 'do not disturb automatically' tab open" />
+        <Image src={"/NotificationSettings2.webp"} width={867} height={863} alt="Windows 11 notification settings with 'do not disturb automatically' tab open" />
       </div>
     </div>
   )

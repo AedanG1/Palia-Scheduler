@@ -9,7 +9,7 @@ export const bugs: Array<PaliaActivity> = [
     desc: "Ancient legends say this rare butterfly got its beautiful coloring from dipping the tip of its wings in a Well of Flow. Found in the Fields of Bahari Bay during the morning and day.",
     location: "Bahari Bay",
     locationImage: "",
-    displayImage: "/bug-rainbow-tipped-butterfly.png",
+    displayImage: "/bug-rainbow-tipped-butterfly.webp",
     timesAvailable: [
       {
         id: "rainbow-butterfly-morning",
