@@ -27,7 +27,7 @@ export default function List({schedule, toggleScheduleItem, toggleModal}: ListPr
   };
 
   // handle search input
-  const handleSearchInput = (string: any) => {
+  const handleSearchInput = (string: string) => {
     setSearchInput(() => {
       return string;
     })
