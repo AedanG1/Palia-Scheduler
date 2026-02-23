@@ -66,6 +66,16 @@ export default function ScheduleItem({
           >
             <MapPin size={20} />
           </button>
+          <Image
+            placeholder="blur"
+            blurDataURL="/PlaceholderMap.jpg"
+            src={activity.displayImage}
+            width={20}
+            height={20}
+            alt={activity.name}
+            title={activity.name}
+            className="object-contain"
+          />
           <span className="overflow-hidden shrink-0">{activity.name}</span>
           {
             activity.bait && activity.baitImage &&
