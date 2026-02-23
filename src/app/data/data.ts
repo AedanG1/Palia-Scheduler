@@ -65,11 +65,11 @@ export type Bait = typeof BAIT[number];
 export const bait = {
   worm: {
     bait: "Worm",
-    baitImage: "/worm.png"
+    baitImage: "/worm.webp"
   },
   glowWorm: {
     bait: "Glow Worm",
-    baitImage: "/glow-worm.png" 
+    baitImage: "/glow-worm.webp" 
   }
 } as const;
 
