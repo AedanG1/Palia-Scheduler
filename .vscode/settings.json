@@ -1,4 +1,5 @@
 {
   "editor.fontFamily": "'Monaspace Xenon semiwide', monospace",
-  "editor.fontLigatures": "'calt'"
+  "editor.fontLigatures": "'calt'",
+  "python-envs.pythonProjects": []
 }

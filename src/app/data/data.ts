@@ -1,15 +1,25 @@
 export const LOCATIONS = [
   "Kilima",
+  "Kilima Fields",
   "Kilima Village",
   "Kilima Lake",
   "Kilima Rivers",
   "Bahari Bay",
   "Bahari Coast",
   "Bahari Rivers",
+  "Bahari Forest",
+  "Bahari Fields",
   "Elderwood",
+  "Elderwood Caves",
   "Elderwood Freshwater",
+  "Elderwood Forest",
   "Elderwood Saltwater",
+  "Elderwood Swamps",
+  "Daiya Family Farm",
   "Caves",
+  "Flooded Fortress",
+  "Cliffs Above Pavel Mines",
+  "Dragon Shrine",
   "Ponds",
   "Temple of the Gales"
 ] as const;
@@ -70,7 +80,7 @@ export const activityType = {
   },
   fish: {
     type: "Fish",
-    typeColor: "#00bcff"
+    typeColor: "#00a6f4"
   },
   bugs: {
     type: "Bugs",
