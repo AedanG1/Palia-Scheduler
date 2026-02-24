@@ -6,6 +6,7 @@ import { allActivites } from "../data/allActivites";
 import ListItem from "./ListItem";
 import TypeSelect from "./TypeSelect";
 import { X } from "lucide-react";
+import { Virtuoso } from "react-virtuoso";
 
 type ListProps = {
   schedule: Array<ScheduledActivity>;
@@ -46,17 +47,6 @@ export default function List({schedule, toggleScheduleItem, toggleModal}: ListPr
   }).sort((a, b) => a.name.localeCompare(b.name)
   );
 
-  // create the Activity Elements from the activities
-  const activityElements: Array<JSX.Element> = activitiesToDisplay.map((activity: PaliaActivity): JSX.Element => {
-    return <ListItem 
-      key={activity.id} 
-      schedule={schedule}
-      activity={activity} 
-      toggleScheduleItem={toggleScheduleItem}
-      toggleModal={toggleModal}
-    />
-  })
-
   return (
     <div className="flex flex-col gap-4 w-1/3">
       <div className="flex flex-row gap-8">
@@ -79,9 +69,22 @@ export default function List({schedule, toggleScheduleItem, toggleModal}: ListPr
           }
         </div>
       </div>
-      <div className="space-y-2 max-h-200 overflow-y-auto scroll-smooth pb-4">
-        {activityElements}
-      </div>
+      <Virtuoso
+        className="space-y-2"
+        style={{ height: '800px' }}
+        data={activitiesToDisplay}
+        itemContent={(_, activity) => (
+          <div className="pb-2">
+            <ListItem
+              key={activity.id}
+              schedule={schedule}
+              activity={activity}
+              toggleScheduleItem={toggleScheduleItem}
+              toggleModal={toggleModal}
+            />
+          </div>
+        )}
+      />
     </div>
   ) 
 }
