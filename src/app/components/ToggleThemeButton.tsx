@@ -1,15 +1,18 @@
 'use client'
 
 import { Sun, Moon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 type Theme = "dark" | "light";
 
 export default function ToggleThemeButton() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    return localStorage.getItem("theme") as Theme ?? "dark"
-  });
+  const [theme, setTheme] = useState<Theme>("dark")
+
+  useEffect(() => {
+    const stored = localStorage.getItem("theme") as Theme;
+    if (stored) setTheme(stored);
+  }, [])
 
   const toggleTheme = () => {
     // get the opposite theme from the current one
