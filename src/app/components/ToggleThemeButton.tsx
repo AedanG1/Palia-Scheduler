@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 type Theme = "dark" | "light";
 
 export default function ToggleThemeButton() {
-  const [theme, setTheme] = useState<Theme>("dark")
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme;

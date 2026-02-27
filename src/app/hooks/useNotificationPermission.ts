@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
-type PermissionStatus = "default" | "granted" | "denied"; 
+type PermissionStatus = "default" | "granted" | "denied" | null; 
 
 type NotificationPermission = {
-  permissionStatus: string;
+  permissionStatus: PermissionStatus;
   requestPermission: () => Promise<void>;
 }
 
 export default function useNotificationPermission(): NotificationPermission {
-  const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>("default");
+  const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>(null);
 
   // check notification status on component mount
   useEffect(() => {

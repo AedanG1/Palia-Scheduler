@@ -7,6 +7,15 @@ import Link from "next/link";
 export default function NotificationSettings(): JSX.Element {
   const {permissionStatus, requestPermission} = useNotificationPermission();
 
+  if (permissionStatus === null) {
+    return (
+      <div className="flex flex-col items-center mb-15">
+        Fetching notification status...
+      </div>
+    )
+
+  }
+
   if (permissionStatus === "granted") {
     return (
       <div className="flex flex-col items-center mb-9">
