@@ -7,8 +7,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "ancient-amber-beetle",
     name: "Ancient Amber Beetle",
     desc: "One of the oldest known insects species in Palia, was said to exist in the time of humans. Found in the forests of Bahari Bay. Also has a chance to be found when chopping trees in Bahari Bay.",
-    location: "Bahari Forest",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-ancient-amber-beetle.webp",
     displayImage: "/bug-ancient-amber-beetle.webp",
     timesAvailable: [
       {
@@ -36,7 +36,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Ancient Flowbug",
     desc: "A rare species of bioluminescent fauna that was previously thought to be a myth. Bahari Glowbugs are said to have descended from them.",
     location: "Temple of the Gales",
-    locationImage: "",
+    locationImage: "/temple-of-the-gales.webp",
     displayImage: "/bug-ancient-flowbug.webp",
     timesAvailable: [
       {
@@ -63,8 +63,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "azure-stonehopper",
     name: "Azure Stonehopper",
     desc: "This little blue beauty has been known to camouflage itself as a shiny blue pebble. Found in the fields of Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-azure-stonehopper.webp",
     displayImage: "/bug-azure-stonehopper.webp",
     timesAvailable: [
       {
@@ -91,8 +91,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "bahari-bee",
     name: "Bahari Bee",
     desc: "A local species of bees, known to produce delicious honey. Has a chance to be found when chopping trees in Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-bahari-bee.webp",
     displayImage: "/bug-bahari-bee.webp",
     timesAvailable: [
       {
@@ -119,8 +119,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "bahari-crab",
     name: "Bahari Crab",
     desc: "A local crab, known to taste good with drawn butter. Found along the coast of Bahari Bay. Also has a chance to be found when foraging shells in Bahari Bay.",
-    location: "Bahari Coast",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-bahari-crab.webp",
     displayImage: "/bug-bahari-crab.webp",
     timesAvailable: [
       {
@@ -147,8 +147,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "bahari-glowbug",
     name: "Bahari Glowbug",
     desc: "A local species of bioluminescent fauna. Discovered by Professor Bonlin Amepongo. Found in the fields of Bahari Bay during the evening and night.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-bahari-glowbug.webp",
     displayImage: "/bug-bahari-glowbug.webp",
     timesAvailable: [
       {
@@ -168,7 +168,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Blood Beetle",
     desc: "Named for the startling red markings splashed across this beetle's exoskeleton. Despite the name they actually prefer feasting on piksii berries over anything sanguine.",
     location: "Elderwood Caves",
-    locationImage: "",
+    locationImage: "/loc-blood-beetle.webp",
     displayImage: "/bug-blood-beetle.webp",
     timesAvailable: [
       {
@@ -196,7 +196,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Blushing Batterfly",
     desc: "A batterfly that spends most of its time flitting among the bioluminescent foliage of the Elderwood's caves.",
     location: "Elderwood Caves",
-    locationImage: "",
+    locationImage: "/loc-blushing-batterfly.webp",
     displayImage: "/bug-blushing-batterfly.webp",
     timesAvailable: [
       {
@@ -223,8 +223,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "brighteye-butterfly",
     name: "Brighteye Butterfly",
     desc: "Whenever you see the sun out, you can see the eyes of this intricately patterned butterfly looking around Bahari Bay. Found in the Forests of Bahari Bay during the morning and day.",
-    location: "Bahari Forest",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-brighteye-butterfly.webp",
     displayImage: "/bug-brighteye-butterfly.webp",
     timesAvailable: [
       {
@@ -243,8 +243,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "brushtail-dragonfly",
     name: "Brushtail Dragonfly",
     desc: "The tail of this Dragonfly is so bright and vibrant, some early Majiri were said to have used it as a paintbrush. Found around the lake in Kilima, as well as rivers and ponds in Bahari Bay.",
-    location: "Bahari Rivers",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-brushtail-dragonfly.webp",
     displayImage: "/bug-brushtail-dragonfly.webp",
     timesAvailable: [
       {
@@ -272,7 +272,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Cave Piksii",
     desc: "This Piksii lives under the staircase mushrooms that grow along the walls of caves in the Elderwood. Be careful where you tread, lest you disturb one and face its tiny wrath.",
     location: "Elderwood Caves",
-    locationImage: "",
+    locationImage: "/loc-cave-piksii.webp",
     displayImage: "/bug-cave-piksii.webp",
     timesAvailable: [
       {
@@ -299,8 +299,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "cerulean-cicada",
     name: "Cerulean Cicada",
     desc: "The call of this cicada is so soothing, it was said to be the inspiration for Ayana's fourth symphony. Found attached to trees in Bahari Bay during the morning and day.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-cerulean-cicada.webp",
     displayImage: "/bug-cerulean-cicada.webp",
     timesAvailable: [
       {
@@ -319,8 +319,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "common-bark-cicada",
     name: "Common Bark Cicada",
     desc: "A common cicada. Found attached to trees in Bahari Bay during the morning and day.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-common-bark-cicada.webp",
     displayImage: "/bug-common-bark-cicada.webp",
     timesAvailable: [
       {
@@ -339,8 +339,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "common-blue-butterfly",
     name: "Common Blue Butterfly",
     desc: "Ever resilient. Butterflies of this type can be found in almost every climate in Palia. Found all around Kilima and Bahari Bay during the morning and day.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-common-blue-butterfly.webp",
     displayImage: "/bug-common-blue-butterfly.webp",
     timesAvailable: [
       {
@@ -359,8 +359,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "common-field-cricket",
     name: "Common Field Cricket",
     desc: "Field crickets can be found anywhere you can find a field. Found all around Kilima and Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Kilima",
+    locationImage: "/loc-common-field-cricket.webp",
     displayImage: "/bug-common-field-cricket.webp",
     timesAvailable: [
       {
@@ -388,7 +388,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Draugr Beetle",
     desc: "One might mistake the bright coloring on its armor for natural markings, but they're actually a sign of the parasitic fungus that has taken control of this unsuspecting beetle.",
     location: "Elderwood Swamps",
-    locationImage: "",
+    locationImage: "/loc-draugr-beetle.webp",
     displayImage: "/bug-draugr-beetle.webp",
     timesAvailable: [
       {
@@ -415,8 +415,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "duskwing-butterfly",
     name: "Duskwing Butterfly",
     desc: "A beautiful butterfly with wings the color of dusk. Unique to the Kilima Valley. Found around the Dragon Shrine in Kilima during the morning and day.",
-    location: "Dragon Shrine",
-    locationImage: "",
+    location: "Kilima",
+    locationImage: "/loc-duskwing-butterfly.webp",
     displayImage: "/bug-duskwing-butterfly.webp",
     timesAvailable: [
       {
@@ -435,8 +435,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "fairy-mantis",
     name: "Fairy Mantis",
     desc: "A mantis from early Majiri legend only recently confirmed to exist by modern entomologists. Said to have magical properties. Found in the fields of Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-fairy-mantis.webp",
     displayImage: "/bug-fairy-mantis.webp",
     timesAvailable: [
       {
@@ -464,7 +464,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Firebreathing Dragonfly",
     desc: "This Dragonfly is notoriously difficult to catch, in part due to its fiery breath. Found in the fields of Kilima.",
     location: "Kilima Fields",
-    locationImage: "",
+    locationImage: "/loc-firebreathing-dragonfly.webp",
     displayImage: "/bug-firebreathing-dragonfly.webp",
     timesAvailable: [
       {
@@ -492,7 +492,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Flame-Horned Rockhopper",
     desc: "Despite the name, its horns are as cool and slimy to the touch as the rest of this rockhopper. It uses its fiery appearance to intimidate potential predators.",
     location: "Elderwood Swamps",
-    locationImage: "",
+    locationImage: "/loc-flame-horned-rockhopper.webp",
     displayImage: "/bug-flame-horned-rockhopper.webp",
     timesAvailable: [
       {
@@ -519,8 +519,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "garden-ladybug",
     name: "Garden Ladybug",
     desc: "A black and red ladybug, popular for controlling garden pests. Has a chance to be found when foraging in the fields of Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-garden-ladybug.webp",
     displayImage: "/bug-garden-ladybug.webp",
     timesAvailable: [
       {
@@ -548,7 +548,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Garden Leafhopper",
     desc: "The Garden Leafhopper is such a delight in Palia that many children keep them as pets. They are said to bring good luck. Found in the fields and Badruu's Farm in Kilima. Also has a chance to be found when foraging in Kilima.",
     location: "Kilima Fields",
-    locationImage: "",
+    locationImage: "/loc-garden-leafhopper.webp",
     displayImage: "/bug-garden-leafhopper.webp",
     timesAvailable: [
       {
@@ -576,7 +576,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Garden Mantis",
     desc: "Nothing to see here. Just your garden variety mantis. Found around the lake in Kilima. Also has a chance to be found when foraging around the lake in Kilima.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/loc-garden-mantis.webp",
     displayImage: "/bug-garden-mantis.webp",
     timesAvailable: [
       {
@@ -604,7 +604,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Garden Millipede",
     desc: "A brown and green millipede that loves feasting on garden crops. Found in the fields of Kilima. Also has a chance to be found when foraging in the fields of Kilima.",
     location: "Kilima Fields",
-    locationImage: "",
+    locationImage: "/loc-garden-millipede.webp",
     displayImage: "/bug-garden-millipede.webp",
     timesAvailable: [
       {
@@ -631,8 +631,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "garden-snail",
     name: "Garden Snail",
     desc: "A snail that has evolved over time to look like a leaf. Good for hiding from predators, bad for hiding from the Leafstalker Mantis. Found along the coast and in forests of Bahari Bay.",
-    location: "Bahari Coast",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-garden-snail.webp",
     displayImage: "/bug-garden-snail.webp",
     timesAvailable: [
       {
@@ -660,7 +660,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Golden Glory Bee",
     desc: "A rare bee, imported from the Akwindu province. Mead made from this bee's honey is said to be heavily consumed by the Queen of the province and her family. Has a chance to be found when chopping trees in Kilima during the morning and day.",
     location: "Kilima Fields",
-    locationImage: "",
+    locationImage: "/loc-golden-glory-bee.webp",
     displayImage: "/bug-golden-glory-bee.webp",
     timesAvailable: [
       {
@@ -680,7 +680,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Gossamer Veil Moth",
     desc: "The wings of this moth are so thin that some say you can see a peek of the Dragon Realm by looking through them. Found in the fields of Kilima during the evening and night.",
     location: "Kilima Fields",
-    locationImage: "",
+    locationImage: "/loc-gossamer-veil-moth.webp",
     displayImage: "/bug-gossamer-veil-moth.webp",
     timesAvailable: [
       {
@@ -700,7 +700,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Grumpy Granite Rockhopper",
     desc: "It is impossible to tell if this rockhopper is genuinely mad at you, or if its face just looks that way.",
     location: "Elderwood Forest",
-    locationImage: "",
+    locationImage: "/loc-grumpy-granite-rockhopper.webp",
     displayImage: "/bug-grumpy-granite-rockhopper.webp",
     timesAvailable: [
       {
@@ -727,8 +727,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "hairy-millipede",
     name: "Hairy Millipede",
     desc: "A millipede with a hair growth problem. Found in the forests of Bahari Bay.",
-    location: "Bahari Forest",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-hairy-millipede.webp",
     displayImage: "/bug-hairy-millipede.webp",
     timesAvailable: [
       {
@@ -755,8 +755,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "inky-dragonfly",
     name: "Inky Dragonfly",
     desc: "This stealthy Dragonfly is used as a component in various black dyes and inks. Found around rivers and ponds in Bahari Bay.",
-    location: "Bahari Rivers",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-inky-dragonfly.webp",
     displayImage: "/bug-inky-dragonfly.webp",
     timesAvailable: [
       {
@@ -783,8 +783,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "jewelwing-dragonfly",
     name: "Jewelwing Dragonfly",
     desc: "A Dragonfly with wings as bright and colorful as any precious stone. Found near a cave entrance on a cliff in Bahari Bay.",
-    location: "Cliffs Above Pavel Mines",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-jewelwing-dragonfly.webp",
     displayImage: "/bug-jewelwing-dragonfly.webp",
     timesAvailable: [
       {
@@ -811,8 +811,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "kilima-night-moth",
     name: "Kilima Night Moth",
     desc: "While beautiful, the Kilima night moth is so prevalent on hot summer nights that some consider it to be a pest. Keep away from stored cloth. Found all around Kilima and Bahari Bay during the evening and night.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-kilima-night-moth.webp",
     displayImage: "/bug-kilima-night-moth.webp",
     timesAvailable: [
       {
@@ -831,8 +831,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "leafstalker-mantis",
     name: "Leafstalker Mantis",
     desc: "An herbivorous mantis that exclusively eats leaves. Has a chance to be found when foraging in the forests of Bahari Bay.",
-    location: "Bahari Forest",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-leafstalker-mantis.webp",
     displayImage: "/bug-leafstalker-mantis.webp",
     timesAvailable: [
       {
@@ -859,8 +859,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "lunar-fairy-moth",
     name: "Lunar Fairy Moth",
     desc: "The Lunar Fairy Moth is said to have a very special connection to the Dragon Moon, and is said to only appear at special times during its cycle. Found in the fields and forests of Bahari Bay during the evening and night.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-lunar-fairy-moth.webp",
     displayImage: "/bug-lunar-fairy-moth.webp",
     timesAvailable: [
       {
@@ -880,7 +880,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Nightshadow Batterfly",
     desc: "This batterfly only comes out under the cover of night and canopy both.",
     location: "Elderwood Caves",
-    locationImage: "",
+    locationImage: "/loc-nightshadow-batterfly.webp",
     displayImage: "/bug-nightshadow-batterfly.webp",
     timesAvailable: [
       {
@@ -899,8 +899,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "paper-lantern-bug",
     name: "Paper Lantern Bug",
     desc: "This bug glows as brightly as a colorful feast day lantern taking flight into the Palian night sky. Found along the coast and in forests of Bahari Bay during the evening and night.",
-    location: "Bahari Coast",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-paper-lantern-bug.webp",
     displayImage: "/bug-paper-lantern-bug.webp",
     timesAvailable: [
       {
@@ -920,7 +920,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Princess Ladybug",
     desc: "A very regal looking lady bug, made popular by the children's fairytale, The Princess Who Turned Into A Ladybug. Found around the lake in Kilima.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/loc-princess-ladybug.webp",
     displayImage: "/bug-princess-ladybug.webp",
     timesAvailable: [
       {
@@ -948,7 +948,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Proudhorned Stag Beetle",
     desc: "The horns of this stag beetle are said to resemble that of the Proudhorned Sernuk . Has a chance to be found when mining in Kilima.",
     location: "Kilima Fields",
-    locationImage: "",
+    locationImage: "/loc-proudhorned-stag-beetle.webp",
     displayImage: "/bug-proudhorned-stag-beetle.webp",
     timesAvailable: [
       {
@@ -974,9 +974,9 @@ export const bugs: Array<PaliaActivity> = [
   {
     id: "pumpkin-rockhopper",
     name: "Pumpkin Rockhopper",
-    desc: "This rockhopper has evolved to sport a rather spooky face on its back, likely to scare away predators. Just don't let it scare away YOU!",
-    location: "Kilima",
-    locationImage: "",
+    desc: "This rockhopper has evolved to sport a rather spooky face on its back, likely to scare away predators. Just don't let it scare away YOU! Can be caught anywhere using a Jack O' Lantern Lure.",
+    location: "Anywhere",
+    locationImage: "/kilima.webp",
     displayImage: "/bug-pumpkin-rockhopper.webp",
     timesAvailable: [
       {
@@ -1003,8 +1003,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "rainbow-tipped-butterfly",
     name: "Rainbow-tipped Butterfly",
     desc: "Ancient legends say this rare butterfly got its beautiful coloring from dipping the tip of its wings in a Well of Flow. Found in the Fields of Bahari Bay during the morning and day.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-rainbow-tipped-butterfly.webp",
     displayImage: "/bug-rainbow-tipped-butterfly.webp",
     timesAvailable: [
       {
@@ -1023,8 +1023,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "raspberry-beetle",
     name: "Raspberry Beetle",
     desc: "A beetle whose entire diet consists of raspberries. Found around Badruu's Farm in Kilima.",
-    location: "Daiya Family Farm",
-    locationImage: "",
+    location: "Kilima",
+    locationImage: "/loc-raspberry-beetle.webp",
     displayImage: "/bug-raspberry-beetle.webp",
     timesAvailable: [
       {
@@ -1051,8 +1051,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "scintillating-centipede",
     name: "Scintillating Centipede",
     desc: "A rare centipede with a shiny hard shell. Has a chance to be found when mining in Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-scintillating-centipede.webp",
     displayImage: "/bug-scintillating-centipede.webp",
     timesAvailable: [
       {
@@ -1079,8 +1079,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "spineshell-crab",
     name: "Spineshell Crab",
     desc: "A crab with a very spiny shell. Found along the coast of Bahari Bay.",
-    location: "Bahari Coast",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-spineshell-crab.webp",
     displayImage: "/bug-spineshell-crab.webp",
     timesAvailable: [
       {
@@ -1107,8 +1107,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "spitfire-cicada",
     name: "Spitfire Cicada",
     desc: "A spirited cicada, whose bark is worse than its bite. Found attached to trees in Bahari Bay during the morning and day.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-spitfire-cicada.webp",
     displayImage: "/bug-spitfire-cicada.webp",
     timesAvailable: [
       {
@@ -1127,8 +1127,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "spotted-mantis",
     name: "Spotted Mantis",
     desc: "A rare mantis with a beautiful set of spots. Found around the Dragon Shrine in Kilima.",
-    location: "Dragon Shrine",
-    locationImage: "",
+    location: "Kilima",
+    locationImage: "/loc-spotted-mantis.webp",
     displayImage: "/bug-spotted-mantis.webp",
     timesAvailable: [
       {
@@ -1155,8 +1155,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "spotted-stinkbug",
     name: "Spotted Stinkbug",
     desc: "A bug known more for his strong musk than its striking colors. Found all around Kilima and Bahari Bay.",
-    location: "Bahari Fields",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-spotted-stinkbug.webp",
     displayImage: "/bug-spotted-stinkbug.webp",
     timesAvailable: [
       {
@@ -1183,8 +1183,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "stripeshell-snail",
     name: "Stripeshell Snail",
     desc: "A snail with such distinctive stripes, that its shell was once used as a currency among the early Majiri. Found along the coast in Bahari Bay.",
-    location: "Bahari Coast",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-stripeshell-snail.webp",
     displayImage: "/bug-stripeshell-snail.webp",
     timesAvailable: [
       {
@@ -1204,7 +1204,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Sunburst Batterfly",
     desc: "Unlike its light-averse brethren, this batterfly thrives under the meager light of the Elderwood.",
     location: "Elderwood Forest",
-    locationImage: "",
+    locationImage: "/loc-sunburst-batterfly.webp",
     displayImage: "/bug-sunburst-batterfly.webp",
     timesAvailable: [
       {
@@ -1219,8 +1219,8 @@ export const bugs: Array<PaliaActivity> = [
     id: "vampire-crab",
     name: "Vampire Crab",
     desc: "An invasive species of crab that sucks the life out of the local population. Found around the Flooded Fortress in Bahari Bay during the evening and night.",
-    location: "Flooded Fortress",
-    locationImage: "",
+    location: "Bahari Bay",
+    locationImage: "/loc-vampire-crab.webp",
     displayImage: "/bug-vampire-crab.webp",
     timesAvailable: [
       {
@@ -1240,7 +1240,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Veil Piksii",
     desc: "These Piksiis are said to form from the Flow of those unable to cross the Veil. Strange that so many should populate the Elderwood.",
     location: "Elderwood Caves",
-    locationImage: "",
+    locationImage: "/loc-veil-piksii.webp",
     displayImage: "/bug-veil-piksii.webp",
     timesAvailable: [
       {
@@ -1268,7 +1268,7 @@ export const bugs: Array<PaliaActivity> = [
     name: "Will-o-wisp Rockhopper",
     desc: "This pale rockhopper is said to glow softly in the dark of the Elderwood, luring unwitting travelers deeper into the marsh.",
     location: "Elderwood Forest",
-    locationImage: "",
+    locationImage: "/loc-will-o-wisp-rockhopper.webp",
     displayImage: "/bug-will-o-wisp-rockhopper.webp",
     timesAvailable: [
       {

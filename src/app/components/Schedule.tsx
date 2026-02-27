@@ -85,7 +85,7 @@ export default function Schedule({
 
   return (
     <div className="md:w-1/2 flex flex-col gap-4">
-      <div className="flex flex-row w-full justify-between border-b border-slate-600">
+      <div className="flex flex-row w-full justify-between border-b border-slate-600 dark:border-slate-200">
         <h2 className="text-2xl font-bold pb-2">Daily Schedule</h2>
         <button 
           className="hover: cursor-pointer"
@@ -94,7 +94,7 @@ export default function Schedule({
           Clear Schedule
         </button>
       </div>
-      <div className="flex bg-white rounded-lg shadow-lg p-4">
+      <div className="flex bg-white dark:bg-slate-800 rounded-lg shadow-lg p-4">
         {/* Time of day color indicator */}
         <div  
           style={{
@@ -115,7 +115,7 @@ export default function Schedule({
         </div>
 
         {/* Hour Labels Column */}
-        <div className="w-16 text-right pr-2 border-r border-slate-200">
+        <div className="w-16 text-right pr-2 border-r border-slate-200 dark:border-slate-600">
           {hoursToDisplay.map((hour: number): JSX.Element => (
             <div 
               key={hour}
@@ -124,7 +124,7 @@ export default function Schedule({
               }}
               className="flex items-center justify-end"
             >
-              <span className="text-sm text-slate-500">{formatHourMeridiem(hour)}</span>
+              <span className="text-sm text-slate-500 dark:text-slate-400">{formatHourMeridiem(hour)}</span>
             </div>
           ))}
         </div>
@@ -139,7 +139,7 @@ export default function Schedule({
               style={{
                 height: `${scheduleRowHeight}rem`
               }}
-              className="border-t border-slate-200"></div>
+              className="border-t border-slate-200 dark:border-slate-600"></div>
           ))}
 
           {/* Current Time Indicator */}

@@ -35,7 +35,7 @@ export default function MapModal({activityName, imagePath, location, toggleModal
           placeholder="blur"
           blurDataURL="/PlaceholderMap.jpg"
           className="relative w-180"
-          src={`${imagePath}`}
+          src={imagePath}
           width={800}
           height={600}
           alt=""

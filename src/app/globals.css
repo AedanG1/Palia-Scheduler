@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f1f5f9;
-  --foreground: #1d293d;
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root[data-theme="dark"] {
+  --background: #020618;
+  --foreground: #e2e8f0;
 }
 
-/* @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root[data-theme="light"] {
+  --background: #e2e8f0;
+  --foreground: #020618;
 }
-*/
 
 @layer utilities {
   .no-scrollbar {
@@ -21,13 +20,6 @@
 
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #1d293d;
-    --foreground: #e2e8f0;
   }
 }
 

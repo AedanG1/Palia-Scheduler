@@ -42,8 +42,8 @@ export default function ListItemButtons({schedule, activity, toggleScheduleItem}
         className={`flex-1 p-3 hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2 
           ${
             isScheduled
-            ? "text-green-800 bg-green-200/70 hover:bg-green-200 hover:shadow-green-500/50"
-            : "text-slate-600 bg-white/70 hover:bg-white"
+            ? "text-green-800 bg-green-200/70 dark:bg-green-200 hover:bg-green-200 dark:hover:bg-green-300 hover:shadow-green-500/50"
+            : "text-slate-600 dark:text-slate-200 bg-white/70 dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-800"
           }`}
       >
         {

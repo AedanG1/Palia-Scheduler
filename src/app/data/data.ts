@@ -15,13 +15,10 @@ export const LOCATIONS = [
   "Elderwood Forest",
   "Elderwood Saltwater",
   "Elderwood Swamps",
-  "Daiya Family Farm",
-  "Caves",
-  "Flooded Fortress",
-  "Cliffs Above Pavel Mines",
-  "Dragon Shrine",
+  "Temple of the Gales",
   "Ponds",
-  "Temple of the Gales"
+  "Caves",
+  "Anywhere"
 ] as const;
 
 export type Locations = typeof LOCATIONS[number];
@@ -76,15 +73,15 @@ export const bait = {
 export const activityType = {
   events: {
     type: "Events",
-    typeColor: "#6f68ff"
+    typeColor: "#6222e4"
   },
   fish: {
     type: "Fish",
-    typeColor: "#00a6f4"
+    typeColor: "#006dc7"
   },
   bugs: {
     type: "Bugs",
-    typeColor: "#3a9948"
+    typeColor: "#007d22"
   }
 } as const;
 

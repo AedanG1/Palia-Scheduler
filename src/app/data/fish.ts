@@ -7,7 +7,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Albino Eel",
     desc: "An eel with no pigmentation. Found in Bahari Bay caves using worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-albino-eel.webp",
     timesAvailable: [
       {
@@ -36,7 +36,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Alligator Gar",
     desc: "A carnivorous fish with brilliant purple scales, the Alligator Gar is named after its long snout and rows of large teeth. Found in Kilima Lake using glow worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-alligator-gar.webp",
     timesAvailable: [
       {
@@ -65,7 +65,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Ancient Cloudminnow",
     desc: "A legendary minnow that was previously only known in legend. Found in clouds... allegedly.",
     location: "Temple of the Gales",
-    locationImage: "",
+    locationImage: "/temple-of-the-gales.webp",
     displayImage: "/fish-ancient-cloudminnow.webp",
     timesAvailable: [
       {
@@ -94,7 +94,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Ancient Fish",
     desc: "These fish are as old as the continent of Palia itself, and were thought to be extinct. Guess you have something in common.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-ancient-fish.webp",
     timesAvailable: [
       {
@@ -123,7 +123,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Ancient Koi",
     desc: "Legends say these koi once lived in the ponds of King Mudan's palace.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-ancient-koi.webp",
     timesAvailable: [
       {
@@ -152,7 +152,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Angelfish",
     desc: "Be not afraid.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-angelfish.webp",
     timesAvailable: [
       {
@@ -177,7 +177,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Bahari Bass",
     desc: "A bountiful, staple fish known for its mild flavor. Found off the coast of Bahari Bay without bait.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-bahari-bass.webp",
     timesAvailable: [
       {
@@ -206,7 +206,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Bahari Bream",
     desc: "These fish are widely considered to be a staple of the local diet. Found off the coast of Bahari Bay using worms.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-bahari-bream.webp",
     timesAvailable: [
       {
@@ -235,7 +235,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Bahari Pike",
     desc: "A pike with a deep green hue native to Bahari Bay. Found in Bahari rivers using glow worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-bahari-pike.webp",
     timesAvailable: [
       {
@@ -264,7 +264,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Barracuda",
     desc: "A vicious saltwater predator that tastes great lightly grilled with a little butter. Found off the coast of Bahari Bay without bait in the evening and night.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-barracuda.webp",
     timesAvailable: [
       {
@@ -285,7 +285,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Bat Ray",
     desc: "An ominous ray that is known to leap out of the water like a flying bat. Found in Bahari Bay caves using worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-bat-ray.webp",
     timesAvailable: [
       {
@@ -314,7 +314,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Beluga Sturgeon",
     desc: "A large sturgeon that grows throughout its entire lifetime. Found in Kilima Lake using glow worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-beluga-sturgeon.webp",
     timesAvailable: [
       {
@@ -343,7 +343,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Black Sea Bass",
     desc: "Known for the black spots on their skin, these bass are gentle and non-threatening to Majiri and humans alike. Found off the coast of Bahari Bay using glow worms.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-black-sea-bass.webp",
     timesAvailable: [
       {
@@ -372,7 +372,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Blobfish",
     desc: "A bloated, slimy fish that lives at the bottom of cavern pools. Found in Bahari Bay caves using glow worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-blobfish.webp",
     timesAvailable: [
       {
@@ -401,7 +401,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Blue Marlin",
     desc: "A large and resilient fish. The Blue Marlin is considered a prize by even the most experienced fishermen. Found off the coast of Bahari Bay using worms.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-blue-marlin.webp",
     timesAvailable: [
       {
@@ -430,7 +430,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Blue Spotted Ray",
     desc: "A colorful stingray with bright blue spots across its body and blue stripes along its tail. Found off the coast of Bahari Bay using glow worms in the morning, day, and evening.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-blue-spotted-ray.webp",
     timesAvailable: [
       {
@@ -455,7 +455,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Bluefin Tuna",
     desc: "A common, sleek fish adapted for swimming quickly through ocean currents. Found off the coast of Bahari Bay using worms.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-bluefin-tuna.webp",
     timesAvailable: [
       {
@@ -484,7 +484,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Bronze Bluegill",
     desc: "Just like the Orange Bluegill , this fish has nary a spot of blue to be seen- not even its gills!",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-bronze-bluegill.webp",
     timesAvailable: [
       {
@@ -513,7 +513,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Cactus Moray",
     desc: "An eel with sharp spines growing along its length to deter predators. Found off the coast of Bahari Bay using glow worms in the day and night.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-cactus-moray.webp",
     timesAvailable: [
       {
@@ -534,7 +534,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Calico Koi",
     desc: "A standard koi fish with a beautiful calico pattern. Found in ponds without using any bait.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-calico-koi.webp",
     timesAvailable: [
       {
@@ -563,7 +563,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Cantankerous Koi",
     desc: "Local legend has it that the first Cantankerous Koi was a cranky old man transfigured by a wicked witch. Found in ponds without using any bait during the day and at night.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-cantankerous-koi.webp",
     timesAvailable: [
       {
@@ -584,7 +584,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Channel Catfish",
     desc: "A river catfish at home navigating fast currents. Found in Kilima Rivers without bait.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-channel-catfish.webp",
     timesAvailable: [
       {
@@ -613,7 +613,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Chub",
     desc: "A hard-fighting fish famous for its wide ranging appetite. Found in Bahari rivers using glow worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-chub.webp",
     timesAvailable: [
       {
@@ -642,7 +642,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Cloudfish",
     desc: "A bottom feeding pondfish that can create swirling clouds of sediment for cover. Found in ponds using glow worms in the morning and day.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-cloudfish.webp",
     timesAvailable: [
       {
@@ -663,7 +663,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Crimson Fangtooth",
     desc: "A small red fish with huge teeth in proportion to its own size. Found in Bahari Bay caves using glow worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-crimson-fangtooth.webp",
     timesAvailable: [
       {
@@ -692,7 +692,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Crucian Carp",
     desc: "A hardy carp with coppery golden scales. Found in Kilima rivers using glow worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-crucian-carp.webp",
     timesAvailable: [
       {
@@ -721,7 +721,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Cutthroat Trout",
     desc: "A river trout named after its long jaw and mouth. Found in Bahari Bay rivers using worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-cutthroat-trout.webp",
     timesAvailable: [
       {
@@ -750,7 +750,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Dawnray",
     desc: "A golden ray that hunts at dawn, its scales absorbing the sun's light. Found in Bahari Rivers without bait in the morning from 3 AM to 6 AM.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-dawnray.webp",
     timesAvailable: [
       {
@@ -767,7 +767,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Devilfish",
     desc: "Actually not that bad a guy.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-devilfish.webp",
     timesAvailable: [
       {
@@ -792,7 +792,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Duskray",
     desc: "A mottled charcoal ray that hunts at dusk, blending into the riverbed. Found in Bahari Rivers without bait in the evening.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-duskray.webp",
     timesAvailable: [
       {
@@ -809,7 +809,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Eleroo Eel",
     desc: "Affectionately named for its sizable snout, and not for what it eats. Still, you might want to keep your eleroos at a distance.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-eleroo-eel.webp",
     timesAvailable: [
       {
@@ -834,7 +834,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Enchanted Pupfish",
     desc: "A cute little fish which can absorb trace amounts of Flow into its scales. Found in Kilima Lake using glow worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-enchanted-pupfish.webp",
     timesAvailable: [
       {
@@ -863,7 +863,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Energized Piranha",
     desc: "A piranha infused with magic after consuming a Grimalkin magic trinket. Found in Kilima Rivers using worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-energized-piranha.webp",
     timesAvailable: [
       {
@@ -892,7 +892,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Eyeless Minnow",
     desc: "A cave dwelling creature that has lost the need for eyes. Found in Bahari Bay caves without bait.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-eyeless-minnow.webp",
     timesAvailable: [
       {
@@ -921,7 +921,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Fairy Carp",
     desc: "A shy fish with a hypnotically translucent sheen. Found in ponds using worms in the mornings and evenings.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-fairy-carp.webp",
     timesAvailable: [
       {
@@ -942,7 +942,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Fathead Minnow",
     desc: "A small freshwater fish known for its oversized head. Found in Bahari rivers using glow worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-fathead-minnow.webp",
     timesAvailable: [
       {
@@ -971,7 +971,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Flametongue Ray",
     desc: "A rare river ray named for the bright orange and red streaks across its back. Found in Kilima rivers using glow worms in the morning and day.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-flametongue-ray.webp",
     timesAvailable: [
       {
@@ -992,7 +992,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Freshwater Eel",
     desc: "A long and lithe river fish often confused for a snake. Found in Kilima Rivers using worms in the evening and night.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-freshwater-eel.webp",
     timesAvailable: [
       {
@@ -1013,7 +1013,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Giant Goldfish",
     desc: "Against all odds, some goldfish live to become legendary in size. Found in ponds using glow worms.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-giant-goldfish.webp",
     timesAvailable: [
       {
@@ -1042,7 +1042,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Giant Kilima Stingray",
     desc: "The lord of Kilima Lake, this stingray's poisonous spike can also pierce the bones of its prey. Found in Kilima Lake using glow worms in the morning, day, and evening.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-giant-kilima-stingray.webp",
     timesAvailable: [
       {
@@ -1067,7 +1067,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Gillyfin",
     desc: "The most common fish in Palia. Found in Kilima Lake without using bait.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-gillyfin.webp",
     timesAvailable: [
       {
@@ -1096,7 +1096,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Golden Salmon",
     desc: "A common sort of salmon known to thrive in the sunlight. Found in Kilima Rivers using worms in the morning and day.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-golden-salmon.webp",
     timesAvailable: [
       {
@@ -1117,7 +1117,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Honey Loach",
     desc: "A river fish whose yellow and black stripes resemble a honeybee. Found in Bahari rivers using glow worms at day and night.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-honey-loach.webp",
     timesAvailable: [
       {
@@ -1138,7 +1138,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Hypnotic Moray",
     desc: "A moray eel that combines its striking pattern and hypnotic movements to lure in prey. Found in caves using glow worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-hypnotic-moray.webp",
     timesAvailable: [
       {
@@ -1167,7 +1167,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Indigo Lamprey",
     desc: "Palians in the past would harvest the scales of this fish to make a deep indigo dye. Found in Kilima rivers using glow worms in the evening and night.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-indigo-lamprey.webp",
     timesAvailable: [
       {
@@ -1188,7 +1188,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Inyrevn Mermaid",
     desc: "Murmurs of a mermaid in the water brought curious fishers from across Bahari Island to these woods in hopes they could catch sight of such a majestic creature. The Inyrevn Mermaid is likely not what they pictured.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-inyrevn-mermaid.webp",
     timesAvailable: [
       {
@@ -1217,7 +1217,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Kenli's Carp",
     desc: "Kenli personally discovered this carp near Kilima Village . Bears a remarkable resemblance to a Crucian Carp ... Found in Kilima rivers using glow worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-kenli's-carp.webp",
     timesAvailable: [
       {
@@ -1246,7 +1246,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Kilima Catfish",
     desc: "A unique type of catfish found only in the Kilima Valley . Found in ponds using worms.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-kilima-catfish.webp",
     timesAvailable: [
       {
@@ -1275,7 +1275,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Kilima Grayling",
     desc: "A streamlined fish that spends the first part of its life at sea before returning to the rivers of the Kilima Valley . Found in Kilima rivers using glow worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-kilima-grayling.webp",
     timesAvailable: [
       {
@@ -1304,7 +1304,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Kilima Redfin",
     desc: "An aggressive river predator that will eat literally anything. Found in Bahari Bay rivers using worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-kilima-redfin.webp",
     timesAvailable: [
       {
@@ -1333,7 +1333,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Lake Shark",
     desc: "Just when you thought the lakes were safe...",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-lake-shark.webp",
     timesAvailable: [
       {
@@ -1362,7 +1362,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Largemouth Bass",
     desc: "A very talkative bass that can swallow creatures over 50% their own body weight. Found in Kilima Lake using worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-largemouth-bass.webp",
     timesAvailable: [
       {
@@ -1391,7 +1391,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Long Nosed Unicorn Fish",
     desc: "The horn of the unicorn fish is valuable to any alchemist or potion master. But beware, they are rumored to have psychic abilities that can make even the most accomplished fisherman think left is right. Found off the coast of Bahari Bay using glow worms during the day.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-long-nosed-unicorn-fish.webp",
     timesAvailable: [
       {
@@ -1408,7 +1408,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Majiri-of-War",
     desc: "A mythological floatfish said to be attracted to areas associated with great strife.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-majiri-of-war.webp",
     timesAvailable: [
       {
@@ -1429,7 +1429,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Maws",
     desc: "There's a shark in the Elderwood, they say, with eyes as black as the void, like a potato pod's eyes. Maws, they call him, and by the time you see him coming, it's too late.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-maws.webp",
     timesAvailable: [
       {
@@ -1458,7 +1458,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Midnight Floatfish",
     desc: "This floatfish emerges in the dark of night to feed on the nightmares of little children who don't eat their veggies- or so the old Umbraan tale goes.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-midnight-floatfish.webp",
     timesAvailable: [
       {
@@ -1479,7 +1479,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Midnight Paddlefish",
     desc: "A rare paddlefish that feeds at night, its dark scales keeping it hidden from predators. Found in Kilima Lake using glow worms at night.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-midnight-paddlefish.webp",
     timesAvailable: [
       {
@@ -1496,7 +1496,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Mini Mullet",
     desc: "A controversial fish both despised and beloved across Palia.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-mini-mullet.webp",
     timesAvailable: [
       {
@@ -1525,7 +1525,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Mirror Carp",
     desc: "A silvery carp with scales resembling mirrors. Found in ponds using worms.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-mirror-carp.webp",
     timesAvailable: [
       {
@@ -1554,7 +1554,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Mossyfin",
     desc: "The Mossyfin will hide among the mossy rocks at the bottom of pools to camouflage itself. Unfortunately the bright pink stripes on its fins mean this is mostly pointless.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-mossyfin.webp",
     timesAvailable: [
       {
@@ -1583,7 +1583,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Mottled Gobi",
     desc: "An under appreciated fish that feeds on excess pond algae. Found in ponds using glow worms.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-mottled-gobi.webp",
     timesAvailable: [
       {
@@ -1612,7 +1612,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Mudminnow",
     desc: "A common minnow known for its muddy looking color. Found in ponds without using any bait.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-mudminnow.webp",
     timesAvailable: [
       {
@@ -1641,7 +1641,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Mutated Angler",
     desc: "A terrifying monstrosity, said to be a survivor from the time of humans. Found in Bahari Bay caves using worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-mutated-angler.webp",
     timesAvailable: [
       {
@@ -1670,7 +1670,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Oily Anchovy",
     desc: "A slimy fish some Majiri find strangely appetizing. Found in Bahari Bay rivers using worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-oily-anchovy.webp",
     timesAvailable: [
       {
@@ -1699,7 +1699,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Orange Bluegill",
     desc: "An omnivorous fish that prefers insects but will eat anything it can fit into its mouth. Found in ponds using worms.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-orange-bluegill.webp",
     timesAvailable: [
       {
@@ -1728,7 +1728,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Paddlefish",
     desc: "A primitive fish that has survived for millions of years. Found in Bahari Bay rivers using worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-paddlefish.webp",
     timesAvailable: [
       {
@@ -1753,7 +1753,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Painted Perch",
     desc: "A petite river fish known for its pleasing colors. Found in Kilima Lake using worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-painted-perch.webp",
     timesAvailable: [
       {
@@ -1782,7 +1782,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Palian Betta",
     desc: "The Palian Betta is known for its solitary nature and tendency to fight others of its own kind. Unsurprisingly, the Palian Betta was named by Umbraans .",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-palian-betta.webp",
     timesAvailable: [
       {
@@ -1811,7 +1811,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Piksii Floatfish",
     desc: "The Piksii of the Elderwood can come in all shapes and sizes. This one, for example, comes in the shape and size of a floatfish.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-piksii-floatfish.webp",
     timesAvailable: [
       {
@@ -1836,7 +1836,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Platinum Chad",
     desc: "The brilliant platinum scales of this chad can fool fishermen into dreams of wealth. Found in Kilima rivers using glow worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-platinum-chad.webp",
     timesAvailable: [
       {
@@ -1865,7 +1865,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Prism Trout",
     desc: "A gorgeous trout that shines like rainbows in the sunlight. Found in Kilima Lake using worms in the morning and day.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-prism-trout.webp",
     timesAvailable: [
       {
@@ -1886,7 +1886,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Radiant Sunfish",
     desc: "A beautifully radiant river fish that emits a blinding ray of light many compare to looking directly into the sun. Found in Kilima Rivers using worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-radiant-sunfish.webp",
     timesAvailable: [
       {
@@ -1915,7 +1915,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Rainbow Trout",
     desc: "A river fish sporting a muted multicolor scale pattern. Not smart enough to be jealous of the Prism Trout . Found in Kilima Rivers without bait.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-rainbow-trout.webp",
     timesAvailable: [
       {
@@ -1944,7 +1944,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Red-bellied Piranha",
     desc: "An aggressive river predator that will eat literally anything. Found in Kilima Rivers using worms.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-red-bellied-piranha.webp",
     timesAvailable: [
       {
@@ -1973,7 +1973,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Ribbontail Ray",
     desc: "Known to frequent tropical waters, the Ribbontail Ray recently made a surprising migration from the isles of Inyrevn to the west coast of the Palian Republic. Found off the coast of Bahari Bay using worms in the morning and evening.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-ribbontail-ray.webp",
     timesAvailable: [
       {
@@ -1994,7 +1994,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Rosy Bitterling",
     desc: "A freshwater fish with a rosy patch on its behind. Found in Bahari Rivers without bait.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-rosy-bitterling.webp",
     timesAvailable: [
       {
@@ -2023,7 +2023,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Sabertoothed Anchovy",
     desc: "An anchovy with teeth so sharp it might eat YOU for dinner.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-sabertoothed-anchovy.webp",
     timesAvailable: [
       {
@@ -2052,7 +2052,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Sardine",
     desc: "A small, but quick foraging fish that many Majiri enjoy eating when pickled. Found off the coast of Bahari Bay without bait.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-sardine.webp",
     timesAvailable: [
       {
@@ -2081,7 +2081,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Scarlet Koi",
     desc: "A sleek koi fish with a deep red pattern. Found in ponds using glow worms.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-scarlet-koi.webp",
     timesAvailable: [
       {
@@ -2110,7 +2110,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Shimmerfin",
     desc: "A mysterious fish that can sometimes be in two places at once. Found in Kilima Lake using worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-shimmerfin.webp",
     timesAvailable: [
       {
@@ -2139,7 +2139,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Silver Salmon",
     desc: "A common silvery fish. Found in Kilima Rivers without bait in evenings and nights.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-silver-salmon.webp",
     timesAvailable: [
       {
@@ -2160,7 +2160,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Silvery Minnow",
     desc: "A common minnow with silvery scales that sparkle in the sun. Found in Bahari Bay rivers without bait.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-silvery-minnow.webp",
     timesAvailable: [
       {
@@ -2189,7 +2189,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Smallmouth Bass",
     desc: "A common bass with very little to say that is known to occasionally leap from the water. Found in Kilima Lake using worms.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-smallmouth-bass.webp",
     timesAvailable: [
       {
@@ -2218,7 +2218,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Spotted Bullhead",
     desc: "A bullhead with a spotted pattern. Found in Kilima Rivers without bait.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-spotted-bullhead.webp",
     timesAvailable: [
       {
@@ -2247,7 +2247,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Stalking Catfish",
     desc: "A predatory blue catfish that will attack nearby vulnerable fish. Found in ponds using glow worms in the evening and night.",
     location: "Ponds",
-    locationImage: "",
+    locationImage: "/ponds.webp",
     displayImage: "/fish-stalking-catfish.webp",
     timesAvailable: [
       {
@@ -2268,7 +2268,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Starry Bitterling",
     desc: "It's said all the Elderwood's stars are in its waters, for its canopy blocks out the sky.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-starry-bitterling.webp",
     timesAvailable: [
       {
@@ -2297,7 +2297,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Stickleback",
     desc: "A carnivorous fish that enjoys feasting on roe, insects, crustaceans, and the toes of fisherman. Found in Kilima Rivers using worms in the morning and day.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-stickleback.webp",
     timesAvailable: [
       {
@@ -2318,7 +2318,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Stonefish",
     desc: "Extremely poisonous, Stonefish naturally blend into their surroundings while waiting for prey. Found in caves using glow worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-stonefish.webp",
     timesAvailable: [
       {
@@ -2347,7 +2347,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Stormray",
     desc: "A majestic river ray that hunts by twisting water currents and channeling lightning through its tail. Found in Bahari rivers using glow worms in the morning and evening.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-stormray.webp",
     timesAvailable: [
       {
@@ -2368,7 +2368,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Striped Dace",
     desc: "A dace with a striped pattern down its back. Found in Kilima Rivers without bait.",
     location: "Kilima Rivers",
-    locationImage: "",
+    locationImage: "/kilima-rivers.webp",
     displayImage: "/fish-striped-dace.webp",
     timesAvailable: [
       {
@@ -2397,7 +2397,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Striped Sturgeon",
     desc: "A bottom feeding lake fish with light colored stripes that allow it to camouflage in the sunlight. Found in Kilima Lake using worms in the evening and night.",
     location: "Kilima Lake",
-    locationImage: "",
+    locationImage: "/kilima-lake.webp",
     displayImage: "/fish-striped-sturgeon.webp",
     timesAvailable: [
       {
@@ -2418,7 +2418,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Swordfin Eel",
     desc: "An apex predator eel that uses its own body to cut down prey. Found in Bahari rivers using glow worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-swordfin-eel.webp",
     timesAvailable: [
       {
@@ -2447,7 +2447,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Thundering Eel",
     desc: "An electrically charged eel that can shock its prey into submission. Found in Bahari Bay rivers using worms.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-thundering-eel.webp",
     timesAvailable: [
       {
@@ -2476,7 +2476,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Tinfin",
     desc: "A somewhat paranoid cousin of the Kilima Gillyfin.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-tinfin.webp",
     timesAvailable: [
       {
@@ -2505,7 +2505,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Toadstool Floatfish",
     desc: "One touch of this floatfish's tentacles will induce mild hallucinations in its victim. You don't want to know what two touches does.",
     location: "Elderwood Saltwater",
-    locationImage: "",
+    locationImage: "/elderwood-saltwater.webp",
     displayImage: "/fish-toadstool-floatfish.webp",
     timesAvailable: [
       {
@@ -2534,7 +2534,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Turn Pike",
     desc: "This fish can go from 0-60 in the blink of an eye and complete a 90 degree turn at full speed.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-turn-pike.webp",
     timesAvailable: [
       {
@@ -2563,7 +2563,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Umbraan Betta",
     desc: "Unlike its Palian cousin, the Umbraan Betta can tolerate and even thrive in the presence of other Umbraan Betta.",
     location: "Elderwood Freshwater",
-    locationImage: "",
+    locationImage: "/elderwood-freshwater.webp",
     displayImage: "/fish-umbraan-betta.webp",
     timesAvailable: [
       {
@@ -2584,7 +2584,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Umbran Carp",
     desc: "A relative of the Fairy Carp, the Umbran Carp prefers the dark environments of caves and underground lake systems. Found in caves without bait.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-umbran-carp.webp",
     timesAvailable: [
       {
@@ -2613,7 +2613,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Void Ray",
     desc: "Alien and terrifying, some say the Void Ray can enter the Echo realm and feed off smaller echoes is finds. Found in caves using glow worms.",
     location: "Caves",
-    locationImage: "",
+    locationImage: "/caves.webp",
     displayImage: "/fish-void-ray.webp",
     timesAvailable: [
       {
@@ -2642,7 +2642,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Willow Lamprey",
     desc: "A long, thin lamprey named after its similarity to the branches of a willow tree. Found in Bahari Bay rivers using worms at night.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-willow-lamprey.webp",
     timesAvailable: [
       {
@@ -2659,7 +2659,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Yellow Perch",
     desc: "A common perch found in rivers. Found in Bahari Rivers without bait.",
     location: "Bahari Rivers",
-    locationImage: "",
+    locationImage: "/bahari-rivers.webp",
     displayImage: "/fish-yellow-perch.webp",
     timesAvailable: [
       {
@@ -2688,7 +2688,7 @@ export const fish: Array<PaliaActivity> = [
     name: "Yellowfin Tuna",
     desc: "A large tuna that can swim faster than its size implies. Found off the coast of Bahari Bay using glow worms.",
     location: "Bahari Coast",
-    locationImage: "",
+    locationImage: "/bahari-coast.webp",
     displayImage: "/fish-yellowfin-tuna.webp",
     timesAvailable: [
       {
