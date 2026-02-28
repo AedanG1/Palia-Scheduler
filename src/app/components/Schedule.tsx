@@ -79,7 +79,7 @@ export default function Schedule({
   })
 
   return (
-    <div className="md:w-1/2 flex flex-col gap-4">
+    <div className="w-full xl:w-1/2 flex flex-col gap-4">
       <div className="flex flex-row w-full justify-between border-b border-slate-600 dark:border-slate-200">
         <h2 className="text-2xl font-bold pb-2">Daily Schedule</h2>
         <button 

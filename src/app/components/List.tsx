@@ -45,10 +45,10 @@ export default function List({schedule, toggleScheduleItem}: ListProps): JSX.Ele
   );
 
   return (
-    <div className="flex flex-col gap-4 w-1/3">
-      <div className="flex flex-row gap-8">
+    <div className="flex flex-col gap-4 xl:w-1/3">
+      <div className="flex flex-row flex-wrap gap-8">
         <TypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
-        <div className="relative w-full">
+        <div className="relative flex-1 min-w-[110px]">
           <input 
             className="w-full h-full border-b outline-none" 
             placeholder={`Search ${typeToDisplay}...`} 

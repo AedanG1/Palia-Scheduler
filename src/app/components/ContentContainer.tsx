@@ -38,7 +38,7 @@ export default function ContentContainer() {
   }
 
   return (
-    <div className="flex flex-col md:flex-row gap-20 justify-center">
+    <div className="flex flex-col mx-auto xl:flex-row gap-20 justify-center max-w-[1440px]">
       <ActivityNotificationManager schedule={schedule} />
       <Schedule 
         schedule={schedule}
