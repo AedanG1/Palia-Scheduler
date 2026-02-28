@@ -67,8 +67,6 @@ export default function ScheduleItem({
             <MapPin size={20} />
           </button>
           <Image
-            placeholder="blur"
-            blurDataURL="/PlaceholderMap.jpg"
             src={activity.displayImage}
             width={20}
             height={20}
@@ -81,8 +79,6 @@ export default function ScheduleItem({
             activity.bait && activity.baitImage &&
             <div className="flex flex-row gap-2 shrink-0">
                 <Image
-                  placeholder="blur"
-                  blurDataURL="/PlaceholderMap.jpg"
                   src={activity.baitImage}
                   width={20}
                   height={20}

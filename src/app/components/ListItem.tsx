@@ -29,8 +29,6 @@ export default function ListItem({ schedule, activity, toggleScheduleItem}: List
           <div className="flex items-center gap-3">
             <div className="w-16 h-16 rounded-full bg-white/80 dark:bg-slate-950 flex items-center justify-center shadow-md flex-shrink-0">
               <Image
-                placeholder="blur"
-                blurDataURL="/PlaceholderMap.jpg"
                 src={activity.displayImage}
                 width={56}
                 height={56}
@@ -68,8 +66,6 @@ export default function ListItem({ schedule, activity, toggleScheduleItem}: List
           activity.bait && activity.baitImage &&
             <div className="flex flex-row gap-2 items-center mb-4">
               <Image
-                placeholder="blur"
-                blurDataURL="/PlaceholderMap.jpg"
                 src={activity.baitImage}
                 width={24}
                 height={24}
