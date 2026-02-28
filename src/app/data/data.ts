@@ -42,11 +42,11 @@ export const TIMELABEL = [
 export type TimeLabel = typeof TIMELABEL[number];
 
 export const RARITY = [
-  "common",
-  "uncommon",
-  "rare",
-  "epic",
-  "legendary",
+  "Common",
+  "Uncommon",
+  "Rare",
+  "Epic",
+  "Legendary",
   "none"
 ] as const;
 
