@@ -1,14 +1,12 @@
+'use client'
+
 import { useState } from "react";
 import type { ScheduledActivity } from "../data/data";
 import List from "./List";
 import Schedule from "./Schedule";
 import ActivityNotificationManager from "./ActivityNotificationManager";
 
-type ContentContainerProps = {
-  toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
-}
-
-export default function ContentContainer({toggleModal}: ContentContainerProps) {
+export default function ContentContainer() {
   const [schedule, setSchedule] = useState<Array<ScheduledActivity>>([]);
   const SCHEDULE_STARTING_HOUR = 3; // 0-24
 
@@ -46,13 +44,11 @@ export default function ContentContainer({toggleModal}: ContentContainerProps) {
         schedule={schedule}
         handleClearSchedule={handleClearSchedule}
         toggleScheduleItem={toggleScheduleItem}
-        toggleModal={toggleModal}
         scheduleStartingHour={SCHEDULE_STARTING_HOUR}
       />
       <List 
         schedule={schedule} 
         toggleScheduleItem={toggleScheduleItem}
-        toggleModal={toggleModal}
       />
     </div>
   )

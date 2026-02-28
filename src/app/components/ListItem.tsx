@@ -2,15 +2,16 @@ import Image from "next/image"
 import type { PaliaActivity, ScheduledActivity } from "../data/data"
 import { MapPin } from "lucide-react"
 import ListItemButtons from "./ListItemButtons"
+import { useModalContext } from "../context/ModalContext"
 
 type ListItemProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
-  toggleModal: (activityName: string, locationImage: string, location: string, isOpen: boolean) => void;
 }
 
-export default function ListItem({ schedule, activity, toggleScheduleItem, toggleModal}: ListItemProps) {
+export default function ListItem({ schedule, activity, toggleScheduleItem}: ListItemProps) {
+  const {toggleModal} = useModalContext();
 
   return (
     <div

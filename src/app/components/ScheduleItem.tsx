@@ -2,6 +2,7 @@ import { type ScheduledActivity } from "../data/data";
 import { CalendarOff, MapPin } from "lucide-react";
 import Image from "next/image";
 import { ItemPosition } from "./Schedule";
+import { useModalContext } from "../context/ModalContext";
 
 type ScheduleItemProps = {
   activity: ScheduledActivity;
@@ -9,7 +10,6 @@ type ScheduleItemProps = {
   scheduleRowHeight: number;
   scheduleStartingHour: number;
   itemPosition: ItemPosition;
-  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export default function ScheduleItem({ 
@@ -18,9 +18,9 @@ export default function ScheduleItem({
   scheduleRowHeight,
   scheduleStartingHour, 
   itemPosition,
-  toggleModal
 } : ScheduleItemProps) {
 
+  const {toggleModal} = useModalContext();
 
   // get the top position of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {

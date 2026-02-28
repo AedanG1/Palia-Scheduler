@@ -87,23 +87,23 @@ export const activityType = {
 
 export const rarity = {
   common: {
-    rarity: "common",
+    rarity: "Common",
     rarityColor: "#62748e"
   },
   uncommon: {
-    rarity: "uncommon",
+    rarity: "Uncommon",
     rarityColor: "#00a63e"
   },
   rare: {
-    rarity: "rare",
+    rarity: "Rare",
     rarityColor: "#0084d1"
   },
   epic: {
-    rarity: "epic",
+    rarity: "Epic",
     rarityColor: "#432dd7"
   },
   legendary: {
-    rarity: "legendary",
+    rarity: "Legendary",
     rarityColor: "#c70036"
   },
   none: {

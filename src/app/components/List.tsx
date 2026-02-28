@@ -1,5 +1,3 @@
-'use client'
-
 import {JSX, useState} from "react";
 import { ActivityType, PaliaActivity, ScheduledActivity } from "../data/data";
 import { allActivites } from "../data/allActivites";
@@ -11,10 +9,9 @@ import { Virtuoso } from "react-virtuoso";
 type ListProps = {
   schedule: Array<ScheduledActivity>;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
-  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
-export default function List({schedule, toggleScheduleItem, toggleModal}: ListProps): JSX.Element {
+export default function List({schedule, toggleScheduleItem}: ListProps): JSX.Element {
   // handle state of type of activities that should be displayed in the list
   const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
   // handle state of search input
@@ -80,7 +77,6 @@ export default function List({schedule, toggleScheduleItem, toggleModal}: ListPr
               schedule={schedule}
               activity={activity}
               toggleScheduleItem={toggleScheduleItem}
-              toggleModal={toggleModal}
             />
           </div>
         )}

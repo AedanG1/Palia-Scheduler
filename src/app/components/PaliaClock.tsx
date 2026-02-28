@@ -1,3 +1,5 @@
+'use client'
+
 import { JSX, useEffect, useState } from "react"
 import usePaliaTime from "../hooks/usePaliaTime"
 import { Sunrise, Sun, Sunset, Moon } from "lucide-react";

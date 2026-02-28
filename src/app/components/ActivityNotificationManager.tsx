@@ -1,3 +1,5 @@
+'use client'
+
 import { ScheduledActivity } from "../data/data";
 import useActivityNotification from "../hooks/useActivityNotification";
 

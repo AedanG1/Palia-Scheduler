@@ -1,5 +1,3 @@
-'use client'
-
 import type { ScheduledActivity } from "../data/data"
 import {JSX} from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
@@ -11,7 +9,6 @@ type ScheduleProps = {
   handleClearSchedule: () => void;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
   scheduleStartingHour: number;
-  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
 }
 
 export type ItemPosition = {
@@ -24,7 +21,6 @@ export default function Schedule({
   handleClearSchedule,
   toggleScheduleItem, 
   scheduleStartingHour,
-  toggleModal
 }: ScheduleProps): JSX.Element {
 
   // create an array to store each hour to display on the schedule for grid lines
@@ -78,7 +74,6 @@ export default function Schedule({
         scheduleRowHeight={scheduleRowHeight}
         scheduleStartingHour={scheduleStartingHour} 
         itemPosition={itemPosition}
-        toggleModal={toggleModal}
       />
     )
   })

@@ -3,6 +3,7 @@ import "./globals.css";
 import { dmSans } from "./fonts";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next";
+import { ModalProvider } from "./context/ModalContext";
 
 export const metadata: Metadata = {
   title: "Palia Scheduler",
@@ -21,7 +22,9 @@ export default function RootLayout({
       >
         <SpeedInsights />
         <Analytics />
-        {children}
+        <ModalProvider>
+          {children}
+        </ModalProvider>
       </body>
     </html>
   );

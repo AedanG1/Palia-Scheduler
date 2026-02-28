@@ -1,16 +1,16 @@
+'use client'
+
 import Image from "next/image"
 import { X } from "lucide-react"
 import { JSX } from "react"
 import { motion } from "motion/react"
+import { useModalContext } from "../context/ModalContext"
 
-type MapModalProps = {
-  activityName: string;
-  imagePath: string;
-  location: string;
-  toggleModal: (activityName: string, imagePath: string, location: string, isOpen: boolean) => void;
-}
+export default function MapModal(): JSX.Element | null {
+  const {modalStatus, toggleModal} = useModalContext();
 
-export default function MapModal({activityName, imagePath, location, toggleModal}: MapModalProps): JSX.Element {
+  if (!modalStatus.isOpen) return null;
+
   return (
     <div className="fixed inset-0 z-40 flex justify-center items-center">
       {/* Backdrop */}
@@ -23,10 +23,10 @@ export default function MapModal({activityName, imagePath, location, toggleModal
         className="flex flex-col p-4 bg-slate-100 text-slate-700 rounded-xl gap-2 z-50"
       >
         <div className="flex flex-row justify-between">
-          <p className="text-xl">{activityName}, {location}</p>
+          <p className="text-xl">{modalStatus.activityName}, {modalStatus.location}</p>
           <button 
             className="hover: cursor-pointer"
-            onClick={() => {toggleModal("", imagePath, location, false)}}
+            onClick={() => {toggleModal("", modalStatus.locationImage, modalStatus.location, false)}}
           >
             <X />
           </button>
@@ -35,7 +35,7 @@ export default function MapModal({activityName, imagePath, location, toggleModal
           placeholder="blur"
           blurDataURL="/PlaceholderMap.jpg"
           className="relative w-180"
-          src={imagePath}
+          src={modalStatus.locationImage}
           width={800}
           height={600}
           alt=""
