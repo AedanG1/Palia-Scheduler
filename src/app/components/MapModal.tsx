@@ -14,7 +14,10 @@ export default function MapModal(): JSX.Element | null {
   return (
     <div className="fixed inset-0 z-40 flex justify-center items-center">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-gray-900 opacity-70"></div>
+      <div 
+        className="absolute inset-0 bg-gray-900 opacity-70"
+        onClick={() => {toggleModal("", "", "", false)}}
+      ></div>
 
       {/* Image Modal */}
       <motion.div 
@@ -26,7 +29,7 @@ export default function MapModal(): JSX.Element | null {
           <p className="text-xl">{modalStatus.activityName}, {modalStatus.location}</p>
           <button 
             className="hover: cursor-pointer"
-            onClick={() => {toggleModal("", modalStatus.locationImage, modalStatus.location, false)}}
+            onClick={() => {toggleModal("", "", "", false)}}
           >
             <X />
           </button>
