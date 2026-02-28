@@ -13,7 +13,6 @@ export default function NotificationSettings(): JSX.Element {
         Fetching notification status...
       </div>
     )
-
   }
 
   if (permissionStatus === "granted") {
