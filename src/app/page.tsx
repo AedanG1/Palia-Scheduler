@@ -3,6 +3,7 @@ import PaliaClock from "./components/PaliaClock";
 import MapModal from "./components/MapModal";
 import ToggleThemeButton from "./components/ToggleThemeButton";
 import ContentContainer from "./components/ContentContainer";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
           <NotificationSettings />
         </div>
         <ContentContainer />
+        <Footer />
       </div>
     </div>
   );
