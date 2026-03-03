@@ -1,7 +1,7 @@
 # Palia Scheduler
 
 A client side scheduling web app for the game Palia.
-**Try it live at https://paliascheduler.com**
+**Try it live at <a href="https://paliascheduler.com" target="_blank">paliascheduler.com</a>**
 
 Built with Next.js, tailwindcss, Typescript
 
@@ -9,12 +9,12 @@ Packages used:
 - Motion: animations and transitions
 - Lucide-react: icon library
 - Virtuoso: efficient rendering of list components
----
+
 ## Features
 - Clock synced with in-game time
 - Lists of in-game activities complete with images, locations, descriptions, rarities, and requirements
 - Ability to add activities to the schedule to be notified when they are available in-game
----
+
 ## Local Setup
 ```bash
 git clone https://github.com/AedanG1/Palia-Scheduler.git
@@ -22,7 +22,7 @@ cd Palia-Scheduler
 npm install
 npm run dev
 ```
----
+
 ## Technical notes
 
 ### Schedule Item Collision
@@ -35,9 +35,9 @@ While checking the performance of the website during development I noticed that 
 To improve the render time of the list, I used Virtuoso. Using Virtuoso allowed me to only render the list items in view, decreasing the list's render time by 98%.
 
 *Before*
-![An image showing an INP value of 360ms in chrome dev tools]('/readme-before-inp.png')
-![An image showing the list component rendering in 282ms in react dev tools]('/readme-before-render.png')
+![An image showing an INP value of 360ms in chrome dev tools]('./public/readme-before-inp.png')
+![An image showing the list component rendering in 282ms in react dev tools]('./public/readme-before-render.png')
 
 *After*
-![An image showing an INP value of 72ms in chrome dev tools]('/readme-after-inp.png')
-![An image showing the list component rendering in 5ms in react dev tools]('/readme-after-render.png')
+![An image showing an INP value of 72ms in chrome dev tools]('./public/readme-after-inp.png')
+![An image showing the list component rendering in 5ms in react dev tools]('./public/readme-after-render.png')
