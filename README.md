@@ -35,9 +35,9 @@ While checking the performance of the website during development I noticed that 
 To improve the render time of the list, I used Virtuoso. Using Virtuoso allowed me to only render the list items in view, decreasing the list's render time by 98%.
 
 *Before*
-![An image showing an INP value of 360ms in chrome dev tools]('./public/readme-before-inp.png')
+![An image showing an INP value of 360ms in chrome dev tools](./public/readme-before-inp.png)
 ![An image showing the list component rendering in 282ms in react dev tools]('./public/readme-before-render.png')
 
 *After*
-![An image showing an INP value of 72ms in chrome dev tools]('./public/readme-after-inp.png')
+![An image showing an INP value of 72ms in chrome dev tools](./public/readme-after-inp.png)
 ![An image showing the list component rendering in 5ms in react dev tools]('./public/readme-after-render.png')
