@@ -10,6 +10,9 @@ export default function HelpPage() {
         <u>Home</u>
       </Link>
       <h1 className="text-2xl w-full text-center">Not getting notifications?</h1>
+      <p className="bg-amber-100 border border-amber-600 text-amber-900 py-2 px-4">
+        <b>Note:</b> Currently, only desktop notifications are working. IOS and Android notifications will be added soon.
+      </p>
       <div className="flex flex-col gap-4">
         <p>Navigate to Notification settings in System settings</p>
         <p>Make sure Notifications are on and Do Not Disturb is off. Also make sure notifications are on for the web browser you use.</p>
