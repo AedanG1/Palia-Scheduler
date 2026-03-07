@@ -10,7 +10,8 @@ export default function NotificationSettings(): JSX.Element {
   if (permissionStatus === null) {
     return (
       <div className="flex flex-col items-center mb-15">
-        Fetching notification status...
+        Fetching notification status...<br></br>
+        Note: Notifications currently disabled on IOS/Android
       </div>
     )
   }
