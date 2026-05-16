@@ -7,7 +7,7 @@ export type CurrentTimeIndicatorProps = {
   scheduleRowHeight: number;
 }
 
-export default function CurrentTimeIndicator({scheduleStartingHour, scheduleRowHeight}: CurrentTimeIndicatorProps) {
+export default function CurrentTimeIndicator({ scheduleStartingHour, scheduleRowHeight }: CurrentTimeIndicatorProps) {
   const { paliaCurrentHour, paliaCurrentMinute } = usePaliaTime();
 
   // Shift so that scheduleStartingHour acts as "0"

@@ -6,17 +6,16 @@ type TypeSelectProps = {
   handleClick: (activityType: ActivityType) => void;
 }
 
-export default function TypeSelect({typeToDisplay, handleClick}: TypeSelectProps) {
+export default function TypeSelect({ typeToDisplay, handleClick }: TypeSelectProps) {
   const activityButtonElements = ACTIVITYTYPE.map((activity: ActivityType) => {
     const isSelected = typeToDisplay === activity;
-    
-    return ( 
+
+    return (
       <li key={activity} className="relative">
-        <button 
-          onClick={() => {handleClick(activity)}} 
-          className={`text-2xl font-bold pb-2 hover:cursor-pointer transition-colors ${
-            isSelected ? "text-slate-800 dark:text-slate-200" : "text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-400"
-          }`}
+        <button
+          onClick={() => { handleClick(activity) }}
+          className={`text-2xl font-bold pb-2 hover:cursor-pointer transition-colors ${isSelected ? "text-slate-800 dark:text-slate-200" : "text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-400"
+            }`}
         >
           {activity}
         </button>
@@ -35,7 +34,7 @@ export default function TypeSelect({typeToDisplay, handleClick}: TypeSelectProps
       </li>
     )
   })
-  
+
   return (
     <ul className="flex flex-row gap-4">
       {activityButtonElements}

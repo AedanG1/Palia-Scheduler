@@ -10,18 +10,14 @@ export default function ContentContainer() {
   const [schedule, setSchedule] = useState<Array<ScheduledActivity>>([]);
   const SCHEDULE_STARTING_HOUR = 3; // 0-24
 
-  // handle adding an item to the schedule
   const toggleScheduleItem = (activityToSchedule: ScheduledActivity) => {
-    // check if the activity is on the schedule
     const exists = schedule.some(a => a.id === activityToSchedule.id);
 
-    // if the activity is on the schedule, remove it from the schedule
     if (exists) {
       const newSchedule = schedule.filter(a => a.id !== activityToSchedule.id);
       setSchedule(() => {
         return newSchedule;
       })
-      // else, add it to the schedule
     } else {
       setSchedule((prev) => {
         return [
@@ -31,8 +27,7 @@ export default function ContentContainer() {
       })
     }
   }
-  
-  // handle clearing user schedule
+
   const handleClearSchedule = () => {
     setSchedule(() => []);
   }
@@ -40,14 +35,14 @@ export default function ContentContainer() {
   return (
     <div className="flex flex-col mx-auto xl:flex-row gap-20 justify-center max-w-[1440px]">
       <ActivityNotificationManager schedule={schedule} />
-      <Schedule 
+      <Schedule
         schedule={schedule}
         handleClearSchedule={handleClearSchedule}
         toggleScheduleItem={toggleScheduleItem}
         scheduleStartingHour={SCHEDULE_STARTING_HOUR}
       />
-      <List 
-        schedule={schedule} 
+      <List
+        schedule={schedule}
         toggleScheduleItem={toggleScheduleItem}
       />
     </div>

@@ -1,4 +1,4 @@
-import {JSX, useState} from "react";
+import { JSX, useState } from "react";
 import { ActivityType, PaliaActivity, ScheduledActivity } from "../data/data";
 import { allActivites } from "../data/allActivites";
 import ListItem from "./ListItem";
@@ -11,27 +11,22 @@ type ListProps = {
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
 }
 
-export default function List({schedule, toggleScheduleItem}: ListProps): JSX.Element {
-  // handle state of type of activities that should be displayed in the list
+export default function List({ schedule, toggleScheduleItem }: ListProps): JSX.Element {
   const [typeToDisplay, setTypeToDisplay] = useState<ActivityType>("Events");
-  // handle state of search input
   const [searchInput, setSearchInput] = useState<string>("");
 
-  // handle type button click
   const handleClick = (activityType: ActivityType) => {
     setTypeToDisplay(() => {
-      return activityType; 
+      return activityType;
     })
   };
 
-  // handle search input
   const handleSearchInput = (string: string) => {
     setSearchInput(() => {
       return string;
     })
   };
 
-  // clear search input
   const handleClearSearchInput = () => {
     setSearchInput("");
   };
@@ -49,19 +44,19 @@ export default function List({schedule, toggleScheduleItem}: ListProps): JSX.Ele
       <div className="flex flex-row flex-wrap gap-8">
         <TypeSelect typeToDisplay={typeToDisplay} handleClick={handleClick} />
         <div className="relative flex-1 min-w-[110px]">
-          <input 
-            className="w-full h-full border-b outline-none" 
-            placeholder={`Search ${typeToDisplay}...`} 
-            type="text" 
+          <input
+            className="w-full h-full border-b outline-none"
+            placeholder={`Search ${typeToDisplay}...`}
+            type="text"
             value={searchInput}
-            onChange={(e) => {handleSearchInput(e.target.value)}}>
+            onChange={(e) => { handleSearchInput(e.target.value) }}>
           </input>
           {
             searchInput &&
-            <button 
-              className="absolute right-2 self-center hover:cursor-pointer" 
-              onClick={() => {handleClearSearchInput()}}>
-                <X size={16} />
+            <button
+              className="absolute right-2 self-center hover:cursor-pointer"
+              onClick={() => { handleClearSearchInput() }}>
+              <X size={16} />
             </button>
           }
         </div>
@@ -82,5 +77,5 @@ export default function List({schedule, toggleScheduleItem}: ListProps): JSX.Ele
         )}
       />
     </div>
-  ) 
+  )
 }

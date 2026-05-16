@@ -1,14 +1,14 @@
 import { TimeSlot, PaliaActivity, ScheduledActivity } from "../data/data";
 import { Sunrise, Sun, Sunset, Moon, CalendarPlus, CalendarCheck } from "lucide-react";
 import useFormatHourString from "../hooks/useFormatHourString";
-            
+
 type ListItemButtonsProps = {
   schedule: Array<ScheduledActivity>;
   activity: PaliaActivity;
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
 }
 
-export default function ListItemButtons({schedule, activity, toggleScheduleItem}: ListItemButtonsProps) {
+export default function ListItemButtons({ schedule, activity, toggleScheduleItem }: ListItemButtonsProps) {
   const format = useFormatHourString();
 
   const getIcon = (label: string) => {
@@ -34,28 +34,27 @@ export default function ListItemButtons({schedule, activity, toggleScheduleItem}
     }
 
     const isScheduled = schedule.some(s => s.id === slot.id);
-    
+
     return (
-      <button 
+      <button
         key={slot.id}
         onClick={() => toggleScheduleItem(activityToSchedule)}
         className={`flex-1 p-3 hover:shadow-sm hover:cursor-pointer rounded-lg transition-all font-medium text-sm flex items-center justify-center gap-2 
-          ${
-            isScheduled
+          ${isScheduled
             ? "text-green-800 bg-green-200/70 dark:bg-green-200 hover:bg-green-200 dark:hover:bg-green-300 hover:shadow-green-500/50"
             : "text-slate-600 dark:text-slate-200 bg-white/70 dark:bg-slate-700 hover:bg-white dark:hover:bg-slate-800"
           }`}
       >
         {
-          isScheduled 
-          ? <CalendarCheck size={20} /> 
-          : getIcon(slot.label)
+          isScheduled
+            ? <CalendarCheck size={20} />
+            : getIcon(slot.label)
         }
         <span className="capitalize">
           {
             slot.label === "other"
-            ? `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
-            : slot.label
+              ? `${format(slot.startHour).toLocaleLowerCase()} - ${format(slot.endHour).toLocaleLowerCase()}`
+              : slot.label
           }
         </span>
       </button>

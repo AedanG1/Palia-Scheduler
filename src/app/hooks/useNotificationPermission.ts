@@ -21,17 +21,13 @@ export default function useNotificationPermission(): NotificationPermission {
     setPermissionStatus(Notification.permission);
   }, [])
 
-  // function to request permission for notifications
   const requestPermission = async (): Promise<void> => {
-    // don't ask for permission once already set
     if (!(permissionStatus === "default")) {
       return;
     }
 
-    // send permission request
     const status = await Notification.requestPermission();
 
-    // set permission status of user's choice
     setPermissionStatus(status);
   }
 

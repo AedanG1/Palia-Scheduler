@@ -10,8 +10,8 @@ type ListItemProps = {
   toggleScheduleItem: (activityToSchedule: ScheduledActivity) => void;
 }
 
-export default function ListItem({ schedule, activity, toggleScheduleItem}: ListItemProps) {
-  const {toggleModal} = useModalContext();
+export default function ListItem({ schedule, activity, toggleScheduleItem }: ListItemProps) {
+  const { toggleModal } = useModalContext();
 
   return (
     <div
@@ -19,11 +19,11 @@ export default function ListItem({ schedule, activity, toggleScheduleItem}: List
       className="backdrop-blur-sm bg-white/60 border border-white/80 dark:bg-slate-950 dark:border-slate-800 rounded-2xl shadow-md transition-all p-5 relative overflow-hidden"
     >
       {/* Subtle gradient overlay */}
-      <div 
+      <div
         className="absolute inset-0 opacity-15 dark:opacity-50 pointer-events-none"
         style={{ background: `linear-gradient(135deg, ${activity.typeColor} 0%, transparent 100%)` }}
       ></div>
-      
+
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function ListItem({ schedule, activity, toggleScheduleItem}: List
             </div>
             <div>
               <h3 className="font-bold text-lg text-slate-800 dark:text-slate-200">{activity.name}</h3>
-              <button 
+              <button
                 className="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-400 hover:cursor-pointer"
                 onClick={() => toggleModal(activity.name, activity.locationImage, activity.location, true)}
               >
@@ -50,39 +50,39 @@ export default function ListItem({ schedule, activity, toggleScheduleItem}: List
           </div>
           {
             activity.rarity !== "none" &&
-              <span 
-                className="px-3 py-1 rounded-full text-xs font-semibold"
-                style={{ 
-                  backgroundColor: `${activity.rarityColor}`, 
-                  color: `white` 
-                }}
-              >
-                {activity.rarity}
-              </span>
+            <span
+              className="px-3 py-1 rounded-full text-xs font-semibold"
+              style={{
+                backgroundColor: `${activity.rarityColor}`,
+                color: `white`
+              }}
+            >
+              {activity.rarity}
+            </span>
           }
         </div>
-        
+
         {
           activity.bait && activity.baitImage &&
-            <div className="flex flex-row gap-2 items-center mb-4">
-              <Image
-                src={activity.baitImage}
-                width={24}
-                height={24}
-                alt={activity.bait}
-                title={activity.bait}
-                className="object-contain"
-              />
-              <p className="text-sm text-slate-600 dark:text-slate-400">Requires {activity.bait}s</p>
-            </div>
+          <div className="flex flex-row gap-2 items-center mb-4">
+            <Image
+              src={activity.baitImage}
+              width={24}
+              height={24}
+              alt={activity.bait}
+              title={activity.bait}
+              className="object-contain"
+            />
+            <p className="text-sm text-slate-600 dark:text-slate-400">Requires {activity.bait}s</p>
+          </div>
         }
 
         <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">{activity.desc}</p>
-        
+
         {/* Toggle Schedule Buttons */}
         <ListItemButtons
           schedule={schedule}
-          activity={activity} 
+          activity={activity}
           toggleScheduleItem={toggleScheduleItem}
         />
       </div>

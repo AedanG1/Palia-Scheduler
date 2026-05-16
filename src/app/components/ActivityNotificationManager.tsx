@@ -7,7 +7,7 @@ type ActivityNotificationManagerProps = {
   schedule: Array<ScheduledActivity>;
 }
 
-export default function ActivityNotificationManager({schedule}: ActivityNotificationManagerProps) {
+export default function ActivityNotificationManager({ schedule }: ActivityNotificationManagerProps) {
   useActivityNotification(schedule);
   return null;
 }

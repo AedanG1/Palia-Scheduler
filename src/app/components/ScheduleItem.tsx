@@ -12,22 +12,20 @@ type ScheduleItemProps = {
   itemPosition: ItemPosition;
 }
 
-export default function ScheduleItem({ 
+export default function ScheduleItem({
   activity,
-  toggleScheduleItem, 
+  toggleScheduleItem,
   scheduleRowHeight,
-  scheduleStartingHour, 
+  scheduleStartingHour,
   itemPosition,
-} : ScheduleItemProps) {
+}: ScheduleItemProps) {
 
-  const {toggleModal} = useModalContext();
+  const { toggleModal } = useModalContext();
 
-  // get the top position of the activity based on it's starting hour
   const getStartPosition = (startHour: number): number => {
     return (((startHour - scheduleStartingHour) + 24) % 24) * scheduleRowHeight;
   }
 
-  // get the span of the activity in hours
   const getSpan = (activity: ScheduledActivity): number => {
     if (activity.endHour >= activity.startHour) {
       return (activity.endHour - activity.startHour);
@@ -36,7 +34,6 @@ export default function ScheduleItem({
     }
   }
 
-  // get the z-index by subtracting the span from largest span size possible + 1
   const getZIndex = (activity: ScheduledActivity): number => {
     const span = getSpan(activity);
     const zIndex = 25 - span;
@@ -44,9 +41,9 @@ export default function ScheduleItem({
   }
 
   return (
-    <div 
-      key={activity.id} 
-      style={{ 
+    <div
+      key={activity.id}
+      style={{
         top: `${getStartPosition(activity.startHour)}rem`,
         height: `${getSpan(activity) * scheduleRowHeight}rem`,
         background: `color-mix(in srgb, ${activity.typeColor} 10%, white)`,
@@ -60,9 +57,9 @@ export default function ScheduleItem({
     >
       <div className="w-full flex flex-row justify-between">
         <div className="flex flex-row items-center gap-2 min-w-0 overflow-hidden">
-          <button 
+          <button
             className="hover: cursor-pointer"
-            onClick={() => {toggleModal(activity.name, activity.locationImage, activity.location, true)}}
+            onClick={() => { toggleModal(activity.name, activity.locationImage, activity.location, true) }}
           >
             <MapPin size={20} />
           </button>
@@ -78,15 +75,15 @@ export default function ScheduleItem({
           {
             activity.bait && activity.baitImage &&
             <div className="flex flex-row gap-2 shrink-0">
-                <Image
-                  src={activity.baitImage}
-                  width={20}
-                  height={20}
-                  alt={activity.bait}
-                  title={activity.bait}
-                  className="object-contain"
-                />
-                <span className="text-sm">Required</span>
+              <Image
+                src={activity.baitImage}
+                width={20}
+                height={20}
+                alt={activity.bait}
+                title={activity.bait}
+                className="object-contain"
+              />
+              <span className="text-sm">Required</span>
             </div>
           }
         </div>

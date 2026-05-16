@@ -12,23 +12,16 @@ export default function ToggleThemeButton() {
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme;
     if (stored) {
-      // set the html element's data-theme to opposite theme
       document.documentElement.setAttribute("data-theme", stored);
-      // save theme to local storage
       localStorage.setItem("theme", stored);
-      // set theme state to opposite theme
       setTheme(stored);
     }
   }, [])
 
   const toggleTheme = () => {
-    // get the opposite theme from the current one
     const oppositeTheme = theme === "dark" ? "light" : "dark";
-    // set the html element's data-theme to opposite theme
     document.documentElement.setAttribute("data-theme", oppositeTheme);
-    // save theme to local storage
     localStorage.setItem("theme", oppositeTheme);
-    // set theme state to opposite theme
     setTheme(oppositeTheme);
   }
 

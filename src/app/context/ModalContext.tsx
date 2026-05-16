@@ -26,7 +26,6 @@ export function ModalProvider({children}: React.PropsWithChildren) {
     isOpen: false
   });
 
-  // handle the opening and closing of the modal
   const toggleModal = (activityName: string, locationImage: string, location: string, isOpen: boolean): void => {
     setModalStatus(() => {
       return {

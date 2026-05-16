@@ -7,7 +7,7 @@ import { Sunrise, Sun, Sunset, Moon } from "lucide-react";
 type StageOfDay = "Morning" | "Day" | "Evening" | "Night";
 
 export default function PaliaClock(): JSX.Element {
-  const {paliaTime12Hour, paliaCurrentHour} = usePaliaTime();
+  const { paliaTime12Hour, paliaCurrentHour } = usePaliaTime();
   const [stageOfDay, setStageOfDay] = useState<StageOfDay>("Morning");
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function PaliaClock(): JSX.Element {
         style={{
           background: `${stageOfDayColors[stageOfDay].background}`,
           color: `${stageOfDayColors[stageOfDay].foreground}`
-        }} 
+        }}
       >
         {getIcon(stageOfDay)}
         <span>{stageOfDay}</span>

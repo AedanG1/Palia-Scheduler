@@ -15,14 +15,10 @@ export default function useActivityNotification(schedule: Array<ScheduledActivit
   const {paliaCurrentHour, paliaDayNumber} = usePaliaTime();
 
   useEffect(() => {
-    // if the user doesn't have notifications enabled, do nothing
     if (permissionStatus !== "granted") return;
 
-    // if there's nothing on the schedule, do nothing
     if (!schedule.length) return;
 
-    // Find first activity starting in the next hour
-    // === (paliaCurrentHour + 1) % 24
     const upcomingActivity = schedule.find(
       a => a.startHour === (paliaCurrentHour + 1) % 24 // wrap to 0 after 23
     )
@@ -31,7 +27,6 @@ export default function useActivityNotification(schedule: Array<ScheduledActivit
       if (notifiedRecord[upcomingActivity.id] !== paliaDayNumber) {
         new Notification(upcomingActivity.name, { body: `${upcomingActivity.location} - ${upcomingActivity.desc}` });
 
-        // mark as notified
         setNotifiedRecord((prev) => ({
           ...prev,
           [upcomingActivity.id]: paliaDayNumber,

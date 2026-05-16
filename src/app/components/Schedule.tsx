@@ -1,5 +1,5 @@
 import type { ScheduledActivity } from "../data/data"
-import {JSX} from "react"
+import { JSX } from "react"
 import CurrentTimeIndicator from "./CurrentTimeIndicator";
 import { formatHourMeridiem } from "../utils";
 import ScheduleItem from "./ScheduleItem";
@@ -17,17 +17,15 @@ export type ItemPosition = {
 }
 
 export default function Schedule({
-  schedule, 
+  schedule,
   handleClearSchedule,
-  toggleScheduleItem, 
+  toggleScheduleItem,
   scheduleStartingHour,
 }: ScheduleProps): JSX.Element {
 
   // create an array to store each hour to display on the schedule for grid lines
   const hoursToDisplay = Array.from({ length: 24 }, (_, i) => (i + scheduleStartingHour) % 24);
-  // set the height of each row in rem
   const scheduleRowHeight = 2;
-  // set the total schedule div height
   const scheduleHeight = 24 * scheduleRowHeight;
 
   // create an object to store item positions by ID
@@ -37,42 +35,35 @@ export default function Schedule({
 
   if (schedule) {
     for (const item of schedule) {
-      // set the startHour as key for the map
       const key = item.startHour;
-      // if the key doesn't exist
       if (!startHourGroups.has(key)) {
-        // create the key value pair
         startHourGroups.set(key, []);
       }
-      // push the item to the key's array
       startHourGroups.get(key).push(item);
     }
 
     startHourGroups.forEach((group) => {
       group.forEach((item: ScheduledActivity, index: number) => {
-        // calculate the percentage for width and left position
         const positions = {
           widthPercent: 100 / group.length,
-          leftPercent: ( index / group.length ) * 100
+          leftPercent: (index / group.length) * 100
         };
 
-        // set calculated positions to current item ID
         itemPositionsById[item.id] = positions;
       })
     })
   }
 
-  // create a schedule item for each of the activities on the schedule
   const scheduleItems = schedule?.map((activity: ScheduledActivity) => {
     const itemPosition = itemPositionsById[activity.id];
 
     return (
-      <ScheduleItem 
+      <ScheduleItem
         key={activity.id}
         activity={activity}
         toggleScheduleItem={toggleScheduleItem}
         scheduleRowHeight={scheduleRowHeight}
-        scheduleStartingHour={scheduleStartingHour} 
+        scheduleStartingHour={scheduleStartingHour}
         itemPosition={itemPosition}
       />
     )
@@ -82,16 +73,16 @@ export default function Schedule({
     <div className="w-full xl:w-1/2 flex flex-col gap-4">
       <div className="flex flex-row w-full justify-between border-b border-slate-600 dark:border-slate-200">
         <h2 className="text-2xl font-bold pb-2">Daily Schedule</h2>
-        <button 
+        <button
           className="hover: cursor-pointer"
-          onClick={() => {handleClearSchedule()}}
+          onClick={() => { handleClearSchedule() }}
         >
           Clear Schedule
         </button>
       </div>
       <div className="flex bg-white dark:bg-slate-800 rounded-lg shadow-lg p-4">
         {/* Time of day color indicator */}
-        <div  
+        <div
           style={{
             background: `
               linear-gradient(
@@ -112,7 +103,7 @@ export default function Schedule({
         {/* Hour Labels Column */}
         <div className="w-16 text-right pr-2 border-r border-slate-200 dark:border-slate-600">
           {hoursToDisplay.map((hour: number): JSX.Element => (
-            <div 
+            <div
               key={hour}
               style={{
                 height: `${scheduleRowHeight}rem`
@@ -129,8 +120,8 @@ export default function Schedule({
 
           {/* Background grid lines */}
           {hoursToDisplay.map((hour: number): JSX.Element => (
-            <div 
-              key={`line-${hour}`} 
+            <div
+              key={`line-${hour}`}
               style={{
                 height: `${scheduleRowHeight}rem`
               }}
@@ -141,11 +132,11 @@ export default function Schedule({
           <CurrentTimeIndicator scheduleStartingHour={scheduleStartingHour} scheduleRowHeight={scheduleRowHeight} />
 
           {/* Create a block for each activity on the schedule */}
-          <div 
+          <div
             className="absolute inset-0"
             style={{
               height: `${scheduleHeight}rem`
-            }} 
+            }}
           >
             {scheduleItems}
           </div>

@@ -44,13 +44,9 @@ export default function usePaliaTime(): PaliaTime {
       // Calculate the total number of Palia days that have passed since Palia's epoch
       const totalPaliaDayCount = Math.floor(totalPaliaSeconds / DAY);
 
-      // get amount of seconds passed in the current palia day using modulo
       const paliaSecondsInCurrentDay = totalPaliaSeconds % DAY;
-      // get amount of minutes passed in the current palia day
       const paliaMinutesInCurrentDay = Math.floor(paliaSecondsInCurrentDay / MINUTE);
-      // convert amount of minutes passed to minutes in current hour (0-59)
       const minute = paliaMinutesInCurrentDay % 60;
-      // convert amount of minutes passed to hour in current day (0-23)
       const hour = (paliaMinutesInCurrentDay - minute) / 60;
 
       setPaliaTime({
